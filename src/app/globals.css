@@ -1,26 +1,168 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  CrimeCanada.io — Civic Atlas design system
+  Single dark "command center" theme. Tokens are exposed as Tailwind v4
+  utilities via @theme (e.g. bg-base, text-ink, border-line, text-cyan).
+  Aesthetic: dark slate / near black, glass panels, thin borders,
+  cyan active states, amber metadata, restrained red for incident markers only.
+*/
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  /* Surfaces */
+  --color-base: #05070d;
+  --color-base-2: #080b15;
+  --color-panel: #0b0f1c;
+  --color-panel-2: #0e1424;
+
+  /* Borders */
+  --color-line: #1b2435;
+  --color-line-soft: #131a29;
+
+  /* Text hierarchy */
+  --color-ink: #e8edf6;
+  --color-muted: #8a96ab;
+  --color-faint: #5b6678;
+
+  /* Accents */
+  --color-cyan: #34d2f2;
+  --color-cyan-soft: #6fe2fb;
+  --color-amber: #ffb224;
+  --color-amber-soft: #ffce6e;
+  --color-red: #ff3b4e;
+  --color-red-soft: #ff6173;
+  --color-green: #34e0a1;
+  --color-violet: #8b7bff;
+
+  --radius-panel: 14px;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--color-base);
+  color: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* Subtle command-center backdrop: faint cyan / red glows + grid */
+  background-image:
+    radial-gradient(900px 520px at 88% -8%, rgba(52, 210, 242, 0.08), transparent 60%),
+    radial-gradient(760px 480px at -6% -6%, rgba(255, 59, 78, 0.06), transparent 60%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(52, 210, 242, 0.28);
+  color: #f4fbff;
+}
+
+/* ---------- Utility layer ---------- */
+@layer utilities {
+  /* Frosted glass panels */
+  .glass {
+    background: linear-gradient(180deg, rgba(20, 28, 46, 0.72), rgba(8, 12, 22, 0.72));
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-panel);
+    backdrop-filter: blur(10px);
+  }
+
+  .glass-2 {
+    background: linear-gradient(180deg, rgba(16, 22, 38, 0.55), rgba(7, 11, 20, 0.55));
+    border: 1px solid var(--color-line-soft);
+    border-radius: var(--radius-panel);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Uppercase eyebrow / metadata label */
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.62rem;
+    line-height: 1.1;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  /* Tabular numerals for counts, dates, IDs */
+  .nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Hover lift for interactive cards */
+  .card-hover {
+    transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  }
+  .card-hover:hover {
+    border-color: rgba(52, 210, 242, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -18px rgba(52, 210, 242, 0.4);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 18px rgba(52, 210, 242, 0.45);
+  }
+
+  /* Faint blueprint grid overlay for hero / map shells */
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(52, 210, 242, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(52, 210, 242, 0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+}
+
+/* ---------- Animations ---------- */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+.animate-sweep {
+  animation: sweep 4.5s linear infinite;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise 520ms ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-dot,
+  .animate-sweep,
+  .animate-rise,
+  .card-hover {
+    animation: none !important;
+    transition: none !important;
+  }
 }

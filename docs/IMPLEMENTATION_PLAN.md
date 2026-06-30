@@ -30,20 +30,21 @@ Foundation work before feature development.
 
 Build the visual foundation and placeholder routes. **No real data yet.**
 
-- [ ] Dark dashboard layout shell (header, nav, footer)
-- [ ] Design tokens: dark background, glass panels, cyan/red/amber accents
-- [ ] Shared components: glass panel, filter bar, source citation block, empty state
-- [ ] Placeholder routes for all V1 pages:
-  - [ ] `/` — landing
-  - [ ] `/toronto` — explorer hub
-  - [ ] `/toronto/map` — map placeholder
-  - [ ] `/toronto/table` — table placeholder
-  - [ ] `/toronto/search` — search/filter placeholder
-  - [ ] `/data/sources` — dataset page skeleton (published / deferred / full inventory sections)
-  - [ ] `/pricing` — pricing placeholder
-  - [ ] `/api` — API waitlist/docs placeholder
-- [ ] Responsive layout for desktop-first dashboard (mobile acceptable, not primary)
-- [ ] Footer with disclaimer and licence attribution copy
+- [x] Dark dashboard layout shell (header, nav, footer)
+- [x] Design tokens: dark background, glass panels, cyan/red/amber accents
+- [x] Shared components: glass panel, filter bar, source citation block, empty state (plus MetricCard, DatasetBadge, StatusChip, PreviewBadge, SourceReceipt, DataLayerStack, ExplorerShell, MapPreview, DataTablePreview, AiQueryBar, DisclaimerBlock)
+- [x] Placeholder routes for all V1 pages:
+  - [x] `/` — landing
+  - [x] `/toronto` — explorer hub
+  - [x] `/toronto/map` — map placeholder
+  - [x] `/toronto/table` — table placeholder
+  - [x] `/toronto/search` — search/filter placeholder
+  - [x] `/data/sources` — dataset page skeleton (published / deferred / full inventory sections)
+  - [x] `/pricing` — pricing placeholder
+  - [x] `/api` — API waitlist/docs placeholder
+  - [x] Concept routes (clearly labelled future): `/vision`, `/canada`, `/ai`, `/data/layers`
+- [x] Responsive layout for desktop-first dashboard (mobile acceptable, not primary)
+- [x] Footer with disclaimer and licence attribution copy
 
 ### Phase 1 constraints (non-negotiable)
 
