@@ -21,6 +21,10 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - [x] Relocated misplaced Major Crime Indicators CSV into `_downloads/2026-06-30`; removed empty `major-crime-indicators/` folders
 - [x] Phase 1: Static shell and design system — dark dashboard shell, design tokens, reusable components, all V1 routes plus four labelled concept routes (UI foundation pass)
 - [x] Product/UI architecture design doc (`docs/PRODUCT_UI_ARCHITECTURE_2026-06-30.md`) covering the 10 data/UI models
+- [x] TPS V1 local processing scripts: `scripts/process-tps-v1.mjs`, `scripts/validate-tps-v1.mjs`
+- [x] TPS V1 real local data wired: 6 datasets → `data/processed/tps/v1/` (581,393 rows; 573,191 mappable; 8,202 non-mappable; 31 source fields)
+- [x] Toronto explorer (`/toronto`, `/toronto/table`, `/toronto/map`, `/toronto/search`) reads processed SQLite via server-side queries
+- [x] Document local TPS V1 data generation and production limitation (`docs/DATA_SOURCE_PLAN.md` — Local development section)
 
 ---
 
@@ -34,8 +38,9 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 
 - [ ] Wire real provenance (source URLs, licence URLs, update dates) into dataset metadata
 - [ ] Design universal source/dataset metadata layer (Phase 3a)
-- [ ] Plan first public incident ingestion for Major Crime Open Data family (Phase 3b)
-- [ ] Replace MapPreview/DataTablePreview scaffolds with map library + server-side queries when DB lands
+- [ ] Define production PostgreSQL ingestion (Phase 3b DB path)
+- [ ] Define production data strategy for Vercel/hosting (processed corpus not in repo; deployment path TBD)
+- [ ] Upgrade map to Leaflet/MapLibre (Phase 5)
 
 ---
 
@@ -50,6 +55,8 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 | 2026-06-30 | Typed source layer plan | Created manifest-only classification for 73 TPS CSVs in `docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md`; no file operations |
 | 2026-06-30 | Corpus relocation | Moved `major-crime-indicators/.../original-file.csv` → `_downloads/2026-06-30/Major_Crime_Indicators_Open_Data.csv`; deleted empty folders; updated docs to 74-file corpus (SHA-256 verified) |
 | 2026-06-30 | UI foundation pass | Built dark "civic atlas" design system + 12 routes (8 V1 + 4 concept) with mock/preview data; added `docs/PRODUCT_UI_ARCHITECTURE_2026-06-30.md`. No new deps, no DB, no auth/billing/AI backend, no CrimeInToronto coupling |
+| 2026-06-30 | TPS V1 local data | Processed 6 Major Crime CSVs from `_downloads/2026-06-30` into `data/processed/tps/v1/`; validation totals 581,393 / 573,191 / 8,202; app serves real records locally; production still lacks data |
+| 2026-06-30 | Docs sync | Updated `Logs/STEP_LOG.md` and `docs/DATA_SOURCE_PLAN.md` (local data generation section); synced `docs/IMPLEMENTATION_PLAN.md` checkboxes to local SQLite interim path |
 
 ---
 
@@ -62,3 +69,4 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - TPS inventory: [docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md](../docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md)
 - TPS typed source layer plan: [docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md](../docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md)
 - Legal guardrails: [docs/LEGAL_GUARDRAILS.md](../docs/LEGAL_GUARDRAILS.md)
+- Local TPS V1 data: [docs/DATA_SOURCE_PLAN.md](../docs/DATA_SOURCE_PLAN.md#local-development-tps-v1-processed-data)

@@ -96,6 +96,86 @@ V1 public UI is powered by **six offence-specific datasets** sharing a **31-colu
 
 ---
 
+## Local development: TPS V1 processed data
+
+The Toronto explorer reads **real local processed data** generated from the six V1 Major Crime CSV files. This section describes how to obtain and regenerate that corpus on a developer machine.
+
+### Raw input location
+
+Place the six V1 CSV files in:
+
+```
+data/raw/tps/_downloads/2026-06-30/
+```
+
+Filenames must match the [V1 Published Dataset Family](#v1-published-dataset-family-major-crime-open-data) table above:
+
+- `Assault_Open_Data_4176353985444773481.csv`
+- `Auto_Theft_Open_Data_4481082360476864088.csv`
+- `Break_and_Enter_Open_Data_9198768316349412680.csv`
+- `Robbery_Open_Data_2226832258065309099.csv`
+- `Theft_From_Motor_Vehicle_Open_Data_4636805822324249695.csv`
+- `Theft_Over_Open_Data_-309556416197554984.csv`
+
+The full 74-file TPS corpus may also live in the same `_downloads/2026-06-30/` folder; only these six files are consumed by the V1 processing scripts.
+
+### Generate processed data
+
+From the repo root:
+
+```bash
+node scripts/process-tps-v1.mjs
+```
+
+This reads the six CSVs, normalizes rows, and writes output under `data/processed/tps/v1/`.
+
+### Validate
+
+After processing, confirm corpus totals and query integrity:
+
+```bash
+node scripts/validate-tps-v1.mjs
+```
+
+Expected validation totals:
+
+| Metric | Count |
+|--------|------:|
+| Datasets | 6 |
+| Total rows | 581,393 |
+| Mappable rows | 573,191 |
+| Non-mappable rows (0,0 coordinates) | 8,202 |
+| Source fields preserved per row | 31 |
+
+### Output artifacts
+
+Generated under `data/processed/tps/v1/`:
+
+| File | Purpose |
+|------|---------|
+| `manifest.json` | Corpus metadata, dataset stats, neighbourhood/division facets |
+| `tps-v1-v2.sqlite` | Queryable SQLite database used by the Next.js app |
+| `assault-open-data.ndjson.gz` | Compressed normalized records (one per dataset) |
+| `auto-theft-open-data.ndjson.gz` | … |
+| `break-and-enter-open-data.ndjson.gz` | … |
+| `robbery-open-data.ndjson.gz` | … |
+| `theft-from-motor-vehicle-open-data.ndjson.gz` | … |
+| `theft-over-open-data.ndjson.gz` | … |
+
+The app reads `manifest.json` and `tps-v1-v2.sqlite` at runtime via `src/lib/tpsQuery.ts`.
+
+### Why raw and processed data are not committed
+
+Both `data/raw/` and `data/processed/` are listed in `.gitignore`. The TPS corpus is large (~1 GB+ across 74 raw files) and must not be checked into git. Clones must obtain TPS raw files separately and run the processing script locally.
+
+### Production limitation
+
+Local development works once processed data is generated. **Vercel and other production deployments do not include this data today** — the gitignored processed corpus is not part of the build artifact. A separate production data strategy (object storage, CI-generated artifact, managed DB ingest, or similar) is still required before public deployment can serve live records.
+
+If processed data is missing at runtime, the app surfaces an error directing developers to run `node scripts/process-tps-v1.mjs`.
+
+---
+
 ## Deferred but Classified TPS Datasets
 
 These datasets are **preserved, inventoried, and classified** — not published in V1 public UI.

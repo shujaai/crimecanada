@@ -8,6 +8,8 @@ Phased build plan for V1. Agents mark items `[x]` when complete, `[ ]` when pend
 
 See also: [NORTH_STAR.md](./NORTH_STAR.md), [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md), [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md).
 
+**Status note (2026-06-30):** Toronto explorer routes serve **real local processed data** from `data/processed/tps/v1/` (SQLite interim path). PostgreSQL/Prisma ingestion and production deployment data strategy remain pending. See [Local development: TPS V1 processed data](./DATA_SOURCE_PLAN.md#local-development-tps-v1-processed-data).
+
 ---
 
 ## Phase 0: Repo & Docs Setup
@@ -72,12 +74,12 @@ Acquire, inventory, and classify official TPS public data. **No database yet.**
 
 ### Remaining
 
-- [ ] Organize TPS files into typed source layers **without modifying originals** (classification manifest only — no CSV edits)
+- [x] Organize TPS files into typed source layers **without modifying originals** (classification manifest only — no CSV edits)
 - [ ] Move/copy V1 target files into per-dataset archive convention: `data/raw/tps/{dataset-slug}/{YYYY-MM-DD}/`
 - [ ] Generate `manifest.json` per archived dataset (see DATA_SOURCE_PLAN)
 - [ ] Document dataset fields, update cadence, and licence for V1 family in [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md)
-- [ ] Verify no suspect names, victim names, or mugshots in V1 target dataset fields
-- [ ] Document V1 field mapping for Major Crime Open Data family (reference inventory identifier facts)
+- [x] Verify no suspect names, victim names, or mugshots in V1 target dataset fields
+- [x] Document V1 field mapping for Major Crime Open Data family (reference inventory identifier facts; see DATA_SOURCE_PLAN normalization table)
 
 **Exit criteria:** Full corpus inventoried and classified by typed layer; V1 target files archived with manifests; no single-schema assumption for all 74 files.
 
@@ -112,20 +114,29 @@ Wire up persistence for dataset-level metadata. **Do not design one universal in
 
 Ingest the six V1 target files into the `public_incident_records` layer.
 
-- [ ] Define `public_incident_records` schema (layer-specific — not shared with other layers)
-- [ ] Normalization rules (see [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md)):
-  - [ ] `OBJECTID` → `source_record_id` (unique within file)
-  - [ ] `EVENT_UNIQUE_ID` → `event_unique_id` (store; **do not dedupe** — not unique per inventory)
-  - [ ] Primary neighbourhood: `HOOD_158`, `NEIGHBOURHOOD_158`
-  - [ ] Preserve `HOOD_140`, `NEIGHBOURHOOD_140` in `source_fields_json` or legacy fields
-  - [ ] Map coordinates: `LAT_WGS84`, `LONG_WGS84`
-  - [ ] All original columns preserved in `source_fields_json`
-- [ ] Build ingestion script: read raw archive → validate → upsert records
-- [ ] Idempotent ingestion (re-run safe on same or updated file)
-- [ ] Ingestion logs: record count, errors, checksum
+### Local interim (done — SQLite, not PostgreSQL)
+
+- [x] Define `public_incident_records` schema (SQLite table in `data/processed/tps/v1/tps-v1-v2.sqlite`)
+- [x] Normalization rules implemented (see [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md)):
+  - [x] `OBJECTID` → `source_record_id` (unique within file)
+  - [x] `EVENT_UNIQUE_ID` → `event_unique_id` (store; **do not dedupe**)
+  - [x] Primary neighbourhood: `HOOD_158`, `NEIGHBOURHOOD_158`
+  - [x] Preserve `HOOD_140`, `NEIGHBOURHOOD_140` in `source_fields_json`
+  - [x] Map coordinates: `LAT_WGS84`, `LONG_WGS84`; 0,0 rows marked non-mappable
+  - [x] All original columns preserved in `source_fields_json`
+- [x] Build ingestion script: `scripts/process-tps-v1.mjs` (read raw CSVs → validate → write SQLite + NDJSON)
+- [x] Validation script: `scripts/validate-tps-v1.mjs` (581,393 rows; 573,191 mappable; 8,202 non-mappable)
+- [x] Idempotent re-run on same source files
+- [x] Ingestion output: `manifest.json` with record counts and facets
+
+### Production path (pending — PostgreSQL)
+
+- [ ] Add PostgreSQL ingest from raw archive → upsert records via Prisma
 - [ ] PostGIS / geospatial indexing — **deferred post-V1** (use lat/lng columns; exclude 0,0 from map queries)
 
-**Exit criteria:** Six Major Crime Open Data files queryable in PostgreSQL via Prisma; metadata and `source_fields_json` preserved on every row.
+**Exit criteria (local interim):** Six Major Crime Open Data files queryable locally via SQLite; metadata and `source_fields_json` preserved on every row.
+
+**Exit criteria (production):** Six Major Crime Open Data files queryable in PostgreSQL via Prisma; metadata and `source_fields_json` preserved on every row.
 
 ---
 
@@ -133,13 +144,13 @@ Ingest the six V1 target files into the `public_incident_records` layer.
 
 Connect UI to real data from Phase 3b.
 
-- [ ] Shared filter state (URL-synced): offence type, date range, neighbourhood, police division
-- [ ] `/toronto/search` — filter UI wired to query params
-- [ ] `/toronto/table` — paginated table from DB with sort
-- [ ] Source citation on every table row and page footer
-- [ ] `/toronto` hub — active filter summary and result count
-- [ ] Empty states, loading states, error states
-- [ ] Server-side pagination and filtering (no client-side full dataset load)
+- [x] Shared filter state (URL-synced): offence type, date range, neighbourhood, police division
+- [x] `/toronto/search` — filter UI wired to query params
+- [x] `/toronto/table` — paginated table from SQLite with sort
+- [x] Source citation on every table row and page footer
+- [x] `/toronto` hub — active filter summary and result count
+- [x] Empty states, loading states, error states (including missing processed-data error)
+- [x] Server-side pagination and filtering (no client-side full dataset load)
 
 **Exit criteria:** Users can filter and browse Major Crime Open Data records in table view with full source attribution.
 
@@ -150,12 +161,12 @@ Connect UI to real data from Phase 3b.
 Add geospatial exploration.
 
 - [ ] Choose map library: Leaflet or MapLibre
-- [ ] `/toronto/map` — render incident markers from filtered query
-- [ ] Exclude rows where `LAT_WGS84 = 0` and `LONG_WGS84 = 0` from map markers (still in table/search)
+- [x] `/toronto/map` — render incident markers from filtered query (canvas projection; real mappable data)
+- [x] Exclude rows where `LAT_WGS84 = 0` and `LONG_WGS84 = 0` from map markers (still in table/search)
 - [ ] Marker clustering for dense areas
-- [ ] Click marker → detail panel with source citation
-- [ ] Filter sync: map respects same filters as table/search
-- [ ] Map empty state when no geocodable records match filters
+- [x] Click marker → detail panel with source citation
+- [x] Filter sync: map respects same filters as table/search
+- [x] Map empty state when no geocodable records match filters
 
 **Exit criteria:** Map view functional with filter sync; 0,0 rows excluded from markers; no safety heatmaps or danger-zone colouring.
 
@@ -221,13 +232,16 @@ crimecanada/
 ├── docs/                    # Planning and spec docs
 ├── Logs/                    # Agent step log
 ├── data/
-│   └── raw/
+│   ├── raw/
+│   │   └── tps/
+│   │       ├── _downloads/  # Bulk corpus copy (2026-06-30: 74 files)
+│   │       └── {dataset-slug}/
+│   │           └── {YYYY-MM-DD}/
+│   │               ├── original-file.csv
+│   │               └── manifest.json
+│   └── processed/
 │       └── tps/
-│           ├── _downloads/  # Bulk corpus copy (2026-06-30: 74 files)
-│           └── {dataset-slug}/
-│               └── {YYYY-MM-DD}/
-│                   ├── original-file.csv
-│                   └── manifest.json
+│           └── v1/          # Generated locally: manifest.json, SQLite, NDJSON (gitignored)
 ├── prisma/                  # Phase 3a+
 ├── src/
 │   ├── app/                 # Next.js App Router pages
