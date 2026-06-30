@@ -1,12 +1,12 @@
 # TPS Typed Source Layer Plan — 2026-06-30
 
-Manifest-only classification for all TPS CSV files in the 2026-06-30 bulk download. Assigns each file to exactly one typed source layer, a logical dataset slug, a publish status, and a proposed canonical archive path. **No files were moved, copied, renamed, edited, or deleted.**
+Manifest-only classification for all TPS CSV files in the 2026-06-30 bulk download. Assigns each file to exactly one typed source layer, a logical dataset slug, a publish status, and a proposed canonical archive path.
 
-> **No file operations performed.** This document is a classification manifest only. All 73 CSV files remain unmodified in `data/raw/tps/_downloads/2026-06-30/`.
+> **Relocation correction (2026-06-30):** `Major_Crime_Indicators_Open_Data.csv` was moved from `data/raw/tps/major-crime-indicators/2026-06-30/original-file.csv` into `data/raw/tps/_downloads/2026-06-30/`. Empty `major-crime-indicators/` folders were removed. CSV contents unchanged (SHA-256 verified). Corpus count is now **74 files**.
 
 **Source of truth:**
 
-- [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md) — structural inventory (73 files, schema families, duplicate pairs)
+- [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md) — structural inventory (74 files, schema families, duplicate pairs)
 - [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md) — typed layers, V1 six-file family, slug/archive conventions
 - [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md) — Phase 2: classify without modifying originals (satisfied by this manifest)
 
@@ -20,7 +20,7 @@ Each TPS dataset is assigned exactly one typed layer. Layers have different sche
 
 | Layer | Description | Files in this download |
 |-------|-------------|------------------------:|
-| `public_incident_records` | Standard geocoded incident open data for public search, table, and map | 7 |
+| `public_incident_records` | Standard geocoded incident open data for public search, table, and map | 8 |
 | `sensitive_incident_records` | Incident data requiring additional legal or presentation review | 7 |
 | `traffic_ksi_records` | Traffic collisions and KSI participant-level records | 9 |
 | `calls_for_service_crisis_records` | Crisis and mental-health-related calls-for-service | 1 |
@@ -30,8 +30,8 @@ Each TPS dataset is assigned exactly one typed layer. Layers have different sche
 
 ```mermaid
 flowchart LR
-  bulk["73 CSV files in _downloads/2026-06-30"]
-  bulk --> public["public_incident_records: 7"]
+  bulk["74 CSV files in _downloads/2026-06-30"]
+  bulk --> public["public_incident_records: 8"]
   bulk --> sensitive["sensitive_incident_records: 7"]
   bulk --> traffic["traffic_ksi_records: 9"]
   bulk --> crisis["calls_for_service_crisis_records: 1"]
@@ -108,7 +108,7 @@ Four files in three groups need review before canonical organization. Do not cop
 
 ---
 
-## Full classification manifest (73 files)
+## Full classification manifest (74 files)
 
 | # | Original filename | Detected dataset name | Typed source layer | Dataset slug | Publish status | Classification reason | Copy to canonical later? |
 |---|-------------------|----------------------|--------------------|--------------|----------------|----------------------|--------------------------|
@@ -185,6 +185,7 @@ Four files in three groups need review before canonical organization. Do not cop
 | 71 | `Traffic_Collisions_Open_Data_8128730402587031536 (1).csv` | Traffic Collisions Open Data | `traffic_ksi_records` | `traffic-collisions-open-data` | `duplicate_review` | Duplicate bulk-download copy (145.86 MB, 809,034 rows); SHA-256 review required | no |
 | 72 | `Traffic_Collisions_Open_Data_8128730402587031536.csv` | Traffic Collisions Open Data | `traffic_ksi_records` | `traffic-collisions-open-data` | `deferred` | 23-column collision events; 131,978 rows at 0,0 coordinates; distinct from incident layer | yes |
 | 73 | `Victims_of_Crime_(ASR_VC_TBL_001)_3114193774591085696.csv` | Victims of Crime (ASR VC TBL 001) | `aggregate_metric_tables` | `asr-victims-of-crime` | `deferred` | ASR victim demographic count table; aggregate summary | yes |
+| 74 | `Major_Crime_Indicators_Open_Data.csv` | Major Crime Indicators Open Data | `public_incident_records` | `major-crime-indicators-open-data` | `deferred` | Combined multi-offence 31-column export; relocated from premature canonical path; V1 still uses six per-offence files only | yes |
 
 ### `future_article_context_links`
 
@@ -196,8 +197,8 @@ No TPS CSV in this bulk download maps to `future_article_context_links`. CrimeIn
 
 | Metric | Count |
 |--------|------:|
-| Total CSV files | 73 |
-| `public_incident_records` | 7 |
+| Total CSV files | 74 |
+| `public_incident_records` | 8 |
 | `sensitive_incident_records` | 7 |
 | `traffic_ksi_records` | 9 |
 | `calls_for_service_crisis_records` | 1 |
@@ -205,11 +206,11 @@ No TPS CSV in this bulk download maps to `future_article_context_links`. CrimeIn
 | `reference_geography_datasets` | 3 |
 | `future_article_context_links` | 0 |
 | `v1_published` | 6 |
-| `deferred` | 60 |
+| `deferred` | 61 |
 | `reference_only` | 3 |
 | `duplicate_review` | 4 |
 | `excluded_from_v1` | 0 |
-| Unique dataset slugs | 70 |
+| Unique dataset slugs | 71 |
 
 ---
 
@@ -226,10 +227,10 @@ data/raw/tps/{dataset-slug}/2026-06-30/
 The bulk corpus remains the authoritative snapshot and is never overwritten:
 
 ```
-data/raw/tps/_downloads/2026-06-30/   # 73 files, unchanged
+data/raw/tps/_downloads/2026-06-30/   # 74 files
 ```
 
-### Slug-to-path index (70 unique slugs)
+### Slug-to-path index (71 unique slugs)
 
 | Dataset slug | Proposed canonical path |
 |--------------|-------------------------|
@@ -281,6 +282,7 @@ data/raw/tps/_downloads/2026-06-30/   # 73 files, unchanged
 | `intimate-partner-and-family-violence-open-data` | `data/raw/tps/intimate-partner-and-family-violence-open-data/2026-06-30/` |
 | `mental-health-act-apprehensions-open-data` | `data/raw/tps/mental-health-act-apprehensions-open-data/2026-06-30/` |
 | `motorcyclist-ksi` | `data/raw/tps/motorcyclist-ksi/2026-06-30/` |
+| `major-crime-indicators-open-data` | `data/raw/tps/major-crime-indicators-open-data/2026-06-30/` |
 | `neighbourhood-crime-rates-open-data` | `data/raw/tps/neighbourhood-crime-rates-open-data/2026-06-30/` |
 | `passenger-ksi` | `data/raw/tps/passenger-ksi/2026-06-30/` |
 | `patrol-zone` | `data/raw/tps/patrol-zone/2026-06-30/` |
@@ -310,7 +312,7 @@ data/raw/tps/_downloads/2026-06-30/   # 73 files, unchanged
 
 1. Resolve four `duplicate_review` files (SHA-256 compare for Homicides and Traffic Collisions pairs; content review for Budget 2024 twins).
 2. Copy V1 six `v1_published` files into per-slug folders with `manifest.json` (Phase 2 remaining item in IMPLEMENTATION_PLAN).
-3. Register all 73 datasets in Phase 3a metadata layer with `typed_layer` and `publish_status` from this manifest.
+3. Register all 74 datasets in Phase 3a metadata layer with `typed_layer` and `publish_status` from this manifest.
 
 This manifest satisfies IMPLEMENTATION_PLAN Phase 2 item: *Organize TPS files into typed source layers without modifying originals*.
 

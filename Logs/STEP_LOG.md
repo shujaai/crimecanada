@@ -13,11 +13,12 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - [x] Production build passed
 - [x] `docs/` and `Logs/` folders created
 - [x] Create planning docs (`NORTH_STAR`, `FINAL_PRODUCT_SPEC`, `IMPLEMENTATION_PLAN`, `DATA_SOURCE_PLAN`, `LEGAL_GUARDRAILS`)
-- [x] TPS raw files copied into repo (`data/raw/tps/_downloads/2026-06-30`, 73 CSV files)
+- [x] TPS raw files copied into repo (`data/raw/tps/_downloads/2026-06-30`, 74 CSV files)
 - [x] TPS raw data inventory report (`docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md`)
 - [x] Adopted **Unified Source Foundation + Layered Release** strategy (docs update 2026-06-30)
 - [x] TPS typed source layer classification manifest (`docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md`)
 - [x] Organize TPS files into typed source layers without modifying originals (manifest-only; see typed source layer plan)
+- [x] Relocated misplaced Major Crime Indicators CSV into `_downloads/2026-06-30`; removed empty `major-crime-indicators/` folders
 
 ---
 
@@ -45,6 +46,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 | 2026-06-30 | TPS inventory | Inspected 73 CSV files in `data/raw/tps/_downloads/2026-06-30`; wrote `docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md` |
 | 2026-06-30 | Strategy adoption | Adopted Unified Source Foundation + Layered Release; updated `NORTH_STAR`, `FINAL_PRODUCT_SPEC`, `IMPLEMENTATION_PLAN`, `DATA_SOURCE_PLAN` |
 | 2026-06-30 | Typed source layer plan | Created manifest-only classification for 73 TPS CSVs in `docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md`; no file operations |
+| 2026-06-30 | Corpus relocation | Moved `major-crime-indicators/.../original-file.csv` → `_downloads/2026-06-30/Major_Crime_Indicators_Open_Data.csv`; deleted empty folders; updated docs to 74-file corpus (SHA-256 verified) |
 
 ---
 

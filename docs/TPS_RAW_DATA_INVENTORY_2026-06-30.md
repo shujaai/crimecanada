@@ -5,11 +5,15 @@ Read-only structural inventory of CSV files under `data/raw/tps/_downloads/2026-
 ## Executive summary
 
 - **Directory inspected:** `data/raw/tps/_downloads/2026-06-30`
-- **File count:** 73 CSV files
-- **Total size:** 877.97 MB (920,614,185 bytes)
+- **File count:** 74 CSV files
+- **Total size:** ~1,034.5 MB (1,084,517,789 bytes; includes relocated Major Crime Indicators file)
 - **Inspection date:** 2026-06-30
 - **Aggregate / non-incident datasets (classification below):** 51
-- **Other datasets (event-level, open data, or participant-level):** 22
+- **Other datasets (event-level, open data, or participant-level):** 23
+
+### Relocated file (2026-06-30)
+
+`Major_Crime_Indicators_Open_Data.csv` was moved from `data/raw/tps/major-crime-indicators/2026-06-30/original-file.csv` into `_downloads/2026-06-30/`. Empty `major-crime-indicators/` folders were removed. File contents unchanged (SHA-256: `163D9F39EA22659BA0BDF740495CFEED0D23F5C3A0E20D0A3038BC47EE74FBE1`).
 
 ### Duplicate-sized file pairs
 
@@ -20,7 +24,7 @@ Read-only structural inventory of CSV files under `data/raw/tps/_downloads/2026-
 
 | Family | Column count | Representative files |
 |--------|-------------:|----------------------|
-| Major Crime Open Data | 31 | Assault, Auto Theft, Break and Enter, Robbery, Theft From Motor Vehicle, Theft Over |
+| Major Crime Open Data | 31 | Assault, Auto Theft, Break and Enter, Robbery, Theft From Motor Vehicle, Theft Over, Major Crime Indicators (combined) |
 | KSI / collision participant | 54 | AUTOMOBILE_KSI, CYCLIST_KSI, FATALS_KSI, MOTORCYCLIST_KSI, PASSENGER_KSI, PEDESTRIAN_KSI, TOTAL_KSI |
 | FIRS contact records | 15 | 2008_FIRS through 2013_FIRS |
 | Annual Report aggregate (ASR_*) | varies | Reported_Crimes, Arrested_and_Charged_Persons, Tickets_Issued, etc. |
@@ -37,7 +41,7 @@ Read-only structural inventory of CSV files under `data/raw/tps/_downloads/2026-
 
 ### Coordinate facts (cross-file)
 
-- **WGS84 via `LAT_WGS84` / `LONG_WGS84`:** Major Crime Open Data (6 files), Homicides (2), Shooting, Bicycle Thefts, Traffic Collisions (2).
+- **WGS84 via `LAT_WGS84` / `LONG_WGS84`:** Major Crime Open Data (6 per-offence files + Major Crime Indicators combined export), Homicides (2), Shooting, Bicycle Thefts, Traffic Collisions (2).
 - **WGS84 via `LATITUDE` / `LONGITUDE`:** All KSI files (7), Police Facilities.
 - **No WGS84 lat/lng columns:** Hate Crime, Mental Health Act Apprehensions, Persons in Crisis, Intimate Partner and Family Violence, all ASR/Budget/RBDC/FIRS files.
 - **Rows with 0,0 coordinates (where WGS84 pair exists):** Assault 4,125; Auto Theft 858; Bicycle Thefts 347; Break and Enter 569; Homicides 0; Robbery 1,105; Shooting 63; Theft From MV 1,250; Theft Over 295; Traffic Collisions **131,978** (each copy).
@@ -4574,3 +4578,29 @@ Files classified **no** (event-level, participant-level, or open-data incident r
 - Aggregate or reference table; rows represent counts, summaries, budgets, staffing, complaints, facilities, or boundary geometry rather than individual geocoded incidents.
 - Has `ObjectId`; uniqueness within file: yes.
 
+### `Major_Crime_Indicators_Open_Data.csv`
+
+- **Detected dataset name:** Major Crime Indicators Open Data
+- **File type:** CSV
+- **File size:** 156.4 MB (163,903,604 bytes)
+- **Row count:** 474,819 (excluding header)
+- **Column count:** 31
+- **Prior location:** `data/raw/tps/major-crime-indicators/2026-06-30/original-file.csv` (relocated 2026-06-30)
+
+**Columns:** Same 31-column Major Crime Open Data schema family as the six per-offence files (`OBJECTID`, `EVENT_UNIQUE_ID`, `REPORT_DATE`, `OCC_DATE`, …, `LAT_WGS84`, `LONG_WGS84`, `x`, `y`).
+
+**Identifiers and geography:**
+
+- Likely row ID column(s): `OBJECTID`
+- OBJECTID exists: yes (`OBJECTID`)
+- OBJECTID unique: yes (within file)
+- EVENT_UNIQUE_ID exists: yes
+- EVENT_UNIQUE_ID unique: no (multiple rows per event possible)
+- WGS84 lat/lng present: yes (`LAT_WGS84`, `LONG_WGS84`)
+- Non-incident aggregate dataset: no
+
+**V1 ingestion relevance (structure only):**
+
+- Combined multi-offence Major Crime export; **V1 public UI still uses six per-offence files only** (see [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md)).
+- Contains WGS84 coordinates via `LAT_WGS84` and `LONG_WGS84`.
+- Has `OBJECTID`; uniqueness within file: yes.

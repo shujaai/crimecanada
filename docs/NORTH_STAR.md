@@ -18,7 +18,7 @@ This is the **canonical data strategy** for CrimeCanada.io. All planning, implem
 
 CrimeCanada.io should **understand and preserve the full TPS public-data corpus from day one**, but **public features should be released in controlled layers**.
 
-- All **73 TPS CSV files** have been copied and inventoried (2026-06-30). See [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md).
+- All **74 TPS CSV files** have been copied and inventoried (2026-06-30). See [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md).
 - All TPS datasets are **first-class source datasets**. Do not force every file into one incident schema.
 - Preserve source files, source metadata, raw fields, provenance, licence details, and ingestion timestamps.
 - Classify datasets into **typed source layers** (see below).
@@ -36,7 +36,7 @@ CrimeCanada.io should **understand and preserve the full TPS public-data corpus 
 | `reference_geography_datasets` | Division boundaries, patrol zones, facilities, and other reference geometry |
 | `future_article_context_links` | Future CrimeInToronto article or micro-data links — separate from official public-data ingestion |
 
-Do **not** ingest all 73 files into a single universal incident schema. Each layer may have its own schema boundaries while sharing common dataset metadata.
+Do **not** ingest all 74 files into a single universal incident schema. Each layer may have its own schema boundaries while sharing common dataset metadata.
 
 ---
 
@@ -66,7 +66,7 @@ V1 is TPS-only, but the **source foundation is the full corpus**.
 
 ### Full source foundation
 
-- All **73 TPS CSV files** copied to `data/raw/tps/_downloads/2026-06-30`
+- All **74 TPS CSV files** copied to `data/raw/tps/_downloads/2026-06-30`
 - Structural inventory completed: [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md)
 - Every file classified by typed source layer
 - Original files preserved unmodified
@@ -282,6 +282,6 @@ When AI search or AI answers are added post-V1:
 - [FINAL_PRODUCT_SPEC.md](./FINAL_PRODUCT_SPEC.md) — V1 user experience and visual direction
 - [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md) — phased build plan
 - [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md) — TPS data acquisition, typed layers, and archive conventions
-- [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md) — structural inventory of all 73 TPS CSV files
+- [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md) — structural inventory of all 74 TPS CSV files
 - [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md) — legal, privacy, and citation requirements
 - [../Logs/STEP_LOG.md](../Logs/STEP_LOG.md) — chronological agent checklist

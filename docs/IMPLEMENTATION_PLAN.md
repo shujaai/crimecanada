@@ -4,7 +4,7 @@ Phased build plan for V1. Agents mark items `[x]` when complete, `[ ]` when pend
 
 **Tech stack (target):** Next.js, TypeScript, Tailwind, Prisma, PostgreSQL, Leaflet or MapLibre. Auth, Stripe, and AI search are **post-V1**.
 
-**Data strategy:** [Unified Source Foundation + Layered Release](./NORTH_STAR.md#unified-source-foundation--layered-release) — preserve and classify all 73 TPS CSV files; publish public UI layer by layer. V1 ingests the Major Crime Open Data 31-column family only. **Do not ingest all 73 files into one schema.** See [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md).
+**Data strategy:** [Unified Source Foundation + Layered Release](./NORTH_STAR.md#unified-source-foundation--layered-release) — preserve and classify all 74 TPS CSV files; publish public UI layer by layer. V1 ingests the Major Crime Open Data 31-column family only. **Do not ingest all 74 files into one schema.** See [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md).
 
 See also: [NORTH_STAR.md](./NORTH_STAR.md), [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md), [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md).
 
@@ -65,7 +65,7 @@ Acquire, inventory, and classify official TPS public data. **No database yet.**
 ### Completed
 
 - [x] Audit TPS open-data portal; copy full public corpus
-- [x] 73 CSV files archived under `data/raw/tps/_downloads/2026-06-30`
+- [x] 74 CSV files archived under `data/raw/tps/_downloads/2026-06-30`
 - [x] Structural inventory report: [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md)
 - [x] V1 public ingestion target defined: **Major Crime Open Data 31-column family** (six files — see [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md))
 
@@ -78,13 +78,13 @@ Acquire, inventory, and classify official TPS public data. **No database yet.**
 - [ ] Verify no suspect names, victim names, or mugshots in V1 target dataset fields
 - [ ] Document V1 field mapping for Major Crime Open Data family (reference inventory identifier facts)
 
-**Exit criteria:** Full corpus inventoried and classified by typed layer; V1 target files archived with manifests; no single-schema assumption for all 73 files.
+**Exit criteria:** Full corpus inventoried and classified by typed layer; V1 target files archived with manifests; no single-schema assumption for all 74 files.
 
 ---
 
 ## Phase 3a: Universal Source / Dataset Metadata Layer
 
-Wire up persistence for dataset-level metadata. **Do not design one universal incident schema for all 73 files.**
+Wire up persistence for dataset-level metadata. **Do not design one universal incident schema for all 74 files.**
 
 - [ ] Add PostgreSQL (local dev + deployment target)
 - [ ] Add Prisma; define schema for metadata layer
@@ -100,7 +100,7 @@ Wire up persistence for dataset-level metadata. **Do not design one universal in
   - [ ] `ingestion_timestamp`
   - [ ] `typed_layer` (e.g. `public_incident_records`, `aggregate_metric_tables`)
   - [ ] `publish_status` (`published` | `deferred`)
-- [ ] Register all 73 TPS datasets with correct layer classification
+- [ ] Register all 74 TPS datasets with correct layer classification
 - [ ] Mark six Major Crime Open Data files as `published`; all others as `deferred`
 
 **Exit criteria:** All TPS datasets registered in PostgreSQL with provenance and layer classification; no incident rows ingested yet.
@@ -222,7 +222,7 @@ crimecanada/
 ├── data/
 │   └── raw/
 │       └── tps/
-│           ├── _downloads/  # Bulk corpus copy (2026-06-30: 73 files)
+│           ├── _downloads/  # Bulk corpus copy (2026-06-30: 74 files)
 │           └── {dataset-slug}/
 │               └── {YYYY-MM-DD}/
 │                   ├── original-file.csv

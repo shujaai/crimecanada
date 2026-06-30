@@ -18,7 +18,7 @@ CrimeCanada.io V1 ingests **one typed layer** from **one jurisdiction:**
 - No provincial or national aggregated datasets in V1
 - No CrimeInToronto articles or micro incident data in V1
 - No unofficial, scraped, or restricted sources
-- Full TPS corpus (73 files) is preserved and classified; only the six-file family is published in V1 UI
+- Full TPS corpus (74 files) is preserved and classified; only the six-file family is published in V1 UI
 
 ---
 
@@ -26,13 +26,13 @@ CrimeCanada.io V1 ingests **one typed layer** from **one jurisdiction:**
 
 As of 2026-06-30:
 
-- **73 TPS CSV files** copied to `data/raw/tps/_downloads/2026-06-30` (~878 MB)
+- **74 TPS CSV files** under `data/raw/tps/_downloads/2026-06-30` (~1,035 MB; includes relocated Major Crime Indicators export)
 - Structural inventory completed: [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md)
 - Every file is a **first-class source dataset** — not forced into one incident schema
 - Original files are stored **unmodified**; never overwrite prior downloads
 - Each dataset will receive typed layer classification, provenance metadata, and (when applicable) layer-specific ingestion schema
 
-**Anti-pattern:** Do not ingest all 73 files into a single universal incident table.
+**Anti-pattern:** Do not ingest all 74 files into a single universal incident table.
 
 ---
 
@@ -87,7 +87,7 @@ V1 public UI is powered by **six offence-specific datasets** sharing a **31-colu
 ### Phase 2 checklist (V1 family)
 
 - [x] Identify official TPS portal; download full corpus
-- [x] List all 73 available datasets; structural inventory complete
+- [x] List all 74 available datasets; structural inventory complete
 - [x] Confirm Major Crime Open Data family shares 31-column schema
 - [x] Confirm no personal-name columns in V1 target files (inventory scan)
 - [ ] Confirm open-data licence URL per dataset
@@ -180,7 +180,7 @@ data/raw/tps/{dataset-slug}/{YYYY-MM-DD}/
   manifest.json              # metadata for this ingest (see below)
 ```
 
-Bulk corpus (all 73 files) currently lives at:
+Bulk corpus (all 74 files) currently lives at:
 
 ```
 data/raw/tps/_downloads/2026-06-30/
@@ -343,7 +343,7 @@ Every displayed record and the `/data/sources` page must show:
 - Dataset update date
 - CrimeCanada.io ingestion timestamp
 
-The `/data/sources` page must also show published vs deferred datasets and acknowledge the full 73-file inventory.
+The `/data/sources` page must also show published vs deferred datasets and acknowledge the full 74-file inventory.
 
 See [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md) for full citation requirements.
 

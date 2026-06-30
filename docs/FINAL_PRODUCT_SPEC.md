@@ -33,7 +33,7 @@ CrimeCanada.io follows the **Unified Source Foundation + Layered Release** strat
 
 ### 1. Full source foundation
 
-- All **73 TPS CSV files** preserved under `data/raw/tps/_downloads/2026-06-30`
+- All **74 TPS CSV files** preserved under `data/raw/tps/_downloads/2026-06-30`
 - Structural inventory: [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md)
 - Every file classified by typed source layer
 - Original files never modified
@@ -190,7 +190,7 @@ The six Major Crime Open Data datasets listed above, each showing:
 
 #### Deferred but classified
 
-Remaining TPS datasets from the 73-file corpus, grouped by typed layer:
+Remaining TPS datasets from the 74-file corpus, grouped by typed layer:
 
 - Layer name (e.g. `sensitive_incident_records`, `aggregate_metric_tables`)
 - Dataset name and brief description
@@ -199,7 +199,7 @@ Remaining TPS datasets from the 73-file corpus, grouped by typed layer:
 
 #### Full inventory transparency
 
-- Statement that all **73 TPS CSV files** are copied, inventoried, and classified
+- Statement that all **74 TPS CSV files** are copied, inventoried, and classified
 - No hidden datasets — the full corpus is acknowledged even when not yet published
 - Link to inventory report
 
