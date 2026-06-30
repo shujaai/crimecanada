@@ -41,6 +41,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - [ ] Define production PostgreSQL ingestion (Phase 3b DB path)
 - [ ] Define production data strategy for Vercel/hosting (processed corpus not in repo; deployment path TBD)
 - [ ] Upgrade map to Leaflet/MapLibre (Phase 5)
+- [ ] Prototype Ask Bar → Living Answer on TPS V1 (NL→ExplorerFilters compile, existing records + SourceReceipt; no schema/auth/AI backend)
 
 ---
 
@@ -57,12 +58,14 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 | 2026-06-30 | UI foundation pass | Built dark "civic atlas" design system + 12 routes (8 V1 + 4 concept) with mock/preview data; added `docs/PRODUCT_UI_ARCHITECTURE_2026-06-30.md`. No new deps, no DB, no auth/billing/AI backend, no CrimeInToronto coupling |
 | 2026-06-30 | TPS V1 local data | Processed 6 Major Crime CSVs from `_downloads/2026-06-30` into `data/processed/tps/v1/`; validation totals 581,393 / 573,191 / 8,202; app serves real records locally; production still lacks data |
 | 2026-06-30 | Docs sync | Updated `Logs/STEP_LOG.md` and `docs/DATA_SOURCE_PLAN.md` (local data generation section); synced `docs/IMPLEMENTATION_PLAN.md` checkboxes to local SQLite interim path |
+| 2026-06-30 | Product vision | Unified the 10 signature UI ideas into one system ("The Living Record"); added `docs/PRODUCT_VISION_LIVING_RECORD_2026-06-30.md`. Ask Bar → Living Answer named as first prototype; other 9 ideas defined as future views on the shared filter spine. Docs only — no src, no schema, no deps |
 
 ---
 
 ## Reference
 
 - North star: [docs/NORTH_STAR.md](../docs/NORTH_STAR.md)
+- Product vision (Living Record): [docs/PRODUCT_VISION_LIVING_RECORD_2026-06-30.md](../docs/PRODUCT_VISION_LIVING_RECORD_2026-06-30.md)
 - Product spec: [docs/FINAL_PRODUCT_SPEC.md](../docs/FINAL_PRODUCT_SPEC.md)
 - Implementation plan: [docs/IMPLEMENTATION_PLAN.md](../docs/IMPLEMENTATION_PLAN.md)
 - Data sources: [docs/DATA_SOURCE_PLAN.md](../docs/DATA_SOURCE_PLAN.md)
