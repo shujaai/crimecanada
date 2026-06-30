@@ -16,6 +16,8 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - [x] TPS raw files copied into repo (`data/raw/tps/_downloads/2026-06-30`, 73 CSV files)
 - [x] TPS raw data inventory report (`docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md`)
 - [x] Adopted **Unified Source Foundation + Layered Release** strategy (docs update 2026-06-30)
+- [x] TPS typed source layer classification manifest (`docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md`)
+- [x] Organize TPS files into typed source layers without modifying originals (manifest-only; see typed source layer plan)
 
 ---
 
@@ -28,7 +30,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 ## Next Up
 
 - [ ] Confirm folder structure conventions (app routes, `data/raw/`, components)
-- [ ] Organize TPS files into typed source layers without modifying originals
+- [ ] Move/copy V1 target files into per-dataset archive convention (`data/raw/tps/{dataset-slug}/{YYYY-MM-DD}/`) and generate `manifest.json`
 - [ ] Design universal source/dataset metadata layer (Phase 3a)
 - [ ] Plan first public incident ingestion for Major Crime Open Data family (Phase 3b)
 
@@ -42,6 +44,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 | 2026-06-30 | Planning docs | Created `docs/NORTH_STAR.md`, `docs/FINAL_PRODUCT_SPEC.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/DATA_SOURCE_PLAN.md`, `docs/LEGAL_GUARDRAILS.md`, `Logs/STEP_LOG.md` |
 | 2026-06-30 | TPS inventory | Inspected 73 CSV files in `data/raw/tps/_downloads/2026-06-30`; wrote `docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md` |
 | 2026-06-30 | Strategy adoption | Adopted Unified Source Foundation + Layered Release; updated `NORTH_STAR`, `FINAL_PRODUCT_SPEC`, `IMPLEMENTATION_PLAN`, `DATA_SOURCE_PLAN` |
+| 2026-06-30 | Typed source layer plan | Created manifest-only classification for 73 TPS CSVs in `docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md`; no file operations |
 
 ---
 
@@ -52,4 +55,5 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - Implementation plan: [docs/IMPLEMENTATION_PLAN.md](../docs/IMPLEMENTATION_PLAN.md)
 - Data sources: [docs/DATA_SOURCE_PLAN.md](../docs/DATA_SOURCE_PLAN.md)
 - TPS inventory: [docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md](../docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md)
+- TPS typed source layer plan: [docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md](../docs/TPS_TYPED_SOURCE_LAYER_PLAN_2026-06-30.md)
 - Legal guardrails: [docs/LEGAL_GUARDRAILS.md](../docs/LEGAL_GUARDRAILS.md)
