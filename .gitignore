@@ -43,3 +43,6 @@ next-env.d.ts
 # Raw public-data downloads
 data/raw/
 
+# Generated local TPS query corpus
+data/processed/
+

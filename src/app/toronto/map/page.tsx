@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { ExplorerShell } from "@/components/explorer/ExplorerShell";
 import { FilterBar } from "@/components/explorer/FilterBar";
-import { MapPreview } from "@/components/explorer/MapPreview";
+import { TorontoMap as TorontoIncidentMap } from "@/components/explorer/TorontoMap";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SourceReceipt } from "@/components/ui/SourceReceipt";
 import { StatusChip } from "@/components/ui/StatusChip";
 import { parseFilters, describeFilters, buildExplorerUrl } from "@/lib/filters";
-import { filterPreviewIncidents, summarizePreview } from "@/lib/previewQuery";
-import { V1_DATASETS } from "@/lib/datasets";
+import { getTorontoFacets, queryTorontoIncidents } from "@/lib/tpsQuery";
+import { getV1DatasetsBySlug } from "@/lib/datasets";
 
 export const metadata: Metadata = {
   title: "Toronto map",
@@ -21,9 +21,12 @@ export default async function TorontoMap({
 }) {
   const sp = await searchParams;
   const filters = parseFilters(sp);
-  const rows = filterPreviewIncidents(filters);
-  const summary = summarizePreview(rows);
-  const mappable = rows.filter((r) => r.mappable);
+  const [result, facets] = await Promise.all([
+    queryTorontoIncidents(filters, { includeMapRecords: true }),
+    getTorontoFacets(),
+  ]);
+  const { summary } = result;
+  const selectedDatasets = getV1DatasetsBySlug(filters.offence);
 
   return (
     <ExplorerShell
@@ -31,7 +34,7 @@ export default async function TorontoMap({
       filters={filters}
       toolbar={
         <StatusChip tone="cyan" dot>
-          {summary.mappable.toLocaleString("en-CA")} mappable · preview
+          {summary.mappable.toLocaleString("en-CA")} matching mappable
         </StatusChip>
       }
     >
@@ -39,18 +42,28 @@ export default async function TorontoMap({
         <div className="flex flex-col gap-4">
           <GlassPanel className="p-4">
             <p className="kicker mb-3">Filter drawer</p>
-            <FilterBar initial={filters} mode="live" view="map" />
+            <FilterBar
+              initial={filters}
+              matchingCount={summary.total}
+              facets={facets}
+              mode="live"
+              view="map"
+            />
           </GlassPanel>
           <SourceReceipt
-            datasets={V1_DATASETS}
+            datasets={selectedDatasets}
             recordCount={summary.total}
-            recordCountPreview
             filters={describeFilters(filters)}
             reproUrl={buildExplorerUrl("map", filters)}
           />
         </div>
 
-        <MapPreview incidents={mappable} nonMappableCount={summary.nonMappable} />
+        <TorontoIncidentMap
+          incidents={result.mapRecords}
+          totalMappableCount={summary.mappable}
+          nonMappableCount={summary.nonMappable}
+          mapLimit={result.mapLimit}
+        />
       </div>
     </ExplorerShell>
   );

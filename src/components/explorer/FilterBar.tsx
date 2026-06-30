@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -10,10 +10,10 @@ import {
   describeFilters,
   activeFilterCount,
   EMPTY_FILTERS,
+  toQueryString,
 } from "@/lib/filters";
-import { OFFENCE_GROUPS, NEIGHBOURHOODS, DIVISIONS } from "@/lib/toronto";
-import { filterPreviewIncidents } from "@/lib/previewQuery";
-import { PreviewBadge } from "@/components/ui/PreviewBadge";
+import { OFFENCE_GROUPS } from "@/lib/toronto";
+import type { TorontoFacets } from "@/lib/tps";
 
 interface FilterBarProps {
   initial: ExplorerFilters;
@@ -24,6 +24,8 @@ interface FilterBarProps {
   mode?: "live" | "builder";
   /** The current view, used for "live" mode URL updates. */
   view?: "map" | "table" | "search";
+  matchingCount: number;
+  facets: TorontoFacets;
 }
 
 const GEO_OPTIONS: { value: Geocodable; label: string }[] = [
@@ -32,14 +34,16 @@ const GEO_OPTIONS: { value: Geocodable; label: string }[] = [
   { value: "no", label: "Non-mappable" },
 ];
 
-export function FilterBar({ initial, mode = "builder", view = "search" }: FilterBarProps) {
+export function FilterBar({
+  initial,
+  matchingCount,
+  facets,
+  mode = "builder",
+  view = "search",
+}: FilterBarProps) {
   const router = useRouter();
   const [filters, setFilters] = useState<ExplorerFilters>(initial);
-
-  const previewCount = useMemo(
-    () => filterPreviewIncidents(filters).length,
-    [filters],
-  );
+  const hasStagedChanges = toQueryString(filters) !== toQueryString(initial);
 
   function update(next: ExplorerFilters) {
     setFilters(next);
@@ -140,7 +144,7 @@ export function FilterBar({ initial, mode = "builder", view = "search" }: Filter
             className="w-full rounded-md border border-line bg-base px-2 py-1.5 text-sm text-ink outline-none focus:border-cyan/50"
           >
             <option value="">All neighbourhoods</option>
-            {NEIGHBOURHOODS.map((n) => (
+            {facets.neighbourhoods.map((n) => (
               <option key={n.code} value={n.code}>
                 {n.code} · {n.name}
               </option>
@@ -157,7 +161,7 @@ export function FilterBar({ initial, mode = "builder", view = "search" }: Filter
             className="w-full rounded-md border border-line bg-base px-2 py-1.5 text-sm text-ink outline-none focus:border-cyan/50"
           >
             <option value="">All divisions</option>
-            {DIVISIONS.map((d) => (
+            {facets.divisions.map((d) => (
               <option key={d} value={d}>
                 {d}
               </option>
@@ -166,12 +170,16 @@ export function FilterBar({ initial, mode = "builder", view = "search" }: Filter
         </fieldset>
       </div>
 
-      {/* Result preview + actions */}
+      {/* Exact current result count + actions */}
       <div className="flex flex-col gap-3 border-t border-line pt-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm text-muted">Matching preview records:</span>
-          <span className="nums text-sm font-semibold text-cyan">{previewCount}</span>
-          <PreviewBadge />
+          <span className="text-sm text-muted">Matching real records:</span>
+          <span className="nums text-sm font-semibold text-cyan">
+            {matchingCount.toLocaleString("en-CA")}
+          </span>
+          {mode === "builder" && hasStagedChanges ? (
+            <span className="text-xs text-faint">recounts when a view opens</span>
+          ) : null}
           {activeFilterCount(filters) > 0 ? (
             <button
               type="button"

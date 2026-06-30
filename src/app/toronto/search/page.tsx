@@ -5,8 +5,8 @@ import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SourceReceipt } from "@/components/ui/SourceReceipt";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { parseFilters, describeFilters, buildExplorerUrl } from "@/lib/filters";
-import { filterPreviewIncidents, summarizePreview } from "@/lib/previewQuery";
-import { V1_DATASETS } from "@/lib/datasets";
+import { getTorontoFacets, queryTorontoIncidents } from "@/lib/tpsQuery";
+import { getV1DatasetsBySlug } from "@/lib/datasets";
 
 export const metadata: Metadata = {
   title: "Toronto search",
@@ -20,8 +20,12 @@ export default async function TorontoSearch({
 }) {
   const sp = await searchParams;
   const filters = parseFilters(sp);
-  const rows = filterPreviewIncidents(filters);
-  const summary = summarizePreview(rows);
+  const [result, facets] = await Promise.all([
+    queryTorontoIncidents(filters),
+    getTorontoFacets(),
+  ]);
+  const { summary } = result;
+  const selectedDatasets = getV1DatasetsBySlug(filters.offence);
 
   return (
     <ExplorerShell view="search" filters={filters}>
@@ -33,13 +37,18 @@ export default async function TorontoSearch({
             description="Combine offence type, date range, neighbourhood, division, and mappability, then open the result in map or table. There is no free-text search for people."
             className="mb-5"
           />
-          <FilterBar initial={filters} mode="builder" view="search" />
+          <FilterBar
+            initial={filters}
+            matchingCount={summary.total}
+            facets={facets}
+            mode="builder"
+            view="search"
+          />
         </GlassPanel>
 
         <SourceReceipt
-          datasets={V1_DATASETS}
+          datasets={selectedDatasets}
           recordCount={summary.total}
-          recordCountPreview
           filters={describeFilters(filters)}
           reproUrl={buildExplorerUrl("search", filters)}
         />

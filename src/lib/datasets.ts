@@ -4,9 +4,8 @@
  * Row counts and non-mappable (0,0 coordinate) counts are FACTUAL, taken from
  * the committed structural inventory (docs/TPS_RAW_DATA_INVENTORY_2026-06-30.md).
  *
- * Source URLs, licence URLs, and update/ingestion dates are PLACEHOLDERS to be
- * confirmed at real ingestion (Phase 3). They are flagged via `provenanceStatus`
- * and surfaced honestly in the UI — never presented as finalized live values.
+ * The six V1 dataset counts are verified against the local 2026-06-30 ingest.
+ * TPS update dates are not present in these CSVs and are reported as unavailable.
  */
 
 export type TypedLayer =
@@ -51,14 +50,15 @@ const OGL_URL = "https://data.torontopolice.on.ca/pages/open-data-licence";
 
 /** Common defaults for TPS datasets (placeholder provenance). */
 function tps(meta: Omit<DatasetMeta, "sourceName" | "sourceUrl" | "licenceName" | "licenceUrl" | "datasetUpdateDate" | "ingestionDate" | "provenanceStatus"> & Partial<DatasetMeta>): DatasetMeta {
+  const ingested = meta.publishStatus === "v1_published";
   return {
     sourceName: "Toronto Police Service Public Safety Data Portal",
     sourceUrl: TPS_PORTAL,
     licenceName: OGL_NAME,
     licenceUrl: OGL_URL,
-    datasetUpdateDate: "Pending ingestion",
-    ingestionDate: "Pending ingestion",
-    provenanceStatus: "to_be_confirmed",
+    datasetUpdateDate: ingested ? "Not provided in local CSV" : "Pending ingestion",
+    ingestionDate: ingested ? "2026-06-30" : "Pending ingestion",
+    provenanceStatus: ingested ? "verified" : "to_be_confirmed",
     ...meta,
   };
 }
@@ -260,6 +260,12 @@ export const V1_NON_MAPPABLE_RECORDS = V1_DATASETS.reduce(
 
 export function getDatasetBySlug(slug: string): DatasetMeta | undefined {
   return [...V1_DATASETS, ...DEFERRED_DATASETS].find((d) => d.slug === slug);
+}
+
+export function getV1DatasetsBySlug(slugs: string[]): DatasetMeta[] {
+  if (!slugs.length) return V1_DATASETS;
+  const selected = new Set(slugs);
+  return V1_DATASETS.filter((dataset) => selected.has(dataset.slug));
 }
 
 /** Human-readable label for a typed layer. */

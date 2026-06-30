@@ -79,10 +79,20 @@ export function toQueryString(filters: ExplorerFilters): string {
 export function buildExplorerUrl(
   view: "map" | "table" | "search",
   filters: ExplorerFilters,
+  options: { page?: number } = {},
 ): string {
-  const qs = toQueryString(filters);
+  const params = new URLSearchParams(toQueryString(filters));
+  if (options.page && options.page > 1) params.set("page", String(options.page));
+  const qs = params.toString();
   const base = `/toronto/${view}`;
   return qs ? `${base}?${qs}` : base;
+}
+
+export function parsePage(input: SearchParamsInput): number {
+  const raw = getOne(input, "page");
+  if (!raw || !/^\d+$/.test(raw)) return 1;
+  const page = Number(raw);
+  return Number.isSafeInteger(page) && page > 0 && page <= 1_000_000 ? page : 1;
 }
 
 /** Count how many filters are active (for the summary bar). */

@@ -23,13 +23,13 @@ const LENSES: Lens[] = [
   },
   {
     title: "By division",
-    blurb: "Scope records to one of 16 TPS police divisions.",
+    blurb: "Scope records to the division values present in the TPS source files.",
     href: "/toronto/search",
     glyph: "▦",
   },
   {
     title: "By time",
-    blurb: "Date range, year, month, weekday, hour-of-day rhythm.",
+    blurb: "Filter records by their normalized occurrence-date range.",
     href: "/toronto/table",
     glyph: "◷",
   },

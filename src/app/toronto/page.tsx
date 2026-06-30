@@ -11,8 +11,8 @@ import { DisclaimerBlock } from "@/components/ui/DisclaimerBlock";
 import { FilterBar } from "@/components/explorer/FilterBar";
 import { DataLensCards } from "@/components/explorer/DataLensCards";
 import { parseFilters, describeFilters, buildExplorerUrl } from "@/lib/filters";
-import { filterPreviewIncidents, summarizePreview } from "@/lib/previewQuery";
-import { V1_DATASETS } from "@/lib/datasets";
+import { getTorontoFacets, queryTorontoIncidents } from "@/lib/tpsQuery";
+import { getV1DatasetsBySlug, V1_DATASETS } from "@/lib/datasets";
 
 export const metadata: Metadata = {
   title: "Toronto explorer",
@@ -27,8 +27,12 @@ export default async function TorontoHub({
 }) {
   const sp = await searchParams;
   const filters = parseFilters(sp);
-  const rows = filterPreviewIncidents(filters);
-  const summary = summarizePreview(rows);
+  const [result, facets] = await Promise.all([
+    queryTorontoIncidents(filters),
+    getTorontoFacets(),
+  ]);
+  const { summary } = result;
+  const selectedDatasets = getV1DatasetsBySlug(filters.offence);
 
   return (
     <>
@@ -48,21 +52,25 @@ export default async function TorontoHub({
               title="Filter records"
               className="mb-5"
             />
-            <FilterBar initial={filters} mode="builder" />
+            <FilterBar
+              initial={filters}
+              matchingCount={summary.total}
+              facets={facets}
+              mode="builder"
+            />
           </GlassPanel>
 
           {/* Quick stats */}
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-3">
-              <MetricCard label="Matching" value={summary.total} tone="cyan" preview />
-              <MetricCard label="Mappable" value={summary.mappable} preview />
-              <MetricCard label="Non-mappable" value={summary.nonMappable} tone="amber" preview />
+              <MetricCard label="Matching" value={summary.total} tone="cyan" />
+              <MetricCard label="Mappable" value={summary.mappable} />
+              <MetricCard label="Non-mappable" value={summary.nonMappable} tone="amber" />
               <MetricCard label="Datasets" value={V1_DATASETS.length} />
             </div>
             <SourceReceipt
-              datasets={V1_DATASETS}
+              datasets={selectedDatasets}
               recordCount={summary.total}
-              recordCountPreview
               filters={describeFilters(filters)}
               reproUrl={buildExplorerUrl("table", filters)}
             />
@@ -83,7 +91,7 @@ export default async function TorontoHub({
           <GlassPanel soft className="flex flex-col justify-center p-4">
             <p className="kicker mb-1">Across the six V1 datasets</p>
             <p className="nums text-sm text-muted">
-              <span className="font-semibold text-amber">8,202</span> source rows
+              <span className="font-semibold text-amber">8,202</span> verified source rows
               sit at 0,0 and are map-excluded by design.
             </p>
           </GlassPanel>

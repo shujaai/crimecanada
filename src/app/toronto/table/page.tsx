@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { ExplorerShell } from "@/components/explorer/ExplorerShell";
 import { FilterBar } from "@/components/explorer/FilterBar";
-import { DataTablePreview } from "@/components/explorer/DataTablePreview";
+import { DataTable } from "@/components/explorer/DataTable";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SourceReceipt } from "@/components/ui/SourceReceipt";
 import { StatusChip } from "@/components/ui/StatusChip";
-import { parseFilters, describeFilters, buildExplorerUrl } from "@/lib/filters";
-import { filterPreviewIncidents, summarizePreview } from "@/lib/previewQuery";
-import { V1_DATASETS } from "@/lib/datasets";
+import { parseFilters, parsePage, describeFilters, buildExplorerUrl } from "@/lib/filters";
+import { getTorontoFacets, queryTorontoIncidents } from "@/lib/tpsQuery";
+import { getV1DatasetsBySlug } from "@/lib/datasets";
 
 export const metadata: Metadata = {
   title: "Toronto table",
@@ -21,8 +21,13 @@ export default async function TorontoTable({
 }) {
   const sp = await searchParams;
   const filters = parseFilters(sp);
-  const rows = filterPreviewIncidents(filters);
-  const summary = summarizePreview(rows);
+  const page = parsePage(sp);
+  const [result, facets] = await Promise.all([
+    queryTorontoIncidents(filters, { page, includeRecords: true }),
+    getTorontoFacets(),
+  ]);
+  const { summary } = result;
+  const selectedDatasets = getV1DatasetsBySlug(filters.offence);
 
   return (
     <ExplorerShell
@@ -30,7 +35,7 @@ export default async function TorontoTable({
       filters={filters}
       toolbar={
         <StatusChip tone="cyan" dot>
-          {summary.total.toLocaleString("en-CA")} records · preview
+          {summary.total.toLocaleString("en-CA")} real records
         </StatusChip>
       }
     >
@@ -38,19 +43,30 @@ export default async function TorontoTable({
         <div className="flex flex-col gap-4">
           <GlassPanel className="p-4">
             <p className="kicker mb-3">Filters</p>
-            <FilterBar initial={filters} mode="live" view="table" />
+            <FilterBar
+              initial={filters}
+              matchingCount={summary.total}
+              facets={facets}
+              mode="live"
+              view="table"
+            />
           </GlassPanel>
           <SourceReceipt
-            datasets={V1_DATASETS}
+            datasets={selectedDatasets}
             recordCount={summary.total}
-            recordCountPreview
             filters={describeFilters(filters)}
             reproUrl={buildExplorerUrl("table", filters)}
           />
         </div>
 
         <div className="flex flex-col gap-3">
-          <DataTablePreview incidents={rows} />
+          <DataTable
+            incidents={result.records}
+            filters={filters}
+            total={summary.total}
+            page={result.page}
+            pageCount={result.pageCount}
+          />
           <p className="px-1 text-[0.68rem] leading-relaxed text-faint">
             Columns never include suspect or victim names, mugshots, or personal
             identifiers. Every row expands to its full source citation.
