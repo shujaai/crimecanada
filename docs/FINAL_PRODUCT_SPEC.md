@@ -22,6 +22,51 @@ See also: [NORTH_STAR.md](./NORTH_STAR.md), [LEGAL_GUARDRAILS.md](./LEGAL_GUARDR
 - TPS public/open data only
 - No login, no billing, no API keys
 - Source citation on every record
+- No CrimeInToronto article links
+- No other city pages or city selector
+
+---
+
+## Data Architecture vs V1 UX
+
+CrimeCanada.io follows the **Unified Source Foundation + Layered Release** strategy (see [NORTH_STAR.md](./NORTH_STAR.md)). The user experience in V1 covers only one public layer; the full source foundation is larger.
+
+### 1. Full source foundation
+
+- All **73 TPS CSV files** preserved under `data/raw/tps/_downloads/2026-06-30`
+- Structural inventory: [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md)
+- Every file classified by typed source layer
+- Original files never modified
+
+### 2. Public V1 release
+
+V1 UI is powered by the **Major Crime Open Data 31-column family** — six offence-specific datasets sharing a common schema:
+
+| Dataset | Archive slug (target) |
+|---------|----------------------|
+| Assault Open Data | `assault-open-data` |
+| Auto Theft Open Data | `auto-theft-open-data` |
+| Break and Enter Open Data | `break-and-enter-open-data` |
+| Robbery Open Data | `robbery-open-data` |
+| Theft From Motor Vehicle Open Data | `theft-from-motor-vehicle-open-data` |
+| Theft Over Open Data | `theft-over-open-data` |
+
+Shared fields include: `OBJECTID`, `EVENT_UNIQUE_ID`, `REPORT_DATE`, `OCC_DATE`, `DIVISION`, `OFFENCE`, `CSI_CATEGORY`, `HOOD_158`, `NEIGHBOURHOOD_158`, `HOOD_140`, `NEIGHBOURHOOD_140`, `LAT_WGS84`, `LONG_WGS84`, `x`, `y`.
+
+Primary neighbourhood fields for filters and display: **`HOOD_158`** and **`NEIGHBOURHOOD_158`**. Legacy 140-level fields are preserved in source metadata but not used as primary filters in V1.
+
+### 3. Deferred future layers
+
+Not shown in V1 public UI but classified and preserved for later release:
+
+- **Sensitive incidents** — Homicides, Shooting and Firearm Discharges, Hate Crime, Intimate Partner and Family Violence, Mental Health Act Apprehensions
+- **Traffic / KSI** — KSI participant files, Traffic Collisions Open Data
+- **Crisis calls** — Persons in Crisis Calls for Service
+- **Aggregates** — Budget, ASR, FIRS, RBDC, Neighbourhood Crime Rates, and similar summary tables
+- **Reference geography** — Police Divisions, Patrol Zone, Police Facilities
+- **Future article context** — CrimeInToronto article/micro-data links (0 records today)
+
+Deferred datasets are **not ignored**. They appear on `/data/sources` as classified-but-unpublished with layer type and reason.
 
 ---
 
@@ -78,7 +123,9 @@ See also: [NORTH_STAR.md](./NORTH_STAR.md), [LEGAL_GUARDRAILS.md](./LEGAL_GUARDR
 **Behaviour:**
 
 - Map respects all active filters
-- Empty state when no records match filters
+- Map points use `LAT_WGS84` and `LONG_WGS84` from source data
+- Rows with `LAT_WGS84 = 0` and `LONG_WGS84 = 0` remain in table and search results but are **excluded from map markers** (per inventory: e.g. Assault 4,125; Auto Theft 858; Break and Enter 569; Robbery 1,105; Theft From MV 1,250; Theft Over 295)
+- Empty state when no geocodable records match filters (distinct from zero table results)
 - No heatmap "danger zones" or safety colouring — neutral incident markers only
 
 ---
@@ -127,17 +174,40 @@ See also: [NORTH_STAR.md](./NORTH_STAR.md), [LEGAL_GUARDRAILS.md](./LEGAL_GUARDR
 
 ### `/data/sources` — Dataset / Source / Licence Page
 
-**Purpose:** Full transparency about data origins.
+**Purpose:** Full transparency about data origins — published datasets, deferred datasets, and the complete TPS inventory.
 
-**Key elements:**
+**Key elements — three transparency buckets:**
 
-- Dataset name(s) used in V1 (e.g. TPS Major Crime Indicators)
-- Official source URL(s) with direct download links
+#### Published in V1
+
+The six Major Crime Open Data datasets listed above, each showing:
+
+- Official dataset name and source URL (direct download link)
 - Open-data licence URL and summary
 - Update cadence as published by TPS
-- Last ingestion date and record count
-- Field glossary (what each column means, per TPS documentation)
+- Last ingestion date and live record count
+- Typed layer: `public_incident_records`
+
+#### Deferred but classified
+
+Remaining TPS datasets from the 73-file corpus, grouped by typed layer:
+
+- Layer name (e.g. `sensitive_incident_records`, `aggregate_metric_tables`)
+- Dataset name and brief description
+- Reason deferred (legal sensitivity, aggregate shape, missing coordinates, post-V1 scope, etc.)
+- Link to [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md) for structural detail
+
+#### Full inventory transparency
+
+- Statement that all **73 TPS CSV files** are copied, inventoried, and classified
+- No hidden datasets — the full corpus is acknowledged even when not yet published
+- Link to inventory report
+
+**Shared page elements:**
+
+- Field glossary for V1 published family (31 columns); note `HOOD_158` / `NEIGHBOURHOOD_158` as primary neighbourhood fields
 - Explicit list of excluded fields (names, mugshots, etc.)
+- Statement: no CrimeInToronto article links in V1; no other cities in V1
 - Link to [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md) principles in user-friendly language
 
 ---
@@ -283,8 +353,10 @@ Think: operational dashboard, research tool, public transparency portal.
 - API key management
 - Saved searches (UI placeholder only on pricing page)
 - AI chat or AI search
-- Multi-city selector
-- CrimeInToronto article embeds or links as data sources
+- Multi-city selector or other city pages (Calgary, Peel, Edmonton, Vancouver, Winnipeg, etc.)
+- CrimeInToronto article embeds, links, or data sources (0 article records today)
+- Cross-dataset relationship navigation (deferred to future data design pass)
+- Publishing deferred TPS layers (homicides, shootings, crisis calls, aggregates, reference geometry)
 - Export download (show "coming soon" only)
 
 ---
@@ -294,4 +366,5 @@ Think: operational dashboard, research tool, public transparency portal.
 - [NORTH_STAR.md](./NORTH_STAR.md)
 - [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md)
 - [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md)
+- [TPS_RAW_DATA_INVENTORY_2026-06-30.md](./TPS_RAW_DATA_INVENTORY_2026-06-30.md)
 - [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md)
