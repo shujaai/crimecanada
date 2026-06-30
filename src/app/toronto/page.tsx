@@ -77,6 +77,21 @@ export default async function TorontoHub({
           </div>
         </div>
 
+        <Link href="/toronto/ask" className="group mt-6 block">
+          <GlassPanel interactive className="flex flex-col justify-between gap-4 border-cyan/20 p-5 sm:flex-row sm:items-center">
+            <div>
+              <p className="kicker mb-1 text-cyan">Living Answer prototype</p>
+              <h2 className="text-base font-semibold text-ink">Ask the public record in plain language</h2>
+              <p className="mt-1 text-sm text-muted">
+                Turn a simple question into visible, reproducible TPS filters. Deterministic rules only — no AI.
+              </p>
+            </div>
+            <span className="shrink-0 text-sm font-medium text-cyan transition-transform group-hover:translate-x-0.5">
+              Open Ask Bar →
+            </span>
+          </GlassPanel>
+        </Link>
+
         {/* Mappable vs non-mappable explanation */}
         <section className="mt-8 grid gap-4 md:grid-cols-3">
           <GlassPanel soft className="p-4 md:col-span-2">

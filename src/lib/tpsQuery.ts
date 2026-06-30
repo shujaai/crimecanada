@@ -60,6 +60,7 @@ interface IncidentRow extends Record<string, unknown> {
 
 let manifestPromise: Promise<TpsProcessedManifest> | undefined;
 let database: SqliteDatabase | undefined;
+let legacyNeighbourhoods: TorontoFacets["neighbourhoods"] | undefined;
 
 function missingDataError(error: unknown): Error {
   const detail = error instanceof Error ? ` (${error.message})` : "";
@@ -118,6 +119,25 @@ export async function getTpsProcessedManifest(): Promise<TpsProcessedManifest> {
   return loadManifest();
 }
 
+/** Distinct legacy HOOD_140 values preserved in the processed source rows. */
+export async function getTorontoLegacyNeighbourhoods(): Promise<
+  TorontoFacets["neighbourhoods"]
+> {
+  if (legacyNeighbourhoods) return legacyNeighbourhoods;
+
+  const manifest = await loadManifest();
+  const db = getDatabase(manifest.databaseFile);
+  const rows = db.prepare(`
+    SELECT DISTINCT hood_140 AS code, neighbourhood_140 AS name
+    FROM incidents
+    WHERE hood_140 <> '' AND neighbourhood_140 <> ''
+    ORDER BY neighbourhood_140
+  `).all() as { code: string; name: string }[];
+
+  legacyNeighbourhoods = rows;
+  return legacyNeighbourhoods;
+}
+
 function buildWhere(
   filters: ExplorerFilters,
   validDatasetSlugs: string[],
@@ -146,6 +166,10 @@ function buildWhere(
   if (filters.neighbourhood) {
     clauses.push("hood_158 = ?");
     params.push(filters.neighbourhood);
+  }
+  if (filters.legacyNeighbourhood) {
+    clauses.push("hood_140 = ?");
+    params.push(filters.legacyNeighbourhood);
   }
   if (filters.division) {
     clauses.push("division = ?");

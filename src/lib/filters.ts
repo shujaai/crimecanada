@@ -15,6 +15,8 @@ export interface ExplorerFilters {
   dateTo?: string;
   /** Neighbourhood HOOD_158 code. */
   neighbourhood?: string;
+  /** Legacy neighbourhood HOOD_140 code, used only for exact legacy geography. */
+  legacyNeighbourhood?: string;
   /** Division identifier, e.g. "D51". */
   division?: string;
   geocodable: Geocodable;
@@ -58,6 +60,7 @@ export function parseFilters(input: SearchParamsInput): ExplorerFilters {
     dateFrom: getOne(input, "from"),
     dateTo: getOne(input, "to"),
     neighbourhood: getOne(input, "hood"),
+    legacyNeighbourhood: getOne(input, "hood140"),
     division: getOne(input, "div"),
     geocodable,
   };
@@ -70,6 +73,9 @@ export function toQueryString(filters: ExplorerFilters): string {
   if (filters.dateFrom) params.set("from", filters.dateFrom);
   if (filters.dateTo) params.set("to", filters.dateTo);
   if (filters.neighbourhood) params.set("hood", filters.neighbourhood);
+  if (filters.legacyNeighbourhood) {
+    params.set("hood140", filters.legacyNeighbourhood);
+  }
   if (filters.division) params.set("div", filters.division);
   if (filters.geocodable !== "any") params.set("geo", filters.geocodable);
   return params.toString();
@@ -101,6 +107,7 @@ export function activeFilterCount(filters: ExplorerFilters): number {
   if (filters.offence.length) n += 1;
   if (filters.dateFrom || filters.dateTo) n += 1;
   if (filters.neighbourhood) n += 1;
+  if (filters.legacyNeighbourhood) n += 1;
   if (filters.division) n += 1;
   if (filters.geocodable !== "any") n += 1;
   return n;
@@ -114,6 +121,9 @@ export function describeFilters(filters: ExplorerFilters): string[] {
     chips.push(`${filters.dateFrom ?? "…"} → ${filters.dateTo ?? "…"}`);
   }
   if (filters.neighbourhood) chips.push(`Neighbourhood ${filters.neighbourhood}`);
+  if (filters.legacyNeighbourhood) {
+    chips.push(`Legacy neighbourhood ${filters.legacyNeighbourhood}`);
+  }
   if (filters.division) chips.push(`Division ${filters.division}`);
   if (filters.geocodable !== "any") {
     chips.push(filters.geocodable === "yes" ? "Mappable only" : "Non-mappable only");
