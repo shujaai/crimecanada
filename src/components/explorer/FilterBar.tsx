@@ -65,7 +65,7 @@ export function FilterBar({
   const chips = describeFilters(filters);
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="@container flex flex-col gap-5">
       {/* Offence multi-select */}
       <fieldset className="flex flex-col gap-2">
         <legend className="kicker mb-1">Offence type</legend>
@@ -91,39 +91,39 @@ export function FilterBar({
         </div>
       </fieldset>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 @[26rem]:grid-cols-2">
         {/* Date range */}
-        <fieldset className="flex flex-col gap-2">
+        <fieldset className="flex min-w-0 flex-col gap-2">
           <legend className="kicker mb-1">Occurrence date</legend>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <input
               type="date"
               value={filters.dateFrom ?? ""}
               onChange={(e) => update({ ...filters, dateFrom: e.target.value || undefined })}
-              className="nums w-full rounded-md border border-line bg-base px-2 py-1.5 text-sm text-ink outline-none focus:border-cyan/50"
+              className="nums w-full min-w-0 flex-1 basis-32 rounded-md border border-line bg-base px-2 py-1.5 text-sm text-ink outline-none focus:border-cyan/50"
               aria-label="From date"
             />
-            <span className="text-faint">→</span>
+            <span aria-hidden="true" className="shrink-0 text-faint">→</span>
             <input
               type="date"
               value={filters.dateTo ?? ""}
               onChange={(e) => update({ ...filters, dateTo: e.target.value || undefined })}
-              className="nums w-full rounded-md border border-line bg-base px-2 py-1.5 text-sm text-ink outline-none focus:border-cyan/50"
+              className="nums w-full min-w-0 flex-1 basis-32 rounded-md border border-line bg-base px-2 py-1.5 text-sm text-ink outline-none focus:border-cyan/50"
               aria-label="To date"
             />
           </div>
         </fieldset>
 
         {/* Geocodable */}
-        <fieldset className="flex flex-col gap-2">
+        <fieldset className="flex min-w-0 flex-col gap-2">
           <legend className="kicker mb-1">Mappable</legend>
-          <div className="inline-flex overflow-hidden rounded-md border border-line">
+          <div className="flex w-full flex-wrap overflow-hidden rounded-md border border-line">
             {GEO_OPTIONS.map((opt) => (
               <button
                 key={opt.value}
                 type="button"
                 onClick={() => update({ ...filters, geocodable: opt.value })}
-                className={`px-3 py-1.5 text-xs transition-colors ${
+                className={`flex-1 whitespace-nowrap px-3 py-1.5 text-center text-xs transition-colors ${
                   filters.geocodable === opt.value
                     ? "bg-cyan/15 text-cyan"
                     : "bg-base text-muted hover:text-ink"

@@ -12,6 +12,26 @@ interface TorontoMapProps {
   mapLimit: number;
 }
 
+/**
+ * Neutral per-offence marker palette aligned with the CrimeInToronto
+ * signal-dot aesthetic (solid dot + soft glow). Keyed by V1 dataset slug.
+ * Colour is purely categorical — it carries no danger or safety meaning.
+ */
+const OFFENCE_MARKER: Record<string, { label: string; dot: string; glow: string }> = {
+  "assault-open-data": { label: "Assault", dot: "#ff6a3d", glow: "rgba(255,106,61,0.7)" },
+  "robbery-open-data": { label: "Robbery", dot: "#ffb224", glow: "rgba(255,178,36,0.7)" },
+  "auto-theft-open-data": { label: "Auto Theft", dot: "#4d7dff", glow: "rgba(77,125,255,0.7)" },
+  "break-and-enter-open-data": { label: "Break and Enter", dot: "#a06bff", glow: "rgba(160,107,255,0.7)" },
+  "theft-from-motor-vehicle-open-data": { label: "Theft From Motor Vehicle", dot: "#2dd4bf", glow: "rgba(45,212,191,0.7)" },
+  "theft-over-open-data": { label: "Theft Over", dot: "#e879f9", glow: "rgba(232,121,249,0.7)" },
+};
+
+const DEFAULT_MARKER = { label: "Other", dot: "#8a96ab", glow: "rgba(138,150,171,0.55)" };
+
+function markerStyle(datasetSlug: string) {
+  return OFFENCE_MARKER[datasetSlug] ?? DEFAULT_MARKER;
+}
+
 function project(lat: number, lng: number) {
   const { minLat, maxLat, minLng, maxLng } = TORONTO_BOUNDS;
   const x = ((lng - minLng) / (maxLng - minLng)) * 100;
@@ -37,17 +57,23 @@ export function TorontoMap({
           {incidents.map((record) => {
             const { x, y } = project(record.lat, record.lng);
             const active = selected?.recordKey === record.recordKey;
+            const marker = markerStyle(record.datasetSlug);
             return (
               <button
                 key={record.recordKey}
                 type="button"
                 onClick={() => setSelected(record)}
                 aria-label={`${record.offence} in ${record.neighbourhood158}`}
-                style={{ left: `${x}%`, top: `${y}%` }}
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  backgroundColor: marker.dot,
+                  boxShadow: `0 0 ${active ? "14px" : "8px"} ${marker.glow}`,
+                }}
                 className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full transition-all ${
                   active
-                    ? "h-3.5 w-3.5 bg-amber ring-2 ring-amber/50"
-                    : "h-2 w-2 bg-cyan/65 hover:h-3 hover:w-3 hover:bg-cyan"
+                    ? "h-3.5 w-3.5 ring-2 ring-ink/70"
+                    : "h-2 w-2 hover:h-3 hover:w-3"
                 }`}
               />
             );
@@ -83,9 +109,10 @@ export function TorontoMap({
           <div className="flex flex-col gap-3">
             <span className="kicker">Map panel</span>
             <p className="text-xs leading-relaxed text-muted">
-              Select a neutral marker to inspect a real TPS record. The lightweight
+              Select a marker to inspect a real TPS record. The lightweight
               canvas projects source WGS84 coordinates inside Toronto bounds.
             </p>
+            <MarkerLegend />
             <Metric label="Matching mappable" value={totalMappableCount} tone="cyan" />
             <Metric label="Markers rendered" value={incidents.length} tone="cyan" />
             <Metric label="Non-mappable (0,0)" value={nonMappableCount} tone="amber" />
@@ -127,6 +154,26 @@ function SelectedRecord({
         Official TPS open-data record, ingested 2026-06-30. EVENT_UNIQUE_ID is
         stored for provenance and is not used for deduplication.
       </p>
+    </div>
+  );
+}
+
+function MarkerLegend() {
+  return (
+    <div className="rounded-md border border-line bg-base/60 p-3">
+      <p className="kicker mb-2">Marker colour by offence</p>
+      <ul className="flex flex-col gap-1.5">
+        {Object.values(OFFENCE_MARKER).map((m) => (
+          <li key={m.label} className="flex items-center gap-2 text-xs text-muted">
+            <span
+              aria-hidden="true"
+              className="h-2.5 w-2.5 shrink-0 rounded-full"
+              style={{ backgroundColor: m.dot, boxShadow: `0 0 8px ${m.glow}` }}
+            />
+            <span className="truncate">{m.label}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
