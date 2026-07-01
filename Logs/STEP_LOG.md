@@ -25,6 +25,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - [x] TPS V1 real local data wired: 6 datasets → `data/processed/tps/v1/` (581,393 rows; 573,191 mappable; 8,202 non-mappable; 31 source fields)
 - [x] Toronto explorer (`/toronto`, `/toronto/table`, `/toronto/map`, `/toronto/search`) reads processed SQLite via server-side queries
 - [x] Ask Bar → Living Answer prototype (`/toronto/ask`) compiles plain questions into reproducible TPS filters without AI
+- [x] TPS Ask Bar field/scope audit completed; confirmed current Ask filters and identified out-of-jurisdiction broad-query risk
 - [x] Document local TPS V1 data generation and production limitation (`docs/DATA_SOURCE_PLAN.md` — Local development section)
 
 ---
@@ -37,6 +38,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 
 ## Next Up
 
+- [ ] Fix Ask Bar out-of-jurisdiction and unmatched geography guard so outside places do not trigger broad Toronto queries
 - [ ] Wire real provenance (source URLs, licence URLs, update dates) into dataset metadata
 - [ ] Design universal source/dataset metadata layer (Phase 3a)
 - [ ] Define production PostgreSQL ingestion (Phase 3b DB path)
@@ -60,6 +62,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 | 2026-06-30 | Docs sync | Updated `Logs/STEP_LOG.md` and `docs/DATA_SOURCE_PLAN.md` (local data generation section); synced `docs/IMPLEMENTATION_PLAN.md` checkboxes to local SQLite interim path |
 | 2026-06-30 | Product vision | Unified the 10 signature UI ideas into one system ("The Living Record"); added `docs/PRODUCT_VISION_LIVING_RECORD_2026-06-30.md`. Ask Bar → Living Answer named as first prototype; other 9 ideas defined as future views on the shared filter spine. Docs only — no src, no schema, no deps |
 | 2026-06-30 | Ask Bar prototype | Added `/toronto/ask`: deterministic plain-language compilation to shared TPS filters, real map/table previews, transparent unused text, legacy neighbourhood support, and SourceReceipt-backed reproducible links. No AI, backend, schema, package, or data changes. |
+| 2026-07-01 | Ask Bar audit | Reviewed TPS Ask Bar field coverage and parser behavior. Confirmed current Ask support for offence, year, division, neighbourhood, and legacy neighbourhood. Identified trust fix: outside jurisdictions or unmatched geography must block broad Toronto queries instead of being ignored. Logs only — no code changes. |
 
 ---
 
