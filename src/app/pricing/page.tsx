@@ -4,7 +4,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatusChip } from "@/components/ui/StatusChip";
-import { PreviewBadge } from "@/components/ui/PreviewBadge";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -23,8 +23,8 @@ const FUTURE_PAID = [
   { title: "Data exports", body: "CSV / JSON / GeoJSON downloads of filtered results." },
   { title: "Saved searches", body: "Store and revisit your filter sets." },
   { title: "Alerts", body: "Notifications when new records match a saved filter." },
-  { title: "AI search", body: "Source-bound natural-language querying with citations." },
-  { title: "API access", body: "Keyed, rate-limited machine access to published data." },
+  { title: "AI copilot", body: "Broader natural-language querying beyond today's deterministic Ask the record tool." },
+  { title: "API access", body: "Keyed, rate-limited machine access to published Toronto data — not multi-city." },
   { title: "Custom dashboards", body: "Composable panels for ongoing monitoring." },
 ];
 
@@ -40,9 +40,14 @@ export default function Pricing() {
     <>
       <PageHero
         kicker="Pricing"
-        badge={<StatusChip tone="cyan" dot>Explorer is free</StatusChip>}
+        badge={
+          <>
+            <StatusChip tone="cyan" dot>Explorer is free</StatusChip>
+            <TrustBadge label="Live source data" />
+          </>
+        }
         title="Free to explore. Ethical by design."
-        description="V1 has no login, no billing, and no API keys. The pricing below is a preview of future paid features — and a hard line on what we will never sell."
+        description="The free Toronto explorer stays free — no login, no billing, no API keys. Pricing below previews future paid tools (API access, bulk exports, an AI copilot) that don't exist yet, plus a hard line on what we will never sell."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -66,6 +71,10 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
+            <p className="text-xs text-faint">
+              Covers Toronto Police Service data only. Other Canadian cities
+              are not yet public-app linked.
+            </p>
             <Link
               href="/toronto"
               className="mt-2 inline-flex w-fit rounded-md border border-cyan/40 bg-cyan/15 px-5 py-2.5 text-sm font-medium text-cyan transition-colors hover:bg-cyan/25"
@@ -81,7 +90,7 @@ export default function Pricing() {
                 <p className="kicker text-amber">Future paid tiers</p>
                 <p className="mt-1 text-xl font-semibold text-ink">Coming after V1</p>
               </div>
-              <PreviewBadge label="Not available yet" />
+              <TrustBadge label="Coming soon" />
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {FUTURE_PAID.map((f) => (
@@ -91,7 +100,10 @@ export default function Pricing() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-faint">No checkout, no accounts, no API keys exist in V1.</p>
+            <p className="text-xs text-faint">
+              No checkout, no accounts, and no API keys exist yet. None of
+              this adds new-city coverage automatically.
+            </p>
           </GlassPanel>
         </div>
 

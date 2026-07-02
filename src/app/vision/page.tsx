@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { PreviewBadge } from "@/components/ui/PreviewBadge";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 import { DataLayerStack } from "@/components/explorer/DataLayerStack";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function Vision() {
       <PageHero
         grid
         kicker="The long view"
-        badge={<PreviewBadge label="Concept · not live data" />}
+        badge={<TrustBadge label="Concept" />}
         title={
           <>
             A living civic atlas for{" "}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
+import { ExplorerShell } from "@/components/explorer/ExplorerShell";
 import { TorontoMap } from "@/components/explorer/TorontoMap";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -8,6 +9,7 @@ import { SourceReceipt } from "@/components/ui/SourceReceipt";
 import { StatusChip } from "@/components/ui/StatusChip";
 import { parseAskQuestion, type AskParseResult } from "@/lib/askParser";
 import {
+  EMPTY_FILTERS,
   activeFilterCount,
   buildExplorerUrl,
 } from "@/lib/filters";
@@ -91,7 +93,7 @@ export default async function TorontoAsk({
         grid
       />
 
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <ExplorerShell view="ask" filters={parsed?.filters ?? EMPTY_FILTERS}>
         <GlassPanel className="p-5 sm:p-6">
           <form action="/toronto/ask" method="get" className="flex flex-col gap-3 sm:flex-row">
             <label htmlFor="ask-question" className="sr-only">
@@ -134,7 +136,7 @@ export default async function TorontoAsk({
         {parsed ? (
           <LivingAnswer question={question} parsed={parsed} result={result} />
         ) : null}
-      </main>
+      </ExplorerShell>
     </>
   );
 }

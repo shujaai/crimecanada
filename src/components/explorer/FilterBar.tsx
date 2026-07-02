@@ -14,6 +14,7 @@ import {
 } from "@/lib/filters";
 import { OFFENCE_GROUPS } from "@/lib/toronto";
 import type { TorontoFacets } from "@/lib/tps";
+import { useResearcherMode } from "./researcherMode";
 
 interface FilterBarProps {
   initial: ExplorerFilters;
@@ -34,6 +35,16 @@ const GEO_OPTIONS: { value: Geocodable; label: string }[] = [
   { value: "no", label: "Non-mappable" },
 ];
 
+/**
+ * Neighbourhood facet names already carry their HOOD_158 code inline, e.g.
+ * "West Humber-Clairville (1)" — the same convention askParser.ts uses
+ * internally for its plain-language aliases. This mirrors that convention
+ * for the filter UI without importing/touching askParser.ts.
+ */
+function nameWithoutCode(name: string): string {
+  return name.replace(/\s*\([^)]*\)\s*$/, "").trim();
+}
+
 export function FilterBar({
   initial,
   matchingCount,
@@ -45,10 +56,23 @@ export function FilterBar({
   const [filters, setFilters] = useState<ExplorerFilters>(initial);
   const hasStagedChanges = toQueryString(filters) !== toQueryString(initial);
 
+  // Researcher mode: off by default. Reveals technical codes that are
+  // already present in `facets` (e.g. HOOD_158 neighbourhood codes) instead
+  // of hiding them behind plain-language names. Never fetches new data.
+  const researcherMode = useResearcherMode();
+
   function update(next: ExplorerFilters) {
     setFilters(next);
     if (mode === "live") {
-      router.replace(buildExplorerUrl(view, next), { scroll: false });
+      // buildExplorerUrl only knows about offence/date/hood/div/geo, so a
+      // live filter change would otherwise silently drop the researcher-mode
+      // flag from the URL. Re-append it here — a pure URL string concern,
+      // not a change to filter/query semantics.
+      const url = buildExplorerUrl(view, next);
+      const nextUrl = researcherMode
+        ? `${url}${url.includes("?") ? "&" : "?"}researcher=1`
+        : url;
+      router.replace(nextUrl, { scroll: false });
     }
   }
 
@@ -63,6 +87,18 @@ export function FilterBar({
   }
 
   const chips = describeFilters(filters);
+
+  // Plain-language by default: swap the raw HOOD_158 code in the
+  // "Neighbourhood <code>" chip for the neighbourhood name. Researcher mode
+  // shows the raw code, matching describeFilters()'s output exactly.
+  function displayChip(chip: string): string {
+    if (researcherMode) return chip;
+    const match = chip.match(/^Neighbourhood (\S+)$/);
+    const facet = match
+      ? facets.neighbourhoods.find((n) => n.code === match[1])
+      : undefined;
+    return facet ? `Neighbourhood ${nameWithoutCode(facet.name)}` : chip;
+  }
 
   return (
     <div className="@container flex flex-col gap-5">
@@ -146,10 +182,15 @@ export function FilterBar({
             <option value="">All neighbourhoods</option>
             {facets.neighbourhoods.map((n) => (
               <option key={n.code} value={n.code}>
-                {n.code} · {n.name}
+                {researcherMode ? n.name : nameWithoutCode(n.name)}
               </option>
             ))}
           </select>
+          {researcherMode ? (
+            <p className="text-[0.68rem] leading-relaxed text-faint">
+              Researcher mode: HOOD_158 codes shown alongside neighbourhood names.
+            </p>
+          ) : null}
         </fieldset>
 
         {/* Division */}
@@ -198,7 +239,7 @@ export function FilterBar({
                 key={c}
                 className="rounded border border-line bg-panel-2 px-2 py-0.5 text-[0.68rem] text-muted"
               >
-                {c}
+                {displayChip(c)}
               </span>
             ))}
           </div>

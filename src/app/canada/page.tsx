@@ -5,6 +5,7 @@ import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatusChip, type ChipTone } from "@/components/ui/StatusChip";
 import { PreviewBadge } from "@/components/ui/PreviewBadge";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 import {
   JURISDICTIONS,
   JURISDICTION_STATUS_LABEL,
@@ -30,9 +31,9 @@ export default function Canada() {
       <PageHero
         grid
         kicker="Federated by design"
-        badge={<PreviewBadge label="Concept · only Toronto is live" />}
+        badge={<TrustBadge label="Concept" />}
         title="The Canada organism"
-        description="Each city joins through jurisdictions, datasets, ingestion runs, and typed source layers — each with its own provenance. Future nodes below carry no data until their official sources are ingested."
+        description="Each city joins through jurisdictions, datasets, ingestion runs, and typed source layers — each with its own provenance. Toronto is the only jurisdiction linked into the public app today. Other cities below may already be collected or processed internally, but none are public-app linked yet, and none show fabricated data in the meantime."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -79,7 +80,7 @@ export default function Canada() {
           <SectionHeader
             kicker="Source readiness"
             title="Jurisdictions"
-            description="Acquisition priority follows the data source plan. No city ingestion is built in V1, and no fabricated data is shown for any future node."
+            description="Acquisition priority follows the data source plan. Other cities may already be collected or processed internally, but no jurisdiction beyond Toronto is public-app linked, and no fabricated data is shown for any future node."
             className="mb-5"
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -90,9 +91,12 @@ export default function Canada() {
                     <h3 className="text-sm font-semibold text-ink">{j.city}</h3>
                     <p className="text-xs text-faint">{j.agency} · {j.province}</p>
                   </div>
-                  <StatusChip tone={STATUS_TONE[j.status]} dot>
-                    {JURISDICTION_STATUS_LABEL[j.status]}
-                  </StatusChip>
+                  <div className="flex flex-wrap items-center justify-end gap-1.5">
+                    {j.status === "active" ? <TrustBadge label="Live source data" /> : null}
+                    <StatusChip tone={STATUS_TONE[j.status]} dot>
+                      {JURISDICTION_STATUS_LABEL[j.status]}
+                    </StatusChip>
+                  </div>
                 </div>
                 <p className="text-xs leading-relaxed text-muted">{j.note}</p>
                 <div className="mt-auto flex items-center justify-between text-[0.68rem] text-faint">
@@ -102,7 +106,7 @@ export default function Canada() {
                       Open explorer →
                     </Link>
                   ) : (
-                    <span>No data yet</span>
+                    <span>Not public-app linked yet</span>
                   )}
                 </div>
               </GlassPanel>

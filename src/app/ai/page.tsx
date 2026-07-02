@@ -4,6 +4,7 @@ import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatusChip } from "@/components/ui/StatusChip";
 import { PreviewBadge } from "@/components/ui/PreviewBadge";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 import { SourceReceipt } from "@/components/ui/SourceReceipt";
 import { AiQueryBar } from "@/components/explorer/AiQueryBar";
 import { V1_DATASETS } from "@/lib/datasets";
@@ -38,7 +39,7 @@ export default function AiPage() {
       <PageHero
         grid
         kicker="Source-bound AI"
-        badge={<PreviewBadge label="Coming soon · does not answer yet" tone="violet" />}
+        badge={<TrustBadge label="Coming soon" />}
         title="Ask the Data"
         description="A future co-pilot that converts plain questions into structured, cited queries. It will behave like a source-bound analyst — not a chatbot that guesses."
       />

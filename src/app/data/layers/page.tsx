@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { StatusChip } from "@/components/ui/StatusChip";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 import { DataLayerStack } from "@/components/explorer/DataLayerStack";
 import { TOTAL_CORPUS_FILES } from "@/lib/datasets";
 
@@ -17,7 +18,12 @@ export default function DataLayers() {
     <>
       <PageHero
         kicker="Unified source foundation"
-        badge={<StatusChip tone="cyan" dot>1 of 7 layers live</StatusChip>}
+        badge={
+          <>
+            <TrustBadge label="Live source data" />
+            <StatusChip tone="cyan" dot>1 of 7 layers live</StatusChip>
+          </>
+        }
         title="Typed source layers"
         description={`All ${TOTAL_CORPUS_FILES} TPS files are classified into exactly one typed layer. Layers have different schemas and are never merged into one universal incident table.`}
       />

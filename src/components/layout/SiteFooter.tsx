@@ -9,6 +9,7 @@ const FOOTER_LINKS: { heading: string; links: { href: string; label: string }[] 
       { href: "/toronto/map", label: "Map" },
       { href: "/toronto/table", label: "Table" },
       { href: "/toronto/search", label: "Search" },
+      { href: "/toronto/ask", label: "Ask the record" },
     ],
   },
   {
@@ -24,7 +25,7 @@ const FOOTER_LINKS: { heading: string; links: { href: string; label: string }[] 
     links: [
       { href: "/vision", label: "Vision" },
       { href: "/canada", label: "Canada organism" },
-      { href: "/ai", label: "Ask the Data" },
+      { href: "/ai", label: "AI copilot (concept)" },
       { href: "/pricing", label: "Pricing" },
     ],
   },

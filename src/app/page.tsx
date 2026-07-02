@@ -3,6 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { GlassPanel } from "@/components/ui/GlassPanel";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatusChip } from "@/components/ui/StatusChip";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 import { DisclaimerBlock } from "@/components/ui/DisclaimerBlock";
 import {
   V1_DATASETS,
@@ -17,7 +18,7 @@ export default function Home() {
       <PageHero
         grid
         kicker="Official public crime data, searchable"
-        badge={<StatusChip tone="cyan" dot>Toronto · V1 live first</StatusChip>}
+        badge={<TrustBadge label="Live source data" />}
         title={
           <>
             A living atlas of Canada&apos;s{" "}
@@ -25,7 +26,7 @@ export default function Home() {
             mapped, filtered, and cited.
           </>
         }
-        description="Search, map, and verify official police open data with a source citation on every record. V1 covers Toronto Police Service Major Crime open data. No safety scores. No news feed. No name search."
+        description="Search, map, ask, and verify official police open data with a source citation on every record. Toronto is the only live public workspace today, and Ask the record is wired to Toronto/TPS data only. No safety scores. No news feed. No name search."
         actions={
           <>
             <Link
@@ -114,14 +115,14 @@ export default function Home() {
           />
         </section>
 
-        {/* Three cards */}
+        {/* Four cards */}
         <section className="mt-12">
           <SectionHeader
-            kicker="Three ways in"
-            title="Map it, table it, or trace the source"
-            description="Every view shares one filter state, so any result is shareable and reproducible."
+            kicker="Four ways in"
+            title="Map it, table it, ask it, or trace the source"
+            description="Every view shares one connected workspace, so any result is shareable and reproducible."
           />
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <EntryCard
               href="/toronto/map"
               title="Map"
@@ -133,6 +134,12 @@ export default function Home() {
               title="Table"
               body="Dense, sortable records with an expandable source citation on every row."
               glyph="▤"
+            />
+            <EntryCard
+              href="/toronto/ask"
+              title="Ask the record"
+              body="Plain-language questions about Toronto's public record — deterministic, no AI, wired to real TPS data only."
+              glyph="?"
             />
             <EntryCard
               href="/data/sources"
@@ -149,16 +156,21 @@ export default function Home() {
             <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
             <div className="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-xl">
-                <span className="kicker text-violet">The bigger picture</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="kicker text-violet">The bigger picture</span>
+                  <TrustBadge label="Concept" />
+                </div>
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink">
                   Built to connect Canadian city datasets — with provenance.
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   CrimeCanada.io is designed as a federated, provenance-aware
                   system: jurisdictions, datasets, ingestion runs, and typed
-                  source layers. Toronto is live first; Calgary, Peel, Edmonton,
-                  Vancouver, and Winnipeg are designed to plug in later — never
-                  with fabricated data.
+                  source layers. Toronto is the only jurisdiction linked into
+                  this public app today. Other Canadian cities may already be
+                  collected or processed internally, but none are public-app
+                  linked yet — and none are shown with fabricated data in the
+                  meantime.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">

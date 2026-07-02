@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const PRIMARY_NAV = [
   { href: "/toronto", label: "Toronto" },
+  { href: "/toronto/ask", label: "Ask the record" },
   { href: "/data/sources", label: "Sources" },
   { href: "/data/layers", label: "Layers" },
   { href: "/pricing", label: "Pricing" },
@@ -15,11 +16,15 @@ const PRIMARY_NAV = [
 const CONCEPT_NAV = [
   { href: "/vision", label: "Vision" },
   { href: "/canada", label: "Canada" },
-  { href: "/ai", label: "Ask the Data" },
+  { href: "/ai", label: "AI copilot (concept)" },
 ];
 
 function isActive(pathname: string, href: string): boolean {
-  if (href === "/toronto") return pathname.startsWith("/toronto");
+  if (href === "/toronto") {
+    // "Ask the record" has its own nav entry, so the Toronto hub tab
+    // should not also light up while on /toronto/ask.
+    return pathname === "/toronto" || (pathname.startsWith("/toronto/") && !pathname.startsWith("/toronto/ask"));
+  }
   if (href === "/data/sources") return pathname === "/data/sources";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
@@ -72,7 +77,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/toronto/map"
+            href="/toronto"
             className="hidden rounded-md border border-cyan/40 bg-cyan/10 px-3 py-1.5 text-sm font-medium text-cyan transition-colors hover:bg-cyan/20 sm:inline-flex"
           >
             Explore data

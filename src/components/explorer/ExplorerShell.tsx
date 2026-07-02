@@ -5,16 +5,33 @@ import {
   buildExplorerUrl,
   describeFilters,
   activeFilterCount,
+  toQueryString,
 } from "@/lib/filters";
 import { StatusChip } from "@/components/ui/StatusChip";
+import { ResearcherModeToggle } from "@/components/explorer/ResearcherModeToggle";
 
-type View = "map" | "table" | "search";
+type View = "map" | "table" | "search" | "ask";
 
 const VIEWS: { id: View; label: string }[] = [
   { id: "map", label: "Map" },
   { id: "table", label: "Table" },
   { id: "search", label: "Search" },
+  { id: "ask", label: "Ask" },
 ];
+
+/**
+ * Ask does not use the same query-string shape as map/table/search (it reads
+ * a plain-language "q" param, not offence/date/etc.), so it needs its own
+ * link builder. This only composes a URL string — it does not touch
+ * lib/filters.ts or any parsing/query semantics.
+ */
+function buildViewUrl(view: View, filters: ExplorerFilters): string {
+  if (view === "ask") {
+    const qs = toQueryString(filters);
+    return qs ? `/toronto/ask?${qs}` : "/toronto/ask";
+  }
+  return buildExplorerUrl(view, filters);
+}
 
 interface ExplorerShellProps {
   view: View;
@@ -36,7 +53,7 @@ export function ExplorerShell({ view, filters, children, toolbar }: ExplorerShel
             {VIEWS.map((v) => (
               <Link
                 key={v.id}
-                href={buildExplorerUrl(v.id, filters)}
+                href={buildViewUrl(v.id, filters)}
                 aria-current={v.id === view ? "page" : undefined}
                 className={`px-4 py-2 text-sm font-medium transition-colors ${
                   v.id === view
@@ -48,7 +65,10 @@ export function ExplorerShell({ view, filters, children, toolbar }: ExplorerShel
               </Link>
             ))}
           </div>
-          {toolbar}
+          <div className="flex items-center gap-2">
+            <ResearcherModeToggle />
+            {toolbar}
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -64,7 +84,7 @@ export function ExplorerShell({ view, filters, children, toolbar }: ExplorerShel
           )}
           {count > 0 ? (
             <Link
-              href={buildExplorerUrl(view, { offence: [], geocodable: "any" })}
+              href={buildViewUrl(view, { offence: [], geocodable: "any" })}
               className="text-xs text-faint underline-offset-2 hover:text-ink hover:underline"
             >
               reset
