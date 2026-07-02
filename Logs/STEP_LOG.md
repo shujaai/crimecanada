@@ -41,6 +41,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 - [x] Taxonomy cleanup analysis completed and V2 taxonomy prepared
 - [x] Taxonomy V2 silver rebuild completed; `other` category reduced from 111,664 to 12,579 rows
 - [x] Silver SQLite indexes applied and benchmarked; 23/23 benchmark queries used indexes
+- [x] CrimeCanada public workspace UX polish A1–A5 (nav/CTA, unified Map/Table/Search/Ask shell, TrustBadge, Researcher Mode toggle, live-vs-roadmap copy; Toronto/TPS only; commit 2850154)
 
 ---
 
@@ -100,6 +101,7 @@ Use `[x]` for completed items and `[ ]` for pending items. Add new entries at th
 | 2026-07-02 | Taxonomy V2 rebuild | Rebuilt silver with Taxonomy V2: total rows stayed 780,385 and `other` dropped from 111,664 to 12,579 rows, an 88.73% reduction. QA passed with 0 load errors. |
 | 2026-07-02 | Silver indexes and benchmark | Applied 12 indexes to local silver SQLite and ran benchmarks. Integrity remained stable, 23/23 benchmark queries used indexes, and benchmark result was PASS WITH CAVEATS. |
 | 2026-07-02 | Pipeline status handoff | Documented that local pipeline is now catalog + bronze + indexed silver with Taxonomy V2 complete. Next step is internal read-only query service, not public UI. |
+| 2026-07-02 | Public workspace UX polish (2850154) | A1–A5 UI/copy only: Ask in nav/footer → `/toronto/ask`; unified ExplorerShell tabs; TrustBadge labels; off-by-default Researcher Mode (technical labels only); clarified Toronto-only live workspace vs roadmap concepts. No askParser/tpsQuery/backend/security/package/data changes. Lint 0 errors; build passed. |
 
 ---
 

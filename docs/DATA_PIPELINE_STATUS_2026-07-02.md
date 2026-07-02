@@ -12,6 +12,22 @@ The **V1 public app remains TPS-oriented** (`/toronto` routes reading `data/proc
 
 ---
 
+## UI sync note (2026-07-02, commit 2850154)
+
+Commit `2850154` (CrimeCanada public workspace UX polish A1–A5) was **UI/copy/workspace discoverability only**:
+
+- Nav/CTA cleanup, TrustBadge labels, Researcher Mode toggle, and live-vs-roadmap copy polish.
+- Unified Map / Table / Search / Ask workspace shell on `/toronto*` routes.
+- **No** pipeline, silver, bronze, raw, query, schema, or backend changes.
+
+**Public app remains Toronto TPS V1 only** (`/toronto`, `/toronto/map`, `/toronto/table`, `/toronto/search`, `/toronto/ask`). Ask is deterministic Toronto/TPS only.
+
+Silver and multi-jurisdiction data are **not public-app linked**. Do not imply Peel, York, Halton, Durham, or Hamilton are live in the public app.
+
+`/ai`, API, and pricing surfaces remain roadmap/concept, not live paid products.
+
+---
+
 ## What Exists
 
 | Layer | Status | Key output | Rows |

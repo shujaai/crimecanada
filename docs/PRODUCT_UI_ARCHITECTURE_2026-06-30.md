@@ -1,9 +1,11 @@
 # CrimeCanada.io — Product / UI Architecture (2026-06-30)
 
 Companion to the UI foundation pass. Describes the data and UI-state models the
-interface is designed around. This is **design intent**, not a built database:
-V1 ships static/preview data and styled scaffolds. No Prisma schema, migrations,
-ingestion, auth, billing, or AI backend are created in this pass.
+interface is designed around. This document began as **design intent**, not a
+built database. The **local Toronto TPS V1 explorer** now serves real processed
+data on `/toronto*` routes; non-Toronto and concept routes may still use
+preview/mock data where labelled. No Prisma schema, migrations, ingestion, auth,
+billing, or AI backend are created in this pass.
 
 See also: [NORTH_STAR.md](./NORTH_STAR.md), [DATA_SOURCE_PLAN.md](./DATA_SOURCE_PLAN.md),
 [LEGAL_GUARDRAILS.md](./LEGAL_GUARDRAILS.md),
@@ -12,6 +14,29 @@ See also: [NORTH_STAR.md](./NORTH_STAR.md), [DATA_SOURCE_PLAN.md](./DATA_SOURCE_
 > Honesty note: where the UI shows numbers derived from synthetic preview data
 > (`src/lib/mockIncidents.ts`), it is labelled "Preview · not live data." Only
 > dataset-level row counts (from the committed inventory) are factual today.
+
+---
+
+## Update — 2026-07-02 (commit 2850154)
+
+Public workspace UX polish A1–A5 updated the live Toronto explorer without
+changing query logic or data pipelines:
+
+- **Ask the record** is a live Toronto/TPS entry at `/toronto/ask`, linked from
+  primary nav and footer.
+- **Unified workspace**: Map, Table, Search, and Ask share the same
+  `ExplorerShell` tab bar, filter chips, and reset shell.
+- **TrustBadge** vocabulary applied across home, `/vision`, `/canada`, `/ai`,
+  `/pricing`, and `/data/layers`: Live source data, Local corpus, Aggregate
+  only, Coming soon, Source-backed, Concept.
+- **Researcher Mode** toggle (off by default): reveals existing technical field
+  names/labels only; does not fetch or expose additional raw data.
+- **Live vs roadmap copy**: Toronto is the only live public workspace; Ask is
+  wired to Toronto/TPS data only; API, pricing, and AI copilot are
+  roadmap/concept surfaces, not live paid products.
+
+Historical context: Sections 1–10 below describe the original design intent.
+The public workspace now has real local TPS V1 views on `/toronto*` routes.
 
 ---
 
@@ -218,7 +243,8 @@ ai_answer {
 Hard rules: cite datasets, filters, and counts; link a reproducible explorer URL;
 say "reported incidents" not "confirmed crimes"; never invent statistics; refuse
 safety recommendations and people/name/profile queries. Concept surface: `/ai`
-(`AiQueryBar` + structured answer card). It does not answer in V1.
+(relabelled "AI copilot (concept)" — `AiQueryBar` + structured answer card). It
+does not answer in V1 and has no live AI backend.
 
 ---
 
@@ -250,7 +276,7 @@ Code: `src/lib/filters.ts` (`parseFilters`, `toQueryString`, `buildExplorerUrl`,
 | `SourceReceipt` | dataset metadata + ingestion run + filter state |
 | `DatasetBadge` / `DataLayerStack` | typed layers |
 | `FilterBar` / `ExplorerShell` | UI filter URL model |
-| `MapPreview` / `DataTablePreview` | `public_incident_records` (preview shape) |
+| `MapPreview` / `DataTablePreview` | `public_incident_records` (real TPS V1 on `/toronto*`; preview shape on concept routes) |
 | `AiQueryBar` + answer card | AI query/citation model |
 | `/canada` node map | jurisdiction model |
 
