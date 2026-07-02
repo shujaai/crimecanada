@@ -46,3 +46,11 @@ data/raw/
 # Generated local TPS query corpus
 data/processed/
 
+
+# Local generated warehouse databases
+data/**/*.sqlite
+data/**/*.sqlite-shm
+data/**/*.sqlite-wal
+data/**/*.db
+data/**/*.db-shm
+data/**/*.db-wal
