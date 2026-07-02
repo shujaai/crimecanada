@@ -1,0 +1,113 @@
+metric_type,jurisdiction_id,source_label,current_category_family,proposed_category_family,row_count,mapping_confidence,notes
+family_total_current,ALL,,homicide,homicide,157,,current silver_incidents
+family_total_current,ALL,,arson,arson,202,,current silver_incidents
+family_total_current,ALL,,shooting_firearm,shooting_firearm,456,,current silver_incidents
+family_total_current,ALL,,sexual_assault,sexual_assault,733,,current silver_incidents
+family_total_current,ALL,,drugs,drugs,4853,,current silver_incidents
+family_total_current,ALL,,fraud,fraud,24716,,current silver_incidents
+family_total_current,ALL,,robbery,robbery,44365,,current silver_incidents
+family_total_current,ALL,,break_and_enter,break_and_enter,92355,,current silver_incidents
+family_total_current,ALL,,auto_vehicle_theft,auto_vehicle_theft,103887,,current silver_incidents
+family_total_current,ALL,,theft_from_vehicle,theft_from_vehicle,109228,,current silver_incidents
+family_total_current,ALL,,other,other,111664,,current silver_incidents
+family_total_current,ALL,,assault,assault,287769,,current silver_incidents
+label_move,halton-hrps,ROADSIDE TEST,other,impaired_driving,10332,high,Halton roadside screening label maps to impaired driving
+label_move,peel-prp,Mischief Over - Property,other,mischief_property_damage,9782,medium,Peel MIS code / mischief description labels
+label_move,tps,Theft Over,other,theft_other,9574,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Theft Under $5000 - Shoplifting,other,theft_other,8439,high,YRP theft under variants
+label_move,hamilton-hps,Theft Under or equal to $5000 - FROM Motor Vehicle - NO Damage,other,theft_from_vehicle,5267,high,Theft from MV labels
+label_move,yrp,Mischief To Property,other,mischief_property_damage,4975,high,YRP mischief labels
+label_move,yrp,Theft Under $5000- Other,other,theft_other,4921,high,YRP theft under variants
+label_move,tps,Theft From Motor Vehicle Over,other,theft_other,3961,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,peel-prp,Mischief Under - Property,other,mischief_property_damage,3743,medium,Peel MIS code / mischief description labels
+label_move,hamilton-hps,Break and Enter - Business,other,break_and_enter,3161,high,Hamilton B&E labels
+label_move,hamilton-hps,Break and Enter - Residence,other,break_and_enter,2575,high,Hamilton B&E labels
+label_move,yrp,Theft Over $5000 - Vehicle,other,auto_vehicle_theft,2547,high,YRP theft over vehicle
+label_move,hamilton-hps,Theft Under or equal to $5000 - FROM Motor Vehicle - Damage,other,theft_from_vehicle,2283,high,Theft from MV labels
+label_move,yrp,Theft Under $5000 - From Motor Vehicle,other,theft_other,1953,high,YRP theft under variants
+label_move,halton-hrps,MVC - HIT & RUN,other,traffic_collisions,1946,high,MVC labels are traffic collisions not generic crime
+label_move,yrp,Break and Enter  - Residential,other,break_and_enter,1934,high,YRP break and enter label variant
+label_move,tps,Theft From Mail / Bag / Key,other,theft_other,1725,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Impaired Alcohol / Over 80 Mgs,other,impaired_driving,1412,high,YRP impaired driving labels
+label_move,halton-hrps,THEFT OF VEHICLE,other,auto_vehicle_theft,1233,high,Vehicle theft
+label_move,halton-hrps,MVC - PI,other,traffic_collisions,1165,high,MVC labels are traffic collisions not generic crime
+label_move,durham-drps,Break & Enter,other,break_and_enter,1075,high,Durham master B&E label
+label_move,yrp,Break and Enter  - Commercial,other,break_and_enter,1054,high,YRP break and enter label variant
+label_move,halton-hrps,THEFT FROM AUTO,other,theft_from_vehicle,1045,high,Theft from vehicle
+label_move,halton-hrps,THEFT UNDER,other,theft_other,1029,high,Theft labels outside major Phase 1 families
+label_move,hamilton-hps,Break and Enter - Other,other,break_and_enter,969,high,Hamilton B&E labels
+label_move,yrp,Missing Person-Adult,other,missing_person,935,high,YRP missing person
+label_move,tps,Theft Over - Shoplifting,other,theft_other,826,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Theft Over $5000 - Other,other,theft_other,784,high,YRP theft over variants
+label_move,halton-hrps,"PROPERTY DAMAGE UNDER $5,000",other,mischief_property_damage,773,high,Property damage is mischief/property damage family
+label_move,durham-drps,Impaired Operation,other,impaired_driving,752,high,Durham impaired operation
+label_move,yrp,Missing Person-Youth,other,missing_person,665,high,YRP missing person
+label_move,halton-hrps,BREAK AND ENTER HOUSE,other,break_and_enter,524,high,B&E variants
+label_move,halton-hrps,IMPAIRED DRIVING,other,impaired_driving,493,high,Impaired driving
+label_move,yrp,Weapons Possession Of Other,other,weapons,473,high,YRP weapons
+label_move,tps,Theft Over - Distraction,other,theft_other,430,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Theft Under $5000 - Bicycle,other,theft_other,398,high,YRP theft under variants
+label_move,halton-hrps,THEFT OVER,other,theft_other,326,high,Theft labels outside major Phase 1 families
+label_move,peel-prp,Mischief/(Non-Physical) Property,other,mischief_property_damage,292,medium,Peel MIS code / mischief description labels
+label_move,halton-hrps,BREAK AND ENTER OTHER,other,break_and_enter,228,high,B&E variants
+label_move,tps,Theft Over - Bicycle,other,theft_other,219,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Theft Over $5000 - From Motor Vehicle,other,auto_vehicle_theft,212,high,YRP theft over vehicle
+label_move,halton-hrps,BREAK AND ENTER SHOP,other,break_and_enter,207,high,B&E variants
+label_move,halton-hrps,THEFT OF BICYCLE,other,theft_other,195,high,Theft labels outside major Phase 1 families
+label_move,yrp,Public Mischief,other,mischief_property_damage,185,high,YRP mischief labels
+label_move,hamilton-hps,Theft Over $5000 - FROM Motor Vehicle - NO Damage,other,theft_from_vehicle,165,high,Theft from MV labels
+label_move,yrp,Mischief - Obstruct / Interrupts / Interferes,other,mischief_property_damage,161,high,YRP mischief labels
+label_move,halton-hrps,OFFENSIVE WEAPONS,other,weapons,153,high,Explicit weapons label
+label_move,yrp,Mischief To Property - Graffiti,other,mischief_property_damage,153,high,YRP mischief labels
+label_move,halton-hrps,FEDERAL STATS - DRUGS,other,drugs,115,high,Drug stats label
+label_move,hamilton-hps,Theft Over $5000 - FROM Motor Vehicle - Damage,other,theft_from_vehicle,110,high,Theft from MV labels
+label_move,yrp,Theft Over $5000 - Shoplifting,other,theft_other,106,high,YRP theft over variants
+label_move,yrp,Mischief - Religious Property - Hate,other,mischief_property_damage,91,high,YRP mischief labels
+label_move,yrp,Theft Over $5000 - Take Vehicle Without Consent,other,auto_vehicle_theft,91,high,YRP theft over vehicle
+label_move,yrp,Assaults - Other,other,assault,81,high,YRP assaults
+label_move,yrp,Theft Under $5000 - Vehicle,other,theft_other,70,high,YRP theft under variants
+label_move,peel-prp,Cybercrime - Mischief to Data/Ransomware/Malware - Denial of Service/Webpage Defacement,other,mischief_property_damage,65,medium,Peel MIS code / mischief description labels
+label_move,tps,Theft - Misapprop Funds Over,other,theft_other,47,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Weapons - Possession Contrary To Order,other,weapons,44,high,YRP weapons
+label_move,yrp,Weapons - Unsafe Storage,other,weapons,44,high,YRP weapons
+label_move,halton-hrps,"PROPERTY DAMAGE OVER $5,000",other,mischief_property_damage,39,high,Property damage is mischief/property damage family
+label_move,yrp,Mischief - Conceal / Corrupt Data,other,mischief_property_damage,25,high,YRP mischief labels
+label_move,halton-hrps,DANGEROUS OPERATION - TRAFFIC,other,traffic_collisions,17,medium,Traffic-related dangerous operation
+label_move,yrp,Mischief To Property - Election Sign,other,mischief_property_damage,17,high,YRP mischief labels
+label_move,halton-hrps,MVC - FATALITY,other,traffic_collisions,15,high,MVC labels are traffic collisions not generic crime
+label_move,yrp,Weapons - Trafficking,other,weapons,14,high,YRP weapons
+label_move,yrp,Break and Enter  - Schools,other,break_and_enter,11,high,YRP break and enter label variant
+label_move,yrp,Operation While Impaired Unspecified,other,impaired_driving,10,high,YRP impaired driving labels
+label_move,halton-hrps,BREAK AND ENTER SCHOOL,other,break_and_enter,9,high,B&E variants
+label_move,peel-prp,Hate Motivated Mischief Relating to Property Used By Identifiable Group,other,mischief_property_damage,8,medium,Peel MIS code / mischief description labels
+label_move,tps,Theft Of Utilities Over,other,theft_other,8,high,TPS V1 theft-over dataset excluded from major crime families
+label_move,yrp,Mischief - Wilfully Act / Wilfully Omits To Act,other,mischief_property_damage,8,high,YRP mischief labels
+label_move,yrp,Theft Over $5000 - Bicycle,other,theft_other,8,high,YRP theft over variants
+label_move,yrp,Criminal Negligence Cause Bodily Harm,other,assault,5,high,YRP assaults
+label_move,yrp,Weapons - Firearms Documents / Admininstation,other,weapons,4,high,YRP weapons
+label_move,yrp,Theft Under $5000 - Take Vehicle Without Consent,other,theft_other,3,high,YRP theft under variants
+label_move,yrp,Theft Under $5000- Election Sign,other,theft_other,3,high,YRP theft under variants
+label_move,yrp,Weapons -Import / Export,other,weapons,3,high,YRP weapons
+label_move,peel-prp,Mischief in relation to cultural property,other,mischief_property_damage,2,medium,Peel MIS code / mischief description labels
+label_move,yrp,Impaired Alcohol Cause Bodily Harm / Over 80,other,impaired_driving,2,high,YRP impaired driving labels
+label_move,yrp,Weapons-Explosives Possession,other,weapons,1,high,YRP weapons
+family_total_proposed,ALL,,assault,assault,287855,,simulated after high+medium patches
+family_total_proposed,ALL,,other,other,12939,,simulated after high+medium patches
+family_total_proposed,ALL,,theft_from_vehicle,theft_from_vehicle,118098,,simulated after high+medium patches
+family_total_proposed,ALL,,auto_vehicle_theft,auto_vehicle_theft,107970,,simulated after high+medium patches
+family_total_proposed,ALL,,break_and_enter,break_and_enter,104102,,simulated after high+medium patches
+family_total_proposed,ALL,,robbery,robbery,44365,,simulated after high+medium patches
+family_total_proposed,ALL,,fraud,fraud,24716,,simulated after high+medium patches
+family_total_proposed,ALL,,drugs,drugs,4968,,simulated after high+medium patches
+family_total_proposed,ALL,,sexual_assault,sexual_assault,733,,simulated after high+medium patches
+family_total_proposed,ALL,,shooting_firearm,shooting_firearm,456,,simulated after high+medium patches
+family_total_proposed,ALL,,arson,arson,202,,simulated after high+medium patches
+family_total_proposed,ALL,,homicide,homicide,157,,simulated after high+medium patches
+family_total_proposed,ALL,,impaired_driving,impaired_driving,13001,,simulated after high+medium patches
+family_total_proposed,ALL,,mischief_property_damage,mischief_property_damage,20319,,simulated after high+medium patches
+family_total_proposed,ALL,,theft_other,theft_other,35025,,simulated after high+medium patches
+family_total_proposed,ALL,,traffic_collisions,traffic_collisions,3143,,simulated after high+medium patches
+family_total_proposed,ALL,,missing_person,missing_person,1600,,simulated after high+medium patches
+family_total_proposed,ALL,,weapons,weapons,736,,simulated after high+medium patches
+summary,ALL,,other,other,12939,,current_other=111664; rows_moved=98725; reduction_pct=88.41
+summary,halton-hrps;peel-prp;tps;yrp;hamilton-hps;durham-drps,,,,108,,affected_labels=80

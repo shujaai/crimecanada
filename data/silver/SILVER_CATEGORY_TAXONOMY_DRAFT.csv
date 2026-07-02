@@ -1,0 +1,210 @@
+category_family,category_canonical,source_jurisdiction,source_label,source_count,coverage_matrix_status,publish_tier,mapping_confidence,notes
+assault,assault,tps,254378,,tps_v1_processed:published,v1_published,high,From coverage matrix column tps_v1_processed
+assault,assault,tps,assault-open-data,,tps_raw_corpus:published,v1_published,high,From coverage matrix column tps_raw_corpus
+assault,assault,peel-prp,21250,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+assault,assault,yrp,9330,,yrp:published,v1_published,high,From coverage matrix column yrp
+auto_vehicle_theft,auto vehicle theft,tps,78714,,tps_v1_processed:published,v1_published,high,From coverage matrix column tps_v1_processed
+auto_vehicle_theft,auto vehicle theft,peel-prp,17728,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+auto_vehicle_theft,auto vehicle theft,yrp,2711,,yrp:published,v1_published,high,From coverage matrix column yrp
+theft_from_vehicle,theft from vehicle,tps,106574,,tps_v1_processed:published,v1_published,high,From coverage matrix column tps_v1_processed
+break_and_enter,break and enter,tps,84689,,tps_v1_processed:published,v1_published,high,From coverage matrix column tps_v1_processed
+break_and_enter,break and enter,peel-prp,7666,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+break_and_enter,break and enter,yrp,3057,,yrp:published,v1_published,high,From coverage matrix column yrp
+robbery,robbery,tps,40248,,tps_v1_processed:published,v1_published,high,From coverage matrix column tps_v1_processed
+robbery,robbery,peel-prp,2512,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+robbery,robbery,yrp,660,,yrp:published,v1_published,high,From coverage matrix column yrp
+homicide,homicide,tps,homicides-open-data,,tps_raw_corpus:raw_available_review_required,v1_deferred,medium,From coverage matrix column tps_raw_corpus
+homicide,homicide,peel-prp,58,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+homicide,homicide,yrp,12,,yrp:published,v1_published,high,From coverage matrix column yrp
+shooting_firearm,shooting firearm,tps,shooting-and-firearm-discharges-open-data,,tps_raw_corpus:raw_available_review_required,v1_deferred,medium,From coverage matrix column tps_raw_corpus
+shooting_firearm,shooting firearm,peel-prp,embedded_in_robbery_labels_only,,peel-prp:embedded_in_robbery_labels_only,v1_deferred,medium,From coverage matrix column peel-prp
+shooting_firearm,shooting firearm,yrp,118_flag,,yrp:published,v1_published,high,From coverage matrix column yrp
+sexual_assault,sexual assault,peel-prp,not_found_in_public_layer,,peel-prp:not_found_in_public_layer,reference_only,medium,From coverage matrix column peel-prp
+sexual_assault,sexual assault,yrp,733,,yrp:published,v1_published,high,From coverage matrix column yrp
+hate_crime,hate crime,tps,hate-crime-open-data,,tps_raw_corpus:raw_available_review_required,v1_deferred,medium,From coverage matrix column tps_raw_corpus
+hate_crime,hate crime,peel-prp,8,,peel-prp:hate_motivated_mischief_only,v1_deferred,medium,From coverage matrix column peel-prp
+hate_crime,hate crime,yrp,356_flag,,yrp:published,v1_published,high,From coverage matrix column yrp
+arson,arson,peel-prp,not_found_in_public_layer,,peel-prp:not_found_in_public_layer,reference_only,medium,From coverage matrix column peel-prp
+arson,arson,yrp,151,,yrp:published,v1_published,high,From coverage matrix column yrp
+drugs,drugs,peel-prp,4302,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+drugs,drugs,yrp,1509,,yrp:published,v1_published,high,From coverage matrix column yrp
+fraud,fraud,tps,not_in_v1_major_crime_family,,tps_raw_corpus:not_in_v1_major_crime_family,v1_deferred,medium,From coverage matrix column tps_raw_corpus
+fraud,fraud,peel-prp,14937,,peel-prp:published,v1_published,high,From coverage matrix column peel-prp
+fraud,fraud,yrp,9779,,yrp:published,v1_published,high,From coverage matrix column yrp
+traffic_collisions,traffic collisions,tps,traffic-collisions-open-data,,tps_raw_corpus:published,v1_published,high,From coverage matrix column tps_raw_corpus
+assault,Assault,tps,Assault,174832,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Assault With Weapon,tps,Assault With Weapon,43667,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Assault Bodily Harm,tps,Assault Bodily Harm,10904,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Assault Peace Officer,tps,Assault Peace Officer,8322,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Assault - Resist/ Prevent Seiz,tps,Assault - Resist/ Prevent Seiz,3866,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Aggravated Assault,tps,Aggravated Assault,3320,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Discharge Firearm With Intent,tps,Discharge Firearm With Intent,2816,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Discharge Firearm - Recklessly,tps,Discharge Firearm - Recklessly,1990,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Pointing A Firearm,tps,Pointing A Firearm,1704,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Assault Peace Officer Wpn/Cbh,tps,Assault Peace Officer Wpn/Cbh,920,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Administering Noxious Thing,tps,Administering Noxious Thing,831,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Assault - Force/Thrt/Impede,tps,Assault - Force/Thrt/Impede,527,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Use Firearm / Immit Commit Off,tps,Use Firearm / Immit Commit Off,244,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Crim Negligence Bodily Harm,tps,Crim Negligence Bodily Harm,164,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Disarming Peace/Public Officer,tps,Disarming Peace/Public Officer,158,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Air Gun Or Pistol: Bodily Harm,tps,Air Gun Or Pistol: Bodily Harm,34,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Aggravated Aslt Peace Officer,tps,Aggravated Aslt Peace Officer,32,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Unlawfully Causing Bodily Harm,tps,Unlawfully Causing Bodily Harm,21,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Aggravated Assault Avails Pros,tps,Aggravated Assault Avails Pros,21,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Traps Likely Cause Bodily Harm,tps,Traps Likely Cause Bodily Harm,2,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Set/Place Trap/Intend Death/Bh,tps,Set/Place Trap/Intend Death/Bh,2,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+assault,Hoax Terrorism Causing Bodily,tps,Hoax Terrorism Causing Bodily,1,catalog_known_categories_json,v1_published,high,cat-0010 tps_major_crime_v1
+auto_theft,Theft Of Motor Vehicle,tps,Theft Of Motor Vehicle,78714,catalog_known_categories_json,v1_published,high,cat-0011 tps_major_crime_v1
+break_and_enter,B&E,tps,B&E,70875,catalog_known_categories_json,v1_published,high,cat-0013 tps_major_crime_v1
+break_and_enter,B&E W'Intent,tps,B&E W'Intent,10796,catalog_known_categories_json,v1_published,high,cat-0013 tps_major_crime_v1
+break_and_enter,Unlawfully In Dwelling-House,tps,Unlawfully In Dwelling-House,2848,catalog_known_categories_json,v1_published,high,cat-0013 tps_major_crime_v1
+break_and_enter,B&E Out,tps,B&E Out,132,catalog_known_categories_json,v1_published,high,cat-0013 tps_major_crime_v1
+break_and_enter,B&E - To Steal Firearm,tps,B&E - To Steal Firearm,24,catalog_known_categories_json,v1_published,high,cat-0013 tps_major_crime_v1
+break_and_enter,B&E - M/Veh To Steal Firearm,tps,B&E - M/Veh To Steal Firearm,14,catalog_known_categories_json,v1_published,high,cat-0013 tps_major_crime_v1
+major_crime_indicators,Assault,tps,Assault,174832,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Theft Of Motor Vehicle,tps,Theft Of Motor Vehicle,78714,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,B&E,tps,B&E,70875,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Assault With Weapon,tps,Assault With Weapon,43667,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Assault Bodily Harm,tps,Assault Bodily Harm,10904,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,B&E W'Intent,tps,B&E W'Intent,10796,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Mugging,tps,Robbery - Mugging,9848,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Theft Over,tps,Theft Over,9574,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Assault Peace Officer,tps,Assault Peace Officer,8322,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery With Weapon,tps,Robbery With Weapon,7906,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Other,tps,Robbery - Other,6816,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Business,tps,Robbery - Business,6084,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Theft From Motor Vehicle Over,tps,Theft From Motor Vehicle Over,3961,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Assault - Resist/ Prevent Seiz,tps,Assault - Resist/ Prevent Seiz,3866,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Aggravated Assault,tps,Aggravated Assault,3320,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Swarming,tps,Robbery - Swarming,2872,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Unlawfully In Dwelling-House,tps,Unlawfully In Dwelling-House,2848,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Discharge Firearm With Intent,tps,Discharge Firearm With Intent,2816,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Discharge Firearm - Recklessly,tps,Discharge Firearm - Recklessly,1990,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Vehicle Jacking,tps,Robbery - Vehicle Jacking,1798,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Home Invasion,tps,Robbery - Home Invasion,1765,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Theft From Mail / Bag / Key,tps,Theft From Mail / Bag / Key,1725,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Pointing A Firearm,tps,Pointing A Firearm,1704,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Purse Snatch,tps,Robbery - Purse Snatch,1265,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+major_crime_indicators,Robbery - Financial Institute,tps,Robbery - Financial Institute,1090,catalog_known_categories_json,v1_deferred,high,cat-0037 tps_major_crime_combined
+robbery,Robbery - Mugging,tps,Robbery - Mugging,9848,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery With Weapon,tps,Robbery With Weapon,7906,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Other,tps,Robbery - Other,6816,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Business,tps,Robbery - Business,6084,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Swarming,tps,Robbery - Swarming,2872,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Vehicle Jacking,tps,Robbery - Vehicle Jacking,1798,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Home Invasion,tps,Robbery - Home Invasion,1765,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Purse Snatch,tps,Robbery - Purse Snatch,1265,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Financial Institute,tps,Robbery - Financial Institute,1090,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Delivery Person,tps,Robbery - Delivery Person,332,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Taxi,tps,Robbery - Taxi,280,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Atm,tps,Robbery - Atm,137,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery - Armoured Car,tps,Robbery - Armoured Car,53,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+robbery,Robbery To Steal Firearm,tps,Robbery To Steal Firearm,2,catalog_known_categories_json,v1_published,high,cat-0061 tps_major_crime_v1
+theft_from_motor_vehicle,Theft From Motor Vehicle Under,tps,Theft From Motor Vehicle Under,102613,catalog_known_categories_json,v1_published,high,cat-0067 tps_major_crime_v1
+theft_from_motor_vehicle,Theft From Motor Vehicle Over,tps,Theft From Motor Vehicle Over,3961,catalog_known_categories_json,v1_published,high,cat-0067 tps_major_crime_v1
+theft_over,Theft Over,tps,Theft Over,9574,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft From Motor Vehicle Over,tps,Theft From Motor Vehicle Over,3961,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft From Mail / Bag / Key,tps,Theft From Mail / Bag / Key,1725,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft Over - Shoplifting,tps,Theft Over - Shoplifting,826,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft Over - Distraction,tps,Theft Over - Distraction,430,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft Over - Bicycle,tps,Theft Over - Bicycle,219,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft - Misapprop Funds Over,tps,Theft - Misapprop Funds Over,47,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+theft_over,Theft Of Utilities Over,tps,Theft Of Utilities Over,8,catalog_known_categories_json,v1_published,high,cat-0068 tps_major_crime_v1
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,ASL,peel-prp,ASL,21250,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,VEH,peel-prp,VEH,17728,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,FRA,peel-prp,FRA,14937,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,MIS,peel-prp,MIS,13948,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,BNE,peel-prp,BNE,7666,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,DRP,peel-prp,DRP,3045,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,ROB,peel-prp,ROB,2512,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,DRT,peel-prp,DRT,1257,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+ASL|VEH|FRA|MIS|BNE|DRP|ROB|DRT|HOM,HOM,peel-prp,HOM,58,catalog_known_categories_json,v1_deferred,high,cat-0076 peel_ecrimes_incidents
+occ_type,Theft Under $5000,yrp,Theft Under $5000,15714,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Fraud,yrp,Fraud,9779,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Assaults,yrp,Assaults,9330,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Other Persons Crime,yrp,Other Persons Crime,6577,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Mischief,yrp,Mischief,5437,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Other Property Crime,yrp,Other Property Crime,3878,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Theft of Motor Vehicle,yrp,Theft of Motor Vehicle,2711,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Impaired Operation,yrp,Impaired Operation,1966,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Break and Enter - Residential,yrp,Break and Enter - Residential,1934,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Missing Person,yrp,Missing Person,1600,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Other Criminal Code,yrp,Other Criminal Code,1249,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Drug Violations,yrp,Drug Violations,1161,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Theft Over $5000,yrp,Theft Over $5000,1110,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Break and Enter - Commercial,yrp,Break and Enter - Commercial,1054,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Sexual Violations,yrp,Sexual Violations,733,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Provincial Offences,yrp,Provincial Offences,686,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Robbery,yrp,Robbery,660,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Weapons Violations,yrp,Weapons Violations,584,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Cannabis Act,yrp,Cannabis Act,348,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Firearms Violations,yrp,Firearms Violations,197,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Public Morals,yrp,Public Morals,172,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Arson,yrp,Arson,151,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Break and Enter - Other,yrp,Break and Enter - Other,69,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Attempt Murder,yrp,Attempt Murder,41,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+occ_type,Homicide,yrp,Homicide,12,catalog_known_categories_json,v1_deferred,high,cat-0090 yrp_community_safety_incidents
+crime_category,Assault,durham-drps,Assault,3103,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Theft from MV,durham-drps,Theft from MV,1397,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Vehicle Theft,durham-drps,Vehicle Theft,1164,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Break & Enter,durham-drps,Break & Enter,1075,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Impaired Operation,durham-drps,Impaired Operation,752,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Robbery,durham-drps,Robbery,267,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Shooting & Firearm Discharge,durham-drps,Shooting & Firearm Discharge,48,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+crime_category,Homicide,durham-drps,Homicide,13,catalog_known_categories_json,v1_deferred,high,cat-0093 durham_master
+DESCRIPTION,ROADSIDE TEST,halton-hrps,ROADSIDE TEST,10332,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,MVC - HIT & RUN,halton-hrps,MVC - HIT & RUN,1946,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,THEFT OF VEHICLE,halton-hrps,THEFT OF VEHICLE,1233,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,MVC - PI,halton-hrps,MVC - PI,1165,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,THEFT FROM AUTO,halton-hrps,THEFT FROM AUTO,1045,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,THEFT UNDER,halton-hrps,THEFT UNDER,1029,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,"PROPERTY DAMAGE UNDER $5,000",halton-hrps,"PROPERTY DAMAGE UNDER $5,000",773,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,BREAK AND ENTER HOUSE,halton-hrps,BREAK AND ENTER HOUSE,524,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,IMPAIRED DRIVING,halton-hrps,IMPAIRED DRIVING,493,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,THEFT OVER,halton-hrps,THEFT OVER,326,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,BREAK AND ENTER OTHER,halton-hrps,BREAK AND ENTER OTHER,228,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,BREAK AND ENTER SHOP,halton-hrps,BREAK AND ENTER SHOP,207,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,RECOVERED VEHICLE OTH SERVICE,halton-hrps,RECOVERED VEHICLE OTH SERVICE,205,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,THEFT OF BICYCLE,halton-hrps,THEFT OF BICYCLE,195,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,ROBBERY,halton-hrps,ROBBERY,155,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,OFFENSIVE WEAPONS,halton-hrps,OFFENSIVE WEAPONS,153,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,FEDERAL STATS - DRUGS,halton-hrps,FEDERAL STATS - DRUGS,115,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,ARSON,halton-hrps,ARSON,48,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,"PROPERTY DAMAGE OVER $5,000",halton-hrps,"PROPERTY DAMAGE OVER $5,000",39,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,DANGEROUS OPERATION - TRAFFIC,halton-hrps,DANGEROUS OPERATION - TRAFFIC,17,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,MVC - FATALITY,halton-hrps,MVC - FATALITY,15,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+DESCRIPTION,BREAK AND ENTER SCHOOL,halton-hrps,BREAK AND ENTER SCHOOL,9,catalog_known_categories_json,v1_deferred,high,cat-0105 halton_crime_map_incidents
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Under or equal to $5000 - FROM Motor Vehicle - NO Damage,hamilton-hps,Theft Under or equal to $5000 - FROM Motor Vehicle - NO Damage,5267,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft - Truck,hamilton-hps,Theft - Truck,3781,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Break and Enter - Business,hamilton-hps,Break and Enter - Business,3161,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Break and Enter - Residence,hamilton-hps,Break and Enter - Residence,2575,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft - Automobile,hamilton-hps,Theft - Automobile,2350,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Under or equal to $5000 - FROM Motor Vehicle - Damage,hamilton-hps,Theft Under or equal to $5000 - FROM Motor Vehicle - Damage,2283,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Break and Enter - Other,hamilton-hps,Break and Enter - Other,969,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery - Business,hamilton-hps,Robbery - Business,269,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Over $5000 - FROM Motor Vehicle - NO Damage,hamilton-hps,Theft Over $5000 - FROM Motor Vehicle - NO Damage,165,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft  - Motorcycle,hamilton-hps,Theft  - Motorcycle,150,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery,hamilton-hps,Robbery,145,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Over $5000 - FROM Motor Vehicle - Damage,hamilton-hps,Theft Over $5000 - FROM Motor Vehicle - Damage,110,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery - Home Invasion,hamilton-hps,Robbery - Home Invasion,104,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Murder 2nd Degree,hamilton-hps,Murder 2nd Degree,20,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Murder 1st Degree,hamilton-hps,Murder 1st Degree,13,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery - Delivery Person,hamilton-hps,Robbery - Delivery Person,5,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",11-95,hamilton-hps,11-95,1,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Destruct/Damage/Vandalize Prop,hamilton-hps,Destruct/Damage/Vandalize Prop,1,catalog_known_categories_json,v1_deferred,high,cat-0107 hamilton_communitycrimemap_raw
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Under or equal to $5000 - FROM Motor Vehicle - NO Damage,hamilton-hps,Theft Under or equal to $5000 - FROM Motor Vehicle - NO Damage,5267,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft - Truck,hamilton-hps,Theft - Truck,3781,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Break and Enter - Business,hamilton-hps,Break and Enter - Business,3161,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Break and Enter - Residence,hamilton-hps,Break and Enter - Residence,2575,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft - Automobile,hamilton-hps,Theft - Automobile,2350,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Under or equal to $5000 - FROM Motor Vehicle - Damage,hamilton-hps,Theft Under or equal to $5000 - FROM Motor Vehicle - Damage,2283,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Break and Enter - Other,hamilton-hps,Break and Enter - Other,969,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery - Business,hamilton-hps,Robbery - Business,269,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Over $5000 - FROM Motor Vehicle - NO Damage,hamilton-hps,Theft Over $5000 - FROM Motor Vehicle - NO Damage,165,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft  - Motorcycle,hamilton-hps,Theft  - Motorcycle,150,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery,hamilton-hps,Robbery,145,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Theft Over $5000 - FROM Motor Vehicle - Damage,hamilton-hps,Theft Over $5000 - FROM Motor Vehicle - Damage,110,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery - Home Invasion,hamilton-hps,Robbery - Home Invasion,104,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Murder 2nd Degree,hamilton-hps,Murder 2nd Degree,20,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Murder 1st Degree,hamilton-hps,Murder 1st Degree,13,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only
+"selected crimeTypes [1,6,7,10,11,16,17]",Robbery - Delivery Person,hamilton-hps,Robbery - Delivery Person,5,catalog_known_categories_json,v1_deferred,high,cat-0108 hamilton_communitycrimemap_hps_only

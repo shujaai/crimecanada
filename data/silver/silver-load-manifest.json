@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-07-02T11:26:16.870Z",
+  "databaseFile": "data/silver/crimecanada-silver.sqlite",
+  "expectedTotalRows": 780385,
+  "actualTotalRows": 780385,
+  "pass": true,
+  "sourcesLoaded": [
+    {
+      "catalog_id": "cat-0075",
+      "jurisdiction_id": "tps",
+      "bronze_table": "bronze__tps__tps_processed_v1__tps_v1_v2_sqlite",
+      "expected_rows": 581393,
+      "rows_in": 581393,
+      "rows_out": 581393,
+      "transform_profile": "tps_processed_v1",
+      "mapping_confidence": "high",
+      "warning_message": ""
+    },
+    {
+      "catalog_id": "cat-0076",
+      "jurisdiction_id": "peel-prp",
+      "bronze_table": "bronze__peel_prp__peel_ecrimes_incidents__peel_prp_ecrimes_2026_07_01_with_geometr",
+      "expected_rows": 82401,
+      "rows_in": 82401,
+      "rows_out": 82401,
+      "transform_profile": "peel_ecrimes_incidents",
+      "mapping_confidence": "high",
+      "warning_message": ""
+    },
+    {
+      "catalog_id": "cat-0090",
+      "jurisdiction_id": "yrp",
+      "bronze_table": "bronze__yrp__yrp_community_safety_incidents__yrp_community_safety_occurrences_2026_07",
+      "expected_rows": 67153,
+      "rows_in": 67153,
+      "rows_out": 67153,
+      "transform_profile": "yrp_community_safety_incidents",
+      "mapping_confidence": "medium",
+      "warning_message": "6746 rows mapped with low confidence"
+    },
+    {
+      "catalog_id": "cat-0093",
+      "jurisdiction_id": "durham-drps",
+      "bronze_table": "bronze__durham_drps__durham_master__durham_drps_avl_odp_crimemap_master_2026",
+      "expected_rows": 7819,
+      "rows_in": 7819,
+      "rows_out": 7819,
+      "transform_profile": "durham_master",
+      "mapping_confidence": "high",
+      "warning_message": ""
+    },
+    {
+      "catalog_id": "cat-0105",
+      "jurisdiction_id": "halton-hrps",
+      "bronze_table": "bronze__halton_hrps__halton_crime_map_incidents__halton_hrps_crime_map_incidents_2026_07_",
+      "expected_rows": 20252,
+      "rows_in": 20252,
+      "rows_out": 20252,
+      "transform_profile": "halton_crime_map_incidents",
+      "mapping_confidence": "medium",
+      "warning_message": "205 rows mapped with low confidence"
+    },
+    {
+      "catalog_id": "cat-0108",
+      "jurisdiction_id": "hamilton-hps",
+      "bronze_table": "bronze__hamilton_hps__hamilton_communitycrimemap_hps_only__hamilton_communitycrimemap_hps_only_2021",
+      "expected_rows": 21367,
+      "rows_in": 21367,
+      "rows_out": 21367,
+      "transform_profile": "hamilton_communitycrimemap_hps_only",
+      "mapping_confidence": "high",
+      "warning_message": ""
+    }
+  ],
+  "excludedSources": [
+    {
+      "catalog_id": "cat-0010",
+      "reason": "TPS raw major-crime CSV; use processed V1 only"
+    },
+    {
+      "catalog_id": "cat-0011",
+      "reason": "TPS raw major-crime CSV; use processed V1 only"
+    },
+    {
+      "catalog_id": "cat-0013",
+      "reason": "TPS raw major-crime CSV; use processed V1 only"
+    },
+    {
+      "catalog_id": "cat-0061",
+      "reason": "TPS raw major-crime CSV; use processed V1 only"
+    },
+    {
+      "catalog_id": "cat-0067",
+      "reason": "TPS raw major-crime CSV; use processed V1 only"
+    },
+    {
+      "catalog_id": "cat-0068",
+      "reason": "TPS raw major-crime CSV; use processed V1 only"
+    },
+    {
+      "catalog_id": "cat-0012",
+      "reason": "TPS deferred raw major-crime CSV"
+    },
+    {
+      "catalog_id": "cat-0031",
+      "reason": "TPS sensitive/deferred raw source"
+    },
+    {
+      "catalog_id": "cat-0037",
+      "reason": "TPS sensitive/deferred raw source"
+    },
+    {
+      "catalog_id": "cat-0049",
+      "reason": "TPS sensitive/deferred raw source"
+    },
+    {
+      "catalog_id": "cat-0073",
+      "reason": "Traffic/collision table excluded from Phase 1 silver"
+    },
+    {
+      "catalog_id": "cat-0077",
+      "reason": "Peel legacy no-geometry CSV; primary with-geometry used"
+    },
+    {
+      "catalog_id": "cat-0092",
+      "reason": "YRP CCTV archive-only"
+    },
+    {
+      "catalog_id": "cat-0094",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0095",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0096",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0097",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0098",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0099",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0100",
+      "reason": "Durham standalone extract; master only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0106",
+      "reason": "Halton GeoJSON mirror; CSV only in Phase 1"
+    },
+    {
+      "catalog_id": "cat-0107",
+      "reason": "Hamilton raw export; HPS-only cleaned used"
+    },
+    {
+      "catalog_id": "cat-0109",
+      "reason": "CrimeMaps benchmark excluded"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "filesCreated": [
+    "data/silver/crimecanada-silver.sqlite",
+    "data/silver/silver-load-manifest.json",
+    "data/silver/SILVER_LOAD_QA_REPORT.md",
+    "data/silver/SILVER_TABLE_COUNTS.csv",
+    "data/silver/SILVER_SAMPLE_QUERIES.sql",
+    "data/silver/SILVER_TAXONOMY_V2_REBUILD_REPORT.md",
+    "scripts/load-silver-database.mjs"
+  ],
+  "taxonomyVersion": "v2_draft",
+  "previousOtherCount": 111664,
+  "targetOtherCount": 12939,
+  "actualOtherCount": 12579
+}

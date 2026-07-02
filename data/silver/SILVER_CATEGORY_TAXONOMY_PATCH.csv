@@ -1,0 +1,109 @@
+source_jurisdiction,source_field,source_label,current_category_family,proposed_category_family,proposed_category_canonical,mapping_confidence,row_count_impacted,reason,public_display_safe,notes
+halton-hrps,DESCRIPTION,ROADSIDE TEST,other,impaired_driving,roadside test,high,10332,Halton roadside screening label maps to impaired driving,yes,Step 6C goal
+peel-prp,OccType,Mischief Over - Property,other,mischief_property_damage,Mischief Over - Property,medium,9782,Peel MIS code / mischief description labels,yes,"13,948+ rows — review before public MVP"
+tps,OFFENCE,Theft Over,other,theft_other,Theft Over,high,9574,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Theft Under $5000 - Shoplifting,other,theft_other,Theft Under $5000 - Shoplifting,high,8439,YRP theft under variants,yes,
+hamilton-hps,Crime,Theft Under or equal to $5000 - FROM Motor Vehicle - NO Damage,other,theft_from_vehicle,theft from motor vehicle,high,5267,Theft from MV labels,yes,
+yrp,occ_type,Mischief To Property,other,mischief_property_damage,Mischief To Property,high,4975,YRP mischief labels,yes,
+yrp,occ_type,Theft Under $5000- Other,other,theft_other,Theft Under $5000- Other,high,4921,YRP theft under variants,yes,
+tps,OFFENCE,Theft From Motor Vehicle Over,other,theft_other,Theft From Motor Vehicle Over,high,3961,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+peel-prp,OccType,Mischief Under - Property,other,mischief_property_damage,Mischief Under - Property,medium,3743,Peel MIS code / mischief description labels,yes,"13,948+ rows — review before public MVP"
+yrp,occ_type,Utter Threats To Person,other,other_criminal_code,other persons crime,low,3339,Catch-all bucket; keep distinct from major families,yes,Manual review
+hamilton-hps,Crime,Break and Enter - Business,other,break_and_enter,break and enter,high,3161,Hamilton B&E labels,yes,
+yrp,occ_type,Possession Under - Property Obtained By Crime,other,other_criminal_code,other property crime,low,2992,Catch-all bucket,yes,Manual review
+hamilton-hps,Crime,Break and Enter - Residence,other,break_and_enter,break and enter,high,2575,Hamilton B&E labels,yes,
+yrp,occ_type,Theft Over $5000 - Vehicle,other,auto_vehicle_theft,Theft Over $5000 - Vehicle,high,2547,YRP theft over vehicle,yes,
+hamilton-hps,Crime,Theft Under or equal to $5000 - FROM Motor Vehicle - Damage,other,theft_from_vehicle,theft from motor vehicle,high,2283,Theft from MV labels,yes,
+yrp,occ_type,Theft Under $5000 - From Motor Vehicle,other,theft_other,Theft Under $5000 - From Motor Vehicle,high,1953,YRP theft under variants,yes,
+halton-hrps,DESCRIPTION,MVC - HIT & RUN,other,traffic_collisions,motor vehicle collision,high,1946,MVC labels are traffic collisions not generic crime,yes,
+yrp,occ_type,Break and Enter  - Residential,other,break_and_enter,break and enter,high,1934,YRP break and enter label variant,yes,
+tps,OFFENCE,Theft From Mail / Bag / Key,other,theft_other,Theft From Mail / Bag / Key,high,1725,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Impaired Alcohol / Over 80 Mgs,other,impaired_driving,Impaired Alcohol / Over 80 Mgs,high,1412,YRP impaired driving labels,yes,
+halton-hrps,DESCRIPTION,THEFT OF VEHICLE,other,auto_vehicle_theft,theft of vehicle,high,1233,Vehicle theft,yes,
+yrp,occ_type,Criminal Harassment,other,other_criminal_code,other persons crime,low,1187,Catch-all bucket; keep distinct from major families,yes,Manual review
+halton-hrps,DESCRIPTION,MVC - PI,other,traffic_collisions,motor vehicle collision,high,1165,MVC labels are traffic collisions not generic crime,yes,
+yrp,occ_type,Harassing / Indecent Communications,other,other_criminal_code,other persons crime,low,1153,Catch-all bucket; keep distinct from major families,yes,Manual review
+durham-drps,crime_category,Break & Enter,other,break_and_enter,break and enter,high,1075,Durham master B&E label,yes,Loader regex miss + taxonomy placeholder family
+yrp,occ_type,Break and Enter  - Commercial,other,break_and_enter,break and enter,high,1054,YRP break and enter label variant,yes,
+halton-hrps,DESCRIPTION,THEFT FROM AUTO,other,theft_from_vehicle,theft from auto,high,1045,Theft from vehicle,yes,
+halton-hrps,DESCRIPTION,THEFT UNDER,other,theft_other,theft other,high,1029,Theft labels outside major Phase 1 families,yes,
+hamilton-hps,Crime,Break and Enter - Other,other,break_and_enter,break and enter,high,969,Hamilton B&E labels,yes,
+yrp,occ_type,Missing Person-Adult,other,missing_person,missing person,high,935,YRP missing person,yes,
+tps,OFFENCE,Theft Over - Shoplifting,other,theft_other,Theft Over - Shoplifting,high,826,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Theft Over $5000 - Other,other,theft_other,Theft Over $5000 - Other,high,784,YRP theft over variants,yes,
+halton-hrps,DESCRIPTION,"PROPERTY DAMAGE UNDER $5,000",other,mischief_property_damage,property damage,high,773,Property damage is mischief/property damage family,yes,
+durham-drps,crime_category,Impaired Operation,other,impaired_driving,impaired operation,high,752,Durham impaired operation,yes,
+yrp,occ_type,Missing Person-Youth,other,missing_person,missing person,high,665,YRP missing person,yes,
+halton-hrps,DESCRIPTION,BREAK AND ENTER HOUSE,other,break_and_enter,break and enter,high,524,B&E variants,yes,
+yrp,occ_type,Other Persons Crime,other,other_criminal_code,other persons crime,low,504,Catch-all bucket; keep distinct from major families,yes,Manual review
+halton-hrps,DESCRIPTION,IMPAIRED DRIVING,other,impaired_driving,impaired driving,high,493,Impaired driving,yes,
+yrp,occ_type,Weapons Possession Of Other,other,weapons,weapons violations,high,473,YRP weapons,yes,
+yrp,occ_type,Trafficking Stolen Goods Over $5000,other,other_criminal_code,other property crime,low,470,Catch-all bucket,yes,Manual review
+tps,OFFENCE,Theft Over - Distraction,other,theft_other,Theft Over - Distraction,high,430,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Possession Over - Property Obtained By Crime,other,other_criminal_code,other property crime,low,405,Catch-all bucket,yes,Manual review
+yrp,occ_type,Theft Under $5000 - Bicycle,other,theft_other,Theft Under $5000 - Bicycle,high,398,YRP theft under variants,yes,
+yrp,occ_type,Extortion,other,other_criminal_code,other persons crime,low,391,Catch-all bucket; keep distinct from major families,yes,Manual review
+yrp,occ_type,Disguise With Intent,other,other_criminal_code,other criminal code,low,349,Catch-all bucket,yes,Manual review
+yrp,occ_type,Trespass To Property Act,other,other,provincial offences,low,338,Provincial not Criminal Code; remain other,yes,Manual review
+halton-hrps,DESCRIPTION,THEFT OVER,other,theft_other,theft other,high,326,Theft labels outside major Phase 1 families,yes,
+yrp,occ_type,Utter Threats to Property / Animals,other,other_criminal_code,other criminal code,low,299,Catch-all bucket,yes,Manual review
+peel-prp,OccType,Mischief/(Non-Physical) Property,other,mischief_property_damage,Mischief/(Non-Physical) Property,medium,292,Peel MIS code / mischief description labels,yes,"13,948+ rows — review before public MVP"
+halton-hrps,DESCRIPTION,BREAK AND ENTER OTHER,other,break_and_enter,break and enter,high,228,B&E variants,yes,
+tps,OFFENCE,Theft Over - Bicycle,other,theft_other,Theft Over - Bicycle,high,219,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Theft Over $5000 - From Motor Vehicle,other,auto_vehicle_theft,Theft Over $5000 - From Motor Vehicle,high,212,YRP theft over vehicle,yes,
+halton-hrps,DESCRIPTION,BREAK AND ENTER SHOP,other,break_and_enter,break and enter,high,207,B&E variants,yes,
+halton-hrps,DESCRIPTION,RECOVERED VEHICLE OTH SERVICE,other,other,recovered vehicle other service,low,205,Admin/recovery label; keep other,yes,Manual review — not a crime type
+halton-hrps,DESCRIPTION,THEFT OF BICYCLE,other,theft_other,theft other,high,195,Theft labels outside major Phase 1 families,yes,
+yrp,occ_type,Liquor - Other Offences,other,other,provincial offences,low,190,Provincial not Criminal Code; remain other,yes,Manual review
+yrp,occ_type,Public Mischief,other,mischief_property_damage,Public Mischief,high,185,YRP mischief labels,yes,
+yrp,occ_type,Public Morals,other,other_criminal_code,public morals,low,172,Broad label,yes,Manual review
+hamilton-hps,Crime,Theft Over $5000 - FROM Motor Vehicle - NO Damage,other,theft_from_vehicle,theft from motor vehicle,high,165,Theft from MV labels,yes,
+yrp,occ_type,Mischief - Obstruct / Interrupts / Interferes,other,mischief_property_damage,Mischief - Obstruct / Interrupts / Interferes,high,161,YRP mischief labels,yes,
+yrp,occ_type,Liquor - Intoxicated,other,other,provincial offences,low,158,Provincial not Criminal Code; remain other,yes,Manual review
+halton-hrps,DESCRIPTION,OFFENSIVE WEAPONS,other,weapons,offensive weapons,high,153,Explicit weapons label,yes,
+yrp,occ_type,Mischief To Property - Graffiti,other,mischief_property_damage,Mischief To Property - Graffiti,high,153,YRP mischief labels,yes,
+halton-hrps,DESCRIPTION,FEDERAL STATS - DRUGS,other,drugs,federal stats drugs,high,115,Drug stats label,yes,
+hamilton-hps,Crime,Theft Over $5000 - FROM Motor Vehicle - Damage,other,theft_from_vehicle,theft from motor vehicle,high,110,Theft from MV labels,yes,
+yrp,occ_type,Theft Over $5000 - Shoplifting,other,theft_other,Theft Over $5000 - Shoplifting,high,106,YRP theft over variants,yes,
+yrp,occ_type,Possession of Break and Enter Instruments,other,other_criminal_code,other criminal code,low,101,Catch-all bucket,yes,Manual review
+yrp,occ_type,Trespass By Night,other,other_criminal_code,other criminal code,low,96,Catch-all bucket,yes,Manual review
+yrp,occ_type,Mischief - Religious Property - Hate,other,mischief_property_damage,Mischief - Religious Property - Hate,high,91,YRP mischief labels,yes,
+yrp,occ_type,Theft Over $5000 - Take Vehicle Without Consent,other,auto_vehicle_theft,Theft Over $5000 - Take Vehicle Without Consent,high,91,YRP theft over vehicle,yes,
+yrp,occ_type,Assaults - Other,other,assault,assault,high,81,YRP assaults,yes,
+yrp,occ_type,Proceeds Of Crime,other,other_criminal_code,other criminal code,low,77,Catch-all bucket,yes,Manual review
+yrp,occ_type,Theft Under $5000 - Vehicle,other,theft_other,Theft Under $5000 - Vehicle,high,70,YRP theft under variants,yes,
+peel-prp,OccType,Cybercrime - Mischief to Data/Ransomware/Malware - Denial of Service/Webpage Defacement,other,mischief_property_damage,Cybercrime - Mischief to Data/Ransomware/Malware - Denial of Service/Webpage Defacement,medium,65,Peel MIS code / mischief description labels,yes,"13,948+ rows — review before public MVP"
+yrp,occ_type,Firearms / Other Offensive Weapons,other,other_criminal_code,other criminal code,low,58,Catch-all bucket,yes,Manual review
+tps,OFFENCE,Theft - Misapprop Funds Over,other,theft_other,Theft - Misapprop Funds Over,high,47,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Weapons - Possession Contrary To Order,other,weapons,weapons violations,high,44,YRP weapons,yes,
+yrp,occ_type,Weapons - Unsafe Storage,other,weapons,weapons violations,high,44,YRP weapons,yes,
+halton-hrps,DESCRIPTION,"PROPERTY DAMAGE OVER $5,000",other,mischief_property_damage,property damage,high,39,Property damage is mischief/property damage family,yes,
+yrp,occ_type,Personate Peace Officer,other,other_criminal_code,other criminal code,low,37,Catch-all bucket,yes,Manual review
+yrp,occ_type,Mischief - Conceal / Corrupt Data,other,mischief_property_damage,Mischief - Conceal / Corrupt Data,high,25,YRP mischief labels,yes,
+yrp,occ_type,Escape Custody,other,other_criminal_code,other criminal code,low,19,Catch-all bucket,yes,Manual review
+halton-hrps,DESCRIPTION,DANGEROUS OPERATION - TRAFFIC,other,traffic_collisions,dangerous operation traffic,medium,17,Traffic-related dangerous operation,yes,Could also be impaired_driving; review if needed
+yrp,occ_type,Mischief To Property - Election Sign,other,mischief_property_damage,Mischief To Property - Election Sign,high,17,YRP mischief labels,yes,
+halton-hrps,DESCRIPTION,MVC - FATALITY,other,traffic_collisions,motor vehicle collision,high,15,MVC labels are traffic collisions not generic crime,yes,
+yrp,occ_type,Weapons - Trafficking,other,weapons,weapons violations,high,14,YRP weapons,yes,
+yrp,occ_type,Break and Enter  - Schools,other,break_and_enter,break and enter,high,11,YRP break and enter label variant,yes,
+yrp,occ_type,Trafficking Stolen Goods Under $5000,other,other_criminal_code,other property crime,low,11,Catch-all bucket,yes,Manual review
+yrp,occ_type,Operation While Impaired Unspecified,other,impaired_driving,Operation While Impaired Unspecified,high,10,YRP impaired driving labels,yes,
+halton-hrps,DESCRIPTION,BREAK AND ENTER SCHOOL,other,break_and_enter,break and enter,high,9,B&E variants,yes,
+yrp,occ_type,Other Gaming / Betting - Other,other,other_criminal_code,other criminal code,low,9,Catch-all bucket,yes,Manual review
+peel-prp,OccType,Hate Motivated Mischief Relating to Property Used By Identifiable Group,other,mischief_property_damage,Hate Motivated Mischief Relating to Property Used By Identifiable Group,medium,8,Peel MIS code / mischief description labels,yes,"13,948+ rows — review before public MVP"
+tps,OFFENCE,Theft Of Utilities Over,other,theft_other,Theft Of Utilities Over,high,8,TPS V1 theft-over dataset excluded from major crime families,yes,Reclassify from generic other to theft_other
+yrp,occ_type,Mischief - Wilfully Act / Wilfully Omits To Act,other,mischief_property_damage,Mischief - Wilfully Act / Wilfully Omits To Act,high,8,YRP mischief labels,yes,
+yrp,occ_type,Theft Over $5000 - Bicycle,other,theft_other,Theft Over $5000 - Bicycle,high,8,YRP theft over variants,yes,
+yrp,occ_type,Gaming House - Keeper,other,other_criminal_code,other criminal code,low,7,Catch-all bucket,yes,Manual review
+yrp,occ_type,Criminal Negligence Cause Bodily Harm,other,assault,assault,high,5,YRP assaults,yes,
+yrp,occ_type,Gaming House - Found In,other,other_criminal_code,other criminal code,low,5,Catch-all bucket,yes,Manual review
+yrp,occ_type,Prisoner Unlawfully At Large,other,other_criminal_code,other criminal code,low,4,Catch-all bucket,yes,Manual review
+yrp,occ_type,Weapons - Firearms Documents / Admininstation,other,weapons,weapons violations,high,4,YRP weapons,yes,
+yrp,occ_type,Theft Under $5000 - Take Vehicle Without Consent,other,theft_other,Theft Under $5000 - Take Vehicle Without Consent,high,3,YRP theft under variants,yes,
+yrp,occ_type,Theft Under $5000- Election Sign,other,theft_other,Theft Under $5000- Election Sign,high,3,YRP theft under variants,yes,
+yrp,occ_type,Weapons -Import / Export,other,weapons,weapons violations,high,3,YRP weapons,yes,
+peel-prp,OccType,Mischief in relation to cultural property,other,mischief_property_damage,Mischief in relation to cultural property,medium,2,Peel MIS code / mischief description labels,yes,"13,948+ rows — review before public MVP"
+yrp,occ_type,Impaired Alcohol Cause Bodily Harm / Over 80,other,impaired_driving,Impaired Alcohol Cause Bodily Harm / Over 80,high,2,YRP impaired driving labels,yes,
+yrp,occ_type,Incite Hatred,other,other_criminal_code,other criminal code,low,2,Catch-all bucket,yes,Manual review
+yrp,occ_type,Other Gaming / Betting - Lotteries,other,other_criminal_code,other criminal code,low,1,Catch-all bucket,yes,Manual review
+yrp,occ_type,Weapons-Explosives Possession,other,weapons,weapons violations,high,1,YRP weapons,yes,

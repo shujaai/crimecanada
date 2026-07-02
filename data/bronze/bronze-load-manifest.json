@@ -1,0 +1,1513 @@
+{
+  "generatedAt": "2026-07-02T07:42:02.479Z",
+  "databaseFile": "data/bronze/crimecanada-bronze.sqlite",
+  "catalogFile": "data/DATA_COLLECTION_MASTER_CATALOG.csv",
+  "candidateRows": 107,
+  "loadedRows": 107,
+  "skippedCount": 0,
+  "errorCount": 0,
+  "tableCounts": [
+    {
+      "table": "bronze__tps__tps_aggregate__2008_firs_2679553021179060779_csv",
+      "rows": 323457
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__2009_firs_5907723437875695368_csv",
+      "rows": 344981
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__2010_firs_2517232609472490769_csv",
+      "rows": 373297
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__2011_firs_4422831101139071978_csv",
+      "rows": 386315
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__2012_firs_7370968145260043353_csv",
+      "rows": 404293
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__2013_firs_8501434035380412761_csv",
+      "rows": 189564
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__automobile_ksi_3713167661214258977_csv",
+      "rows": 17230
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__administrative_asr_ad_tbl_001_1478935144",
+      "rows": 416
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__arrested_and_charged_persons_asr_enf_tbl",
+      "rows": 163738
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__assault_open_data_4176353985444773481_cs",
+      "rows": 254378
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__auto_theft_open_data_4481082360476864088",
+      "rows": 78714
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__bicycle_thefts_open_data_891999917589377",
+      "rows": 39969
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__break_and_enter_open_data_91987683163494",
+      "rows": 84689
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2020_8087021416505284746_csv",
+      "rows": 7682
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2021_2456030383083920061_csv",
+      "rows": 6032
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2022_2655320733178210418_csv",
+      "rows": 9594
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2023_1284559222086023539_csv",
+      "rows": 15378
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2024_1_csv",
+      "rows": 16266
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2024_csv",
+      "rows": 7689
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2025_csv",
+      "rows": 8133
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_2026_csv",
+      "rows": 8133
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__budget_by_command_csv",
+      "rows": 1273
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__cyclist_ksi_6778972150312286022_csv",
+      "rows": 1986
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__calls_for_service_attended_asr_cs_tbl_00",
+      "rows": 5399
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__complaint_dispositions_asr_pcf_tbl_003_5",
+      "rows": 133
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__dispatched_calls_by_division_asr_cs_tbl_",
+      "rows": 152
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__fatals_ksi_1591277964987434465_csv",
+      "rows": 976
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__firearms_top_calibres_asr_f_tbl_001_5421",
+      "rows": 203
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__gross_expenditures_by_division_asr_pb_tb",
+      "rows": 176
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__gross_operating_budget_asr_pb_tbl_005_19",
+      "rows": 140
+    },
+    {
+      "table": "bronze__tps__tps_sensitive_incident__hate_crime_open_data_1768225117781365955",
+      "rows": 2041
+    },
+    {
+      "table": "bronze__tps__tps_sensitive_incident__homicides_open_data_asr_rc_tbl_002_83690",
+      "rows": 1531
+    },
+    {
+      "table": "bronze__tps__tps_sensitive_incident__homicides_open_data_asr_rc_tbl_002_83690",
+      "rows": 1531
+    },
+    {
+      "table": "bronze__tps__tps_sensitive_incident__intimate_partner_and_family_violence_ope",
+      "rows": 190723
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__investigated_alleged_misconduct_asr_pcf_",
+      "rows": 170
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__motorcyclist_ksi_5609304537475892552_csv",
+      "rows": 1684
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_combined__major_crime_indicators_open_data_csv",
+      "rows": 474819
+    },
+    {
+      "table": "bronze__tps__tps_sensitive_incident__mental_health_act_apprehensions_open_dat",
+      "rows": 134457
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__miscellaneous_calls_for_service_asr_cs_t",
+      "rows": 296
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__miscellaneous_data_asr_misc_tbl_001_2360",
+      "rows": 270
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__miscellaneous_firearms_asr_f_tbl_003_571",
+      "rows": 594
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__neighbourhood_crime_rates_open_data_5187",
+      "rows": 158
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__passenger_ksi_3578422465060491855_csv",
+      "rows": 7183
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__pedestrian_ksi_3654470648591023106_csv",
+      "rows": 7688
+    },
+    {
+      "table": "bronze__tps__tps_reference_geography__patrol_zone_3288783031102167883_csv",
+      "rows": 76
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__personnel_by_command_asr_pb_tbl_004_8734",
+      "rows": 70
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__personnel_by_rank_asr_pb_tbl_002_4327912",
+      "rows": 250
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__personnel_by_rank_by_division_asr_pb_tbl",
+      "rows": 1582
+    },
+    {
+      "table": "bronze__tps__tps_calls_for_service__persons_in_crisis_calls_for_service_atte",
+      "rows": 357697
+    },
+    {
+      "table": "bronze__tps__tps_reference_geography__police_facilities_6911054687584621728_cs",
+      "rows": 26
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_arr_tbl_001_4032986751229720343_csv",
+      "rows": 65276
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_001_8718036773732049598_csv",
+      "rows": 48
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_002_2114656744363348377_csv",
+      "rows": 80
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_003_7983536065313291159_csv",
+      "rows": 272
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_004_3558409208154542082_csv",
+      "rows": 176
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_005_1242716001725294161_csv",
+      "rows": 208
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_006_4119402934590759753_csv",
+      "rows": 48
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_007_8618837934118874435_csv",
+      "rows": 64
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__regulated_interactions_asr_ri_tbl_001_39",
+      "rows": 110
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__reported_crimes_asr_rc_tbl_001_308964798",
+      "rows": 40390
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__robbery_open_data_2226832258065309099_cs",
+      "rows": 40248
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__search_of_persons_asr_sp_tbl_001_4815884",
+      "rows": 201
+    },
+    {
+      "table": "bronze__tps__tps_sensitive_incident__shooting_and_firearm_discharges_open_dat",
+      "rows": 6829
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__staffing_by_command_csv",
+      "rows": 307
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__total_ksi_4115794401574937330_csv",
+      "rows": 18957
+    },
+    {
+      "table": "bronze__tps__tps_reference_geography__tps_police_divisions_3160015003731132608",
+      "rows": 16
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__theft_from_motor_vehicle_open_data_46368",
+      "rows": 106574
+    },
+    {
+      "table": "bronze__tps__tps_major_crime_v1__theft_over_open_data_309556416197554984_",
+      "rows": 16790
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__tickets_issued_asr_enf_tbl_002_631264770",
+      "rows": 31643
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__top_20_offences_of_firearm_seizures_asr_",
+      "rows": 243
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__total_public_complaints_asr_pcf_tbl_001_",
+      "rows": 180
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__traffic_collisions_open_data_81287304025",
+      "rows": 809034
+    },
+    {
+      "table": "bronze__tps__tps_traffic_ksi__traffic_collisions_open_data_81287304025",
+      "rows": 809034
+    },
+    {
+      "table": "bronze__tps__tps_aggregate__victims_of_crime_asr_vc_tbl_001_31141937",
+      "rows": 1384
+    },
+    {
+      "table": "bronze__tps__tps_processed_v1__tps_v1_v2_sqlite",
+      "rows": 581393
+    },
+    {
+      "table": "bronze__peel_prp__peel_ecrimes_incidents__peel_prp_ecrimes_2026_07_01_with_geometr",
+      "rows": 82401
+    },
+    {
+      "table": "bronze__peel_prp__peel_ecrimes_legacy__peel_prp_ecrimes_2026_07_01_no_geometry_",
+      "rows": 82401
+    },
+    {
+      "table": "bronze__peel_prp__peel_reference_geography__peeldivisions_geojson",
+      "rows": 5
+    },
+    {
+      "table": "bronze__peel_prp__peel_reference_geography__peelpatrolz_geojson",
+      "rows": 92
+    },
+    {
+      "table": "bronze__peel_prp__peel_reference_geography__peelwards_geojson",
+      "rows": 21
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_asl_hotspot_geojson",
+      "rows": 24
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_bne_hotspot_geojson",
+      "rows": 18
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_drp_hotspot_geojson",
+      "rows": 19
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_drt_hotspot_geojson",
+      "rows": 18
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_fra_hotspot_geojson",
+      "rows": 22
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_hom_hotspot_geojson",
+      "rows": 7
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_mis_hotspot_geojson",
+      "rows": 23
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_rob_hotspot_geojson",
+      "rows": 21
+    },
+    {
+      "table": "bronze__peel_prp__peel_hotspots_overlay__2025_veh_hotspot_geojson",
+      "rows": 21
+    },
+    {
+      "table": "bronze__yrp__yrp_community_safety_incidents__yrp_community_safety_occurrences_2026_07",
+      "rows": 67153
+    },
+    {
+      "table": "bronze__yrp__yrp_reference_geography__yrp_municipalities_geojson",
+      "rows": 9
+    },
+    {
+      "table": "bronze__durham_drps__durham_master__durham_drps_avl_odp_crimemap_master_2026",
+      "rows": 7819
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_assault_open_data_2026_07_01",
+      "rows": 16157
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_auto_theft_open_data_2026_07",
+      "rows": 6411
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_bne_open_data_2026_07_01_csv",
+      "rows": 7315
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_drug_violations_open_data_20",
+      "rows": 3698
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_firearm_shooting_open_data_2",
+      "rows": 258
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_robbery_open_data_2026_07_01",
+      "rows": 1538
+    },
+    {
+      "table": "bronze__durham_drps__durham_standalone_extract__durham_drps_theft_over_5000_open_data_20",
+      "rows": 1408
+    },
+    {
+      "table": "bronze__durham_drps__durham_traffic_collisions__durham_drps_traffic_collision_open_data_",
+      "rows": 63790
+    },
+    {
+      "table": "bronze__durham_drps__durham_reference_geography__durham_drps_divisions_2015_2026_07_01_ge",
+      "rows": 5
+    },
+    {
+      "table": "bronze__durham_drps__durham_reference_geography__durham_drps_health_neighbourhoods_2026_0",
+      "rows": 50
+    },
+    {
+      "table": "bronze__durham_drps__durham_reference_geography__durham_drps_zones_2015_2026_07_01_geojso",
+      "rows": 22
+    },
+    {
+      "table": "bronze__halton_hrps__halton_crime_map_incidents__halton_hrps_crime_map_incidents_2026_07_",
+      "rows": 20252
+    },
+    {
+      "table": "bronze__halton_hrps__halton_crime_map_incidents_geojson__halton_hrps_crime_map_incidents_2026_07_",
+      "rows": 20252
+    },
+    {
+      "table": "bronze__hamilton_hps__hamilton_communitycrimemap_raw__hamilton_communitycrimemap_2000_to_2026_",
+      "rows": 21369
+    },
+    {
+      "table": "bronze__hamilton_hps__hamilton_communitycrimemap_hps_only__hamilton_communitycrimemap_hps_only_2021",
+      "rows": 21367
+    }
+  ],
+  "skipped": [],
+  "errors": [],
+  "entries": [
+    {
+      "catalog_id": "cat-0001",
+      "jurisdiction_id": "tps",
+      "source_file": "2008_FIRS_-2679553021179060779.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/2008_FIRS_-2679553021179060779.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__2008_firs_2679553021179060779_csv",
+      "rows_loaded": 323457,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0002",
+      "jurisdiction_id": "tps",
+      "source_file": "2009_FIRS_-5907723437875695368.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/2009_FIRS_-5907723437875695368.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__2009_firs_5907723437875695368_csv",
+      "rows_loaded": 344981,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0003",
+      "jurisdiction_id": "tps",
+      "source_file": "2010_FIRS_-2517232609472490769.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/2010_FIRS_-2517232609472490769.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__2010_firs_2517232609472490769_csv",
+      "rows_loaded": 373297,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0004",
+      "jurisdiction_id": "tps",
+      "source_file": "2011_FIRS_-4422831101139071978.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/2011_FIRS_-4422831101139071978.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__2011_firs_4422831101139071978_csv",
+      "rows_loaded": 386315,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0005",
+      "jurisdiction_id": "tps",
+      "source_file": "2012_FIRS_7370968145260043353.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/2012_FIRS_7370968145260043353.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__2012_firs_7370968145260043353_csv",
+      "rows_loaded": 404293,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0006",
+      "jurisdiction_id": "tps",
+      "source_file": "2013_FIRS_8501434035380412761.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/2013_FIRS_8501434035380412761.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__2013_firs_8501434035380412761_csv",
+      "rows_loaded": 189564,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0007",
+      "jurisdiction_id": "tps",
+      "source_file": "AUTOMOBILE_KSI_-3713167661214258977.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/AUTOMOBILE_KSI_-3713167661214258977.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__automobile_ksi_3713167661214258977_csv",
+      "rows_loaded": 17230,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0008",
+      "jurisdiction_id": "tps",
+      "source_file": "Administrative_(ASR_AD_TBL_001)_1478935144902378667.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Administrative_(ASR_AD_TBL_001)_1478935144902378667.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__administrative_asr_ad_tbl_001_1478935144",
+      "rows_loaded": 416,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0009",
+      "jurisdiction_id": "tps",
+      "source_file": "Arrested_and_Charged_Persons_(ASR_ENF_TBL_001)_548544473732615405.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Arrested_and_Charged_Persons_(ASR_ENF_TBL_001)_548544473732615405.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__arrested_and_charged_persons_asr_enf_tbl",
+      "rows_loaded": 163738,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0010",
+      "jurisdiction_id": "tps",
+      "source_file": "Assault_Open_Data_4176353985444773481.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Assault_Open_Data_4176353985444773481.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__assault_open_data_4176353985444773481_cs",
+      "rows_loaded": 254378,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0011",
+      "jurisdiction_id": "tps",
+      "source_file": "Auto_Theft_Open_Data_4481082360476864088.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Auto_Theft_Open_Data_4481082360476864088.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__auto_theft_open_data_4481082360476864088",
+      "rows_loaded": 78714,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0012",
+      "jurisdiction_id": "tps",
+      "source_file": "Bicycle_Thefts_Open_Data_-8919999175893776292.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Bicycle_Thefts_Open_Data_-8919999175893776292.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__bicycle_thefts_open_data_891999917589377",
+      "rows_loaded": 39969,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0013",
+      "jurisdiction_id": "tps",
+      "source_file": "Break_and_Enter_Open_Data_9198768316349412680.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Break_and_Enter_Open_Data_9198768316349412680.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__break_and_enter_open_data_91987683163494",
+      "rows_loaded": 84689,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0014",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2020_8087021416505284746.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2020_8087021416505284746.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2020_8087021416505284746_csv",
+      "rows_loaded": 7682,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0015",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2021_2456030383083920061.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2021_2456030383083920061.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2021_2456030383083920061_csv",
+      "rows_loaded": 6032,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0016",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2022_-2655320733178210418.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2022_-2655320733178210418.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2022_2655320733178210418_csv",
+      "rows_loaded": 9594,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0017",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2023_1284559222086023539.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2023_1284559222086023539.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2023_1284559222086023539_csv",
+      "rows_loaded": 15378,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0018",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2024 (1).csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2024 (1).csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2024_1_csv",
+      "rows_loaded": 16266,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0019",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2024.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2024.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2024_csv",
+      "rows_loaded": 7689,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0020",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2025.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2025.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2025_csv",
+      "rows_loaded": 8133,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0021",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_2026.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_2026.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_2026_csv",
+      "rows_loaded": 8133,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0022",
+      "jurisdiction_id": "tps",
+      "source_file": "Budget_by_Command.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Budget_by_Command.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__budget_by_command_csv",
+      "rows_loaded": 1273,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0023",
+      "jurisdiction_id": "tps",
+      "source_file": "CYCLIST_KSI_6778972150312286022.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/CYCLIST_KSI_6778972150312286022.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__cyclist_ksi_6778972150312286022_csv",
+      "rows_loaded": 1986,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0024",
+      "jurisdiction_id": "tps",
+      "source_file": "Calls_for_Service_Attended_(ASR_CS_TBL_003)_8360330772672605309.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Calls_for_Service_Attended_(ASR_CS_TBL_003)_8360330772672605309.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__calls_for_service_attended_asr_cs_tbl_00",
+      "rows_loaded": 5399,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0025",
+      "jurisdiction_id": "tps",
+      "source_file": "Complaint_Dispositions_(ASR_PCF_TBL_003)_-5877412472568242550.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Complaint_Dispositions_(ASR_PCF_TBL_003)_-5877412472568242550.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__complaint_dispositions_asr_pcf_tbl_003_5",
+      "rows_loaded": 133,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0026",
+      "jurisdiction_id": "tps",
+      "source_file": "Dispatched_Calls_by_Division_(ASR_CS_TBL_001)_-2648219355645136891.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Dispatched_Calls_by_Division_(ASR_CS_TBL_001)_-2648219355645136891.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__dispatched_calls_by_division_asr_cs_tbl_",
+      "rows_loaded": 152,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0027",
+      "jurisdiction_id": "tps",
+      "source_file": "FATALS_KSI_1591277964987434465.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/FATALS_KSI_1591277964987434465.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__fatals_ksi_1591277964987434465_csv",
+      "rows_loaded": 976,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0028",
+      "jurisdiction_id": "tps",
+      "source_file": "Firearms_Top_Calibres_(ASR_F_TBL_001)_-5421012277072395013.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Firearms_Top_Calibres_(ASR_F_TBL_001)_-5421012277072395013.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__firearms_top_calibres_asr_f_tbl_001_5421",
+      "rows_loaded": 203,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0029",
+      "jurisdiction_id": "tps",
+      "source_file": "Gross_Expenditures_by_Division_(ASR_PB_TBL_001)_3825889777885479982.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Gross_Expenditures_by_Division_(ASR_PB_TBL_001)_3825889777885479982.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__gross_expenditures_by_division_asr_pb_tb",
+      "rows_loaded": 176,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0030",
+      "jurisdiction_id": "tps",
+      "source_file": "Gross_Operating_Budget_(ASR_PB_TBL_005)_-1923772532052292360.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Gross_Operating_Budget_(ASR_PB_TBL_005)_-1923772532052292360.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__gross_operating_budget_asr_pb_tbl_005_19",
+      "rows_loaded": 140,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0031",
+      "jurisdiction_id": "tps",
+      "source_file": "HATE_CRIME_OPEN_DATA_-1768225117781365955.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/HATE_CRIME_OPEN_DATA_-1768225117781365955.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_sensitive_incident__hate_crime_open_data_1768225117781365955",
+      "rows_loaded": 2041,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0032",
+      "jurisdiction_id": "tps",
+      "source_file": "Homicides_Open_Data_ASR_RC_TBL_002_8369086210015881422 (1).csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Homicides_Open_Data_ASR_RC_TBL_002_8369086210015881422 (1).csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_sensitive_incident__homicides_open_data_asr_rc_tbl_002_83690",
+      "rows_loaded": 1531,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0033",
+      "jurisdiction_id": "tps",
+      "source_file": "Homicides_Open_Data_ASR_RC_TBL_002_8369086210015881422.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Homicides_Open_Data_ASR_RC_TBL_002_8369086210015881422.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_sensitive_incident__homicides_open_data_asr_rc_tbl_002_83690",
+      "rows_loaded": 1531,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0034",
+      "jurisdiction_id": "tps",
+      "source_file": "Intimate_Partner_and_Family_Violence_open_data_-3830886989670353627.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Intimate_Partner_and_Family_Violence_open_data_-3830886989670353627.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_sensitive_incident__intimate_partner_and_family_violence_ope",
+      "rows_loaded": 190723,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0035",
+      "jurisdiction_id": "tps",
+      "source_file": "Investigated_Alleged_Misconduct_(ASR_PCF_TBL_002)_-2085696945410791167.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Investigated_Alleged_Misconduct_(ASR_PCF_TBL_002)_-2085696945410791167.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__investigated_alleged_misconduct_asr_pcf_",
+      "rows_loaded": 170,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0036",
+      "jurisdiction_id": "tps",
+      "source_file": "MOTORCYCLIST_KSI_5609304537475892552.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/MOTORCYCLIST_KSI_5609304537475892552.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__motorcyclist_ksi_5609304537475892552_csv",
+      "rows_loaded": 1684,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0037",
+      "jurisdiction_id": "tps",
+      "source_file": "Major_Crime_Indicators_Open_Data.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Major_Crime_Indicators_Open_Data.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_combined__major_crime_indicators_open_data_csv",
+      "rows_loaded": 474819,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0038",
+      "jurisdiction_id": "tps",
+      "source_file": "Mental_Health_Act_Apprehensions_Open_Data_6462585705434383286.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Mental_Health_Act_Apprehensions_Open_Data_6462585705434383286.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_sensitive_incident__mental_health_act_apprehensions_open_dat",
+      "rows_loaded": 134457,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0039",
+      "jurisdiction_id": "tps",
+      "source_file": "Miscellaneous_Calls_for_Service_(ASR_CS_TBL_002)_-4714122475863368795.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Miscellaneous_Calls_for_Service_(ASR_CS_TBL_002)_-4714122475863368795.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__miscellaneous_calls_for_service_asr_cs_t",
+      "rows_loaded": 296,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0040",
+      "jurisdiction_id": "tps",
+      "source_file": "Miscellaneous_Data_(ASR_MISC_TBL_001)_2360693627772460444.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Miscellaneous_Data_(ASR_MISC_TBL_001)_2360693627772460444.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__miscellaneous_data_asr_misc_tbl_001_2360",
+      "rows_loaded": 270,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0041",
+      "jurisdiction_id": "tps",
+      "source_file": "Miscellaneous_Firearms_(ASR_F_TBL_003)_5714712306071097312.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Miscellaneous_Firearms_(ASR_F_TBL_003)_5714712306071097312.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__miscellaneous_firearms_asr_f_tbl_003_571",
+      "rows_loaded": 594,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0042",
+      "jurisdiction_id": "tps",
+      "source_file": "Neighbourhood_Crime_Rates_Open_Data_5187007239983414201.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Neighbourhood_Crime_Rates_Open_Data_5187007239983414201.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__neighbourhood_crime_rates_open_data_5187",
+      "rows_loaded": 158,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0043",
+      "jurisdiction_id": "tps",
+      "source_file": "PASSENGER_KSI_3578422465060491855.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/PASSENGER_KSI_3578422465060491855.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__passenger_ksi_3578422465060491855_csv",
+      "rows_loaded": 7183,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0044",
+      "jurisdiction_id": "tps",
+      "source_file": "PEDESTRIAN_KSI_3654470648591023106.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/PEDESTRIAN_KSI_3654470648591023106.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__pedestrian_ksi_3654470648591023106_csv",
+      "rows_loaded": 7688,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0045",
+      "jurisdiction_id": "tps",
+      "source_file": "Patrol_Zone_-3288783031102167883.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Patrol_Zone_-3288783031102167883.csv",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__tps__tps_reference_geography__patrol_zone_3288783031102167883_csv",
+      "rows_loaded": 76,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0046",
+      "jurisdiction_id": "tps",
+      "source_file": "Personnel_by_Command_(ASR_PB_TBL_004)_8734482224623258744.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Personnel_by_Command_(ASR_PB_TBL_004)_8734482224623258744.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__personnel_by_command_asr_pb_tbl_004_8734",
+      "rows_loaded": 70,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0047",
+      "jurisdiction_id": "tps",
+      "source_file": "Personnel_by_Rank_(ASR_PB_TBL_002)_4327912300163850055.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Personnel_by_Rank_(ASR_PB_TBL_002)_4327912300163850055.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__personnel_by_rank_asr_pb_tbl_002_4327912",
+      "rows_loaded": 250,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0048",
+      "jurisdiction_id": "tps",
+      "source_file": "Personnel_by_Rank_by_Division_(ASR_PB_TBL_003)_5370263291996234710.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Personnel_by_Rank_by_Division_(ASR_PB_TBL_003)_5370263291996234710.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__personnel_by_rank_by_division_asr_pb_tbl",
+      "rows_loaded": 1582,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0049",
+      "jurisdiction_id": "tps",
+      "source_file": "Persons_in_Crisis_Calls_for_Service_Attended_Open_Data_-3877229567131500534.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Persons_in_Crisis_Calls_for_Service_Attended_Open_Data_-3877229567131500534.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_calls_for_service__persons_in_crisis_calls_for_service_atte",
+      "rows_loaded": 357697,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0050",
+      "jurisdiction_id": "tps",
+      "source_file": "Police_Facilities_6911054687584621728.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Police_Facilities_6911054687584621728.csv",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__tps__tps_reference_geography__police_facilities_6911054687584621728_cs",
+      "rows_loaded": 26,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0051",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_ARR_TBL_001_4032986751229720343.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_ARR_TBL_001_4032986751229720343.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_arr_tbl_001_4032986751229720343_csv",
+      "rows_loaded": 65276,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0052",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_001_8718036773732049598.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_001_8718036773732049598.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_001_8718036773732049598_csv",
+      "rows_loaded": 48,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0053",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_002_2114656744363348377.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_002_2114656744363348377.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_002_2114656744363348377_csv",
+      "rows_loaded": 80,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0054",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_003_7983536065313291159.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_003_7983536065313291159.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_003_7983536065313291159_csv",
+      "rows_loaded": 272,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0055",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_004_-3558409208154542082.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_004_-3558409208154542082.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_004_3558409208154542082_csv",
+      "rows_loaded": 176,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0056",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_005_1242716001725294161.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_005_1242716001725294161.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_005_1242716001725294161_csv",
+      "rows_loaded": 208,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0057",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_006_4119402934590759753.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_006_4119402934590759753.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_006_4119402934590759753_csv",
+      "rows_loaded": 48,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0058",
+      "jurisdiction_id": "tps",
+      "source_file": "RBDC_UOF_TBL_007_8618837934118874435.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/RBDC_UOF_TBL_007_8618837934118874435.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__rbdc_uof_tbl_007_8618837934118874435_csv",
+      "rows_loaded": 64,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0059",
+      "jurisdiction_id": "tps",
+      "source_file": "Regulated_Interactions_(ASR_RI_TBL_001)_3915709414202984778.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Regulated_Interactions_(ASR_RI_TBL_001)_3915709414202984778.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__regulated_interactions_asr_ri_tbl_001_39",
+      "rows_loaded": 110,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0060",
+      "jurisdiction_id": "tps",
+      "source_file": "Reported_Crimes_(ASR_RC_TBL_001)_-3089647980937589388.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Reported_Crimes_(ASR_RC_TBL_001)_-3089647980937589388.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__reported_crimes_asr_rc_tbl_001_308964798",
+      "rows_loaded": 40390,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0061",
+      "jurisdiction_id": "tps",
+      "source_file": "Robbery_Open_Data_2226832258065309099.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Robbery_Open_Data_2226832258065309099.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__robbery_open_data_2226832258065309099_cs",
+      "rows_loaded": 40248,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0062",
+      "jurisdiction_id": "tps",
+      "source_file": "Search_of_Persons_(ASR_SP_TBL_001)_4815884241870621834.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Search_of_Persons_(ASR_SP_TBL_001)_4815884241870621834.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__search_of_persons_asr_sp_tbl_001_4815884",
+      "rows_loaded": 201,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0063",
+      "jurisdiction_id": "tps",
+      "source_file": "Shooting_and_Firearm_Discharges_Open_Data_-3025367010736391071.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Shooting_and_Firearm_Discharges_Open_Data_-3025367010736391071.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_sensitive_incident__shooting_and_firearm_discharges_open_dat",
+      "rows_loaded": 6829,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0064",
+      "jurisdiction_id": "tps",
+      "source_file": "Staffing_by_Command.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Staffing_by_Command.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__staffing_by_command_csv",
+      "rows_loaded": 307,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0065",
+      "jurisdiction_id": "tps",
+      "source_file": "TOTAL_KSI_4115794401574937330.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/TOTAL_KSI_4115794401574937330.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__total_ksi_4115794401574937330_csv",
+      "rows_loaded": 18957,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0066",
+      "jurisdiction_id": "tps",
+      "source_file": "TPS_POLICE_DIVISIONS_-3160015003731132608.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/TPS_POLICE_DIVISIONS_-3160015003731132608.csv",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__tps__tps_reference_geography__tps_police_divisions_3160015003731132608",
+      "rows_loaded": 16,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0067",
+      "jurisdiction_id": "tps",
+      "source_file": "Theft_From_Motor_Vehicle_Open_Data_4636805822324249695.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Theft_From_Motor_Vehicle_Open_Data_4636805822324249695.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__theft_from_motor_vehicle_open_data_46368",
+      "rows_loaded": 106574,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0068",
+      "jurisdiction_id": "tps",
+      "source_file": "Theft_Over_Open_Data_-309556416197554984.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Theft_Over_Open_Data_-309556416197554984.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_major_crime_v1__theft_over_open_data_309556416197554984_",
+      "rows_loaded": 16790,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0069",
+      "jurisdiction_id": "tps",
+      "source_file": "Tickets_Issued_(ASR_ENF_TBL_002)_6312647708442498473.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Tickets_Issued_(ASR_ENF_TBL_002)_6312647708442498473.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__tickets_issued_asr_enf_tbl_002_631264770",
+      "rows_loaded": 31643,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0070",
+      "jurisdiction_id": "tps",
+      "source_file": "Top_20_Offences_of_Firearm_Seizures_(ASR_F_TBL_002)_3169920589327387274.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Top_20_Offences_of_Firearm_Seizures_(ASR_F_TBL_002)_3169920589327387274.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__top_20_offences_of_firearm_seizures_asr_",
+      "rows_loaded": 243,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0071",
+      "jurisdiction_id": "tps",
+      "source_file": "Total_Public_Complaints(ASR_PCF_TBL_001)_-5426935284038049601.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Total_Public_Complaints(ASR_PCF_TBL_001)_-5426935284038049601.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__total_public_complaints_asr_pcf_tbl_001_",
+      "rows_loaded": 180,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0072",
+      "jurisdiction_id": "tps",
+      "source_file": "Traffic_Collisions_Open_Data_8128730402587031536 (1).csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Traffic_Collisions_Open_Data_8128730402587031536 (1).csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__traffic_collisions_open_data_81287304025",
+      "rows_loaded": 809034,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0073",
+      "jurisdiction_id": "tps",
+      "source_file": "Traffic_Collisions_Open_Data_8128730402587031536.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Traffic_Collisions_Open_Data_8128730402587031536.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_traffic_ksi__traffic_collisions_open_data_81287304025",
+      "rows_loaded": 809034,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0074",
+      "jurisdiction_id": "tps",
+      "source_file": "Victims_of_Crime_(ASR_VC_TBL_001)_3114193774591085696.csv",
+      "load_file_path": "data/raw/tps/_downloads/2026-06-30/Victims_of_Crime_(ASR_VC_TBL_001)_3114193774591085696.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__tps__tps_aggregate__victims_of_crime_asr_vc_tbl_001_31141937",
+      "rows_loaded": 1384,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0075",
+      "jurisdiction_id": "tps",
+      "source_file": "tps-v1-v2.sqlite",
+      "load_file_path": "data/processed/tps/v1/tps-v1-v2.sqlite",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__tps__tps_processed_v1__tps_v1_v2_sqlite",
+      "rows_loaded": 581393,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0076",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "peel-prp-ecrimes-2026-07-01-with-geometry.csv",
+      "load_file_path": "data/raw/peel-prp/ecrimes/incidents/2026-07-01/peel-prp-ecrimes-2026-07-01-with-geometry.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_ecrimes_incidents__peel_prp_ecrimes_2026_07_01_with_geometr",
+      "rows_loaded": 82401,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0077",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "peel-prp-ecrimes-2026-07-01-no-geometry.csv",
+      "load_file_path": "data/raw/peel-prp/ecrimes/legacy-csv-no-geometry/2026-07-01/peel-prp-ecrimes-2026-07-01-no-geometry.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_ecrimes_legacy__peel_prp_ecrimes_2026_07_01_no_geometry_",
+      "rows_loaded": 82401,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0078",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "PeelDivisions.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/boundaries/current/PeelDivisions.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__peel_prp__peel_reference_geography__peeldivisions_geojson",
+      "rows_loaded": 5,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0079",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "PeelPatrolZ.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/boundaries/current/PeelPatrolZ.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__peel_prp__peel_reference_geography__peelpatrolz_geojson",
+      "rows_loaded": 92,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0080",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "PeelWards.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/boundaries/current/PeelWards.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__peel_prp__peel_reference_geography__peelwards_geojson",
+      "rows_loaded": 21,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0081",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_ASL_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_ASL_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_asl_hotspot_geojson",
+      "rows_loaded": 24,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0082",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_BNE_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_BNE_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_bne_hotspot_geojson",
+      "rows_loaded": 18,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0083",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_DRP_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_DRP_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_drp_hotspot_geojson",
+      "rows_loaded": 19,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0084",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_DRT_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_DRT_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_drt_hotspot_geojson",
+      "rows_loaded": 18,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0085",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_FRA_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_FRA_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_fra_hotspot_geojson",
+      "rows_loaded": 22,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0086",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_HOM_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_HOM_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_hom_hotspot_geojson",
+      "rows_loaded": 7,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0087",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_MIS_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_MIS_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_mis_hotspot_geojson",
+      "rows_loaded": 23,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0088",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_ROB_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_ROB_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_rob_hotspot_geojson",
+      "rows_loaded": 21,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0089",
+      "jurisdiction_id": "peel-prp",
+      "source_file": "2025_VEH_Hotspot.geojson",
+      "load_file_path": "data/raw/peel-prp/ecrimes/hotspots/2025/2025_VEH_Hotspot.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__peel_prp__peel_hotspots_overlay__2025_veh_hotspot_geojson",
+      "rows_loaded": 21,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0090",
+      "jurisdiction_id": "yrp",
+      "source_file": "yrp-community-safety-occurrences-2026-07-01-with-geometry.csv",
+      "load_file_path": "data/raw/yrp/community-safety/incidents/2026-07-01/yrp-community-safety-occurrences-2026-07-01-with-geometry.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__yrp__yrp_community_safety_incidents__yrp_community_safety_occurrences_2026_07",
+      "rows_loaded": 67153,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0091",
+      "jurisdiction_id": "yrp",
+      "source_file": "yrp-municipalities.geojson",
+      "load_file_path": "data/raw/yrp/community-safety/boundaries/current/yrp-municipalities.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__yrp__yrp_reference_geography__yrp_municipalities_geojson",
+      "rows_loaded": 9,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0093",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-avl-odp-crimemap-master-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-avl-odp-crimemap-master-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_master__durham_drps_avl_odp_crimemap_master_2026",
+      "rows_loaded": 7819,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0094",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-assault-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-assault-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_assault_open_data_2026_07_01",
+      "rows_loaded": 16157,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0095",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-auto-theft-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-auto-theft-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_auto_theft_open_data_2026_07",
+      "rows_loaded": 6411,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0096",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-bne-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-bne-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_bne_open_data_2026_07_01_csv",
+      "rows_loaded": 7315,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0097",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-drug-violations-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-drug-violations-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_drug_violations_open_data_20",
+      "rows_loaded": 3698,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0098",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-firearm-shooting-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-firearm-shooting-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_firearm_shooting_open_data_2",
+      "rows_loaded": 258,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0099",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-robbery-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-robbery-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_robbery_open_data_2026_07_01",
+      "rows_loaded": 1538,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0100",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-theft-over-5000-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-theft-over-5000-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__durham_drps__durham_standalone_extract__durham_drps_theft_over_5000_open_data_20",
+      "rows_loaded": 1408,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0101",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-traffic-collision-open-data-2026-07-01.csv",
+      "load_file_path": "data/raw/durham-drps/community-safety/incidents/2026-07-01/durham-drps-traffic-collision-open-data-2026-07-01.csv",
+      "ingestion_status": "ready_for_bronze_load",
+      "bronze_table": "bronze__durham_drps__durham_traffic_collisions__durham_drps_traffic_collision_open_data_",
+      "rows_loaded": 63790,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0102",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-divisions-2015-2026-07-01.geojson",
+      "load_file_path": "data/raw/durham-drps/community-safety/boundaries/current/durham-drps-divisions-2015-2026-07-01.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__durham_drps__durham_reference_geography__durham_drps_divisions_2015_2026_07_01_ge",
+      "rows_loaded": 5,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0103",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-health-neighbourhoods-2026-07-01.geojson",
+      "load_file_path": "data/raw/durham-drps/community-safety/boundaries/current/durham-drps-health-neighbourhoods-2026-07-01.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__durham_drps__durham_reference_geography__durham_drps_health_neighbourhoods_2026_0",
+      "rows_loaded": 50,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0104",
+      "jurisdiction_id": "durham-drps",
+      "source_file": "durham-drps-zones-2015-2026-07-01.geojson",
+      "load_file_path": "data/raw/durham-drps/community-safety/boundaries/current/durham-drps-zones-2015-2026-07-01.geojson",
+      "ingestion_status": "reference_geography_only",
+      "bronze_table": "bronze__durham_drps__durham_reference_geography__durham_drps_zones_2015_2026_07_01_geojso",
+      "rows_loaded": 22,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0105",
+      "jurisdiction_id": "halton-hrps",
+      "source_file": "halton-hrps-crime-map-incidents-2026-07-01.csv",
+      "load_file_path": "data/raw/halton-hrps/crime-map/incidents/2026-07-01/halton-hrps-crime-map-incidents-2026-07-01.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__halton_hrps__halton_crime_map_incidents__halton_hrps_crime_map_incidents_2026_07_",
+      "rows_loaded": 20252,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0106",
+      "jurisdiction_id": "halton-hrps",
+      "source_file": "halton-hrps-crime-map-incidents-2026-07-01.geojson",
+      "load_file_path": "data/raw/halton-hrps/crime-map/incidents/2026-07-01/halton-hrps-crime-map-incidents-2026-07-01.geojson",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__halton_hrps__halton_crime_map_incidents_geojson__halton_hrps_crime_map_incidents_2026_07_",
+      "rows_loaded": 20252,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0107",
+      "jurisdiction_id": "hamilton-hps",
+      "source_file": "hamilton-communitycrimemap-2000-to-2026-records-2026-07-02.csv",
+      "load_file_path": "data/raw/hamilton-hps/communitycrimemap/source-freeze-2026-07-02/incidents/2026-07-02/hamilton-communitycrimemap-2000-to-2026-records-2026-07-02.csv",
+      "ingestion_status": "raw_available_review_required",
+      "bronze_table": "bronze__hamilton_hps__hamilton_communitycrimemap_raw__hamilton_communitycrimemap_2000_to_2026_",
+      "rows_loaded": 21369,
+      "load_status": "loaded"
+    },
+    {
+      "catalog_id": "cat-0108",
+      "jurisdiction_id": "hamilton-hps",
+      "source_file": "hamilton-communitycrimemap-hps-only-2021-to-2026-records-2026-07-02.csv",
+      "load_file_path": "data/raw/hamilton-hps/communitycrimemap/source-freeze-2026-07-02/incidents/2026-07-02/cleaned/hamilton-communitycrimemap-hps-only-2021-to-2026-records-2026-07-02.csv",
+      "ingestion_status": "ready_with_caveats",
+      "bronze_table": "bronze__hamilton_hps__hamilton_communitycrimemap_hps_only__hamilton_communitycrimemap_hps_only_2021",
+      "rows_loaded": 21367,
+      "load_status": "loaded"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+category,tps_v1_processed,tps_raw_corpus,peel-prp,yrp,durham-drps_master,halton-hrps,hamilton-hps_cleaned
+assault,published|254378,published|assault-open-data,published|21250,published|9330,unknown,unknown,unknown
+auto_vehicle_theft,published|78714,unknown,published|17728,published|2711,unknown,unknown,unknown
+theft_from_vehicle,published|106574,unknown,unknown,unknown,unknown,unknown,unknown
+break_and_enter,published|84689,unknown,published|7666,published|3057,unknown,unknown,unknown
+robbery,published|40248,unknown,published|2512,published|660,unknown,unknown,unknown
+homicide,unknown,raw_available_review_required|homicides-open-data,published|58,published|12,unknown,unknown,unknown
+shooting_firearm,unknown,raw_available_review_required|shooting-and-firearm-discharges-open-data,embedded_in_robbery_labels_only,published|118_flag,unknown,unknown,unknown
+sexual_assault,unknown,unknown,not_found_in_public_layer,published|733,unknown,unknown,unknown
+hate_crime,unknown,raw_available_review_required|hate-crime-open-data,hate_motivated_mischief_only|8,published|356_flag,unknown,unknown,unknown
+arson,unknown,unknown,not_found_in_public_layer,published|151,unknown,unknown,unknown
+drugs,unknown,unknown,published|4302,published|1509,unknown,unknown,unknown
+fraud,unknown,not_in_v1_major_crime_family,published|14937,published|9779,unknown,unknown,unknown
+traffic_collisions,unknown,published|traffic-collisions-open-data,unknown,unknown,unknown,unknown,unknown

@@ -1,0 +1,52 @@
+column_name,table_name,data_type,required,description,notes
+silver_record_key,silver_incidents,TEXT,yes,Primary key: jurisdiction_id:catalog_id:source_record_id,Stable dedupe key within silver layer only
+catalog_id,silver_incidents,TEXT,yes,FK to DATA_COLLECTION_MASTER_CATALOG.csv,Lineage anchor
+jurisdiction_id,silver_incidents,TEXT,yes,Police service jurisdiction slug,"e.g. tps, peel-prp, yrp"
+dataset_group,silver_incidents,TEXT,yes,Catalog dataset_group,Controls normalization profile
+dataset_slug,silver_incidents,TEXT,yes,Catalog crime_category_raw / dataset slug,Per-source file identity
+source_record_id,silver_incidents,TEXT,yes,Primary source record id,From primary_source_key first token
+occurrence_group_key,silver_incidents,TEXT,no,Source occurrence grouping key,Preserve duplicate rows when source does
+event_unique_id,silver_incidents,TEXT,no,Cross-offence event id when present,TPS EVENT_UNIQUE_ID; do not dedupe across rows
+report_date,silver_incidents,TEXT,no,Report date ISO-8601 date,When available in source
+occ_date,silver_incidents,TEXT,yes,Occurrence date ISO-8601 date,Parsed from date_field_used
+occ_year,silver_incidents,INTEGER,no,Occurrence year,Derived from occ_date
+occ_month,silver_incidents,TEXT,no,Occurrence month label,Derived from occ_date
+occ_dow,silver_incidents,TEXT,no,Day of week,Derived when source lacks it
+occ_hour,silver_incidents,INTEGER,no,Hour of occurrence,Derived when source lacks it
+offence_raw,silver_incidents,TEXT,no,Primary offence label from source,First offence_category_fields column
+offence_secondary,silver_incidents,TEXT,no,Secondary offence/category label,Second offence_category_fields column when present
+category_canonical,silver_incidents,TEXT,no,Mapped canonical category,From SILVER_CATEGORY_TAXONOMY_DRAFT.csv
+category_family,silver_incidents,TEXT,no,High-level category family,"assault, robbery, fraud, etc."
+division,silver_incidents,TEXT,no,Police division,TPS DIVISION; regional equivalents
+municipality,silver_incidents,TEXT,no,Municipality / city,Peel/York/Durham/Halton/Hamilton fields
+neighbourhood_primary,silver_incidents,TEXT,no,Primary neighbourhood label,hood/neighbourhood/sector/district
+neighbourhood_secondary,silver_incidents,TEXT,no,Secondary neighbourhood label,Optional second geography field
+location_type,silver_incidents,TEXT,no,Location / premises context,TPS LOCATION_TYPE/PREMISES_TYPE
+lat,silver_incidents,REAL,no,Latitude WGS84,Parsed from coordinate_fields
+lng,silver_incidents,REAL,no,Longitude WGS84,Parsed from coordinate_fields
+mappable,silver_incidents,INTEGER,yes,1 if coordinates valid for map display,"Exclude 0,0 and invalid coords"
+privacy_level,silver_incidents,TEXT,yes,Catalog privacy_level,"exact_unknown, public_offset, etc."
+public_display_status,silver_incidents,TEXT,yes,Catalog public_display_status,"published_v1, deferred_review, etc."
+scope_type,silver_incidents,TEXT,yes,Catalog scope_type,"processed_canonical, rolling_window, etc."
+source_fields_json,silver_incidents,TEXT,yes,Full source row JSON,All bronze columns except provenance optional
+bronze_table,silver_incidents,TEXT,yes,Source bronze table name,For replay/debug
+normalized_at_utc,silver_incidents,TEXT,yes,Silver normalization timestamp,Set at silver build time
+geo_id,silver_reference_geography,TEXT,yes,Primary key for geography features,catalog_id:source_feature_id
+catalog_id,silver_reference_geography,TEXT,yes,Catalog lineage,
+jurisdiction_id,silver_reference_geography,TEXT,yes,Jurisdiction slug,
+feature_name,silver_reference_geography,TEXT,no,Division/zone/ward label,
+feature_type,silver_reference_geography,TEXT,no,"division, patrol_zone, ward, neighbourhood",
+geometry_json,silver_reference_geography,TEXT,no,GeoJSON geometry,From _raw_geometry in bronze geojson tables
+source_fields_json,silver_reference_geography,TEXT,yes,Full source properties JSON,
+from_catalog_id,silver_lineage,TEXT,yes,Source catalog id,
+bronze_table,silver_lineage,TEXT,yes,Bronze table ingested,
+silver_table,silver_lineage,TEXT,yes,Target silver table,
+rows_in,silver_lineage,INTEGER,yes,Input row count,
+rows_out,silver_lineage,INTEGER,yes,Output row count,
+transform_profile,silver_lineage,TEXT,yes,Normalization profile name,e.g. tps_major_crime_v1
+category_family,silver_category_taxonomy,TEXT,yes,High-level family,
+category_canonical,silver_category_taxonomy,TEXT,yes,Canonical label,
+source_jurisdiction,silver_category_taxonomy,TEXT,yes,Jurisdiction slug,
+source_label,silver_category_taxonomy,TEXT,yes,Raw source label,
+publish_tier,silver_category_taxonomy,TEXT,yes,v1_published | v1_deferred | reference_only,
+mapping_confidence,silver_category_taxonomy,TEXT,yes,high | medium | low,
